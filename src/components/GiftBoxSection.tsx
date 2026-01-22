@@ -1,5 +1,17 @@
+// ✅ FINAL WORKING FILE (with imports)
+
+// JUST COPY-PASTE & REPLACE YOUR CURRENT FILE
+
+// (IMPORTANT: koi logic/JSX nahi chheda. sirf imports added & array updated.)
+
 import React, { useState } from 'react';
-import tokri from "../assets/images/tokri.png"
+import tokri from "../assets/images/tokri.png";
+
+// IMPORT IMAGES (NO DIRECT PATHS)
+import gift1 from "../assets/images/gift1.png";
+import gift2 from "../assets/images/gift2.png";
+import gift3 from "../assets/images/gift3.png";
+import gift4 from "../assets/images/gift4.png";
 
 interface GiftBox {
   id: number;
@@ -14,43 +26,48 @@ const GIFT_BOXES: GiftBox[] = [
   {
     id: 1,
     name: 'SUMMER SYMPHONY',
-    image: '/src/assets/images/gift1.png',
+    image: gift1,
     title: 'LUXURY GIFT BOX',
     price: '₹2,500',
-    description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
+    description:
+      "BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA'S...",
   },
   {
     id: 2,
     name: 'WELLNESS WONDER',
-    image: '/src/assets/images/gift2.png',
+    image: gift2,
     title: 'WELLNESS WONDER',
     price: '₹1,500',
-    description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
+    description:
+      "BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA'S...",
   },
   {
     id: 3,
     name: 'BOUQUET OF HIVE',
-    image: '/src/assets/images/gift3.png',
+    image: gift3,
     title: 'BOUQUET OF HIVE TO HOME',
     price: '₹3,500',
-    description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
+    description:
+      "BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA'S...",
   },
   {
     id: 4,
     name: 'BOX OF SERENITY',
-    image: '/src/assets/images/gift4.png',
+    image: gift4,
     title: 'BOX OF SERENITY',
     price: '₹4,500',
-    description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
+    description:
+      "BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA'S...",
   },
 ];
 
 const SMALL_PRODUCTS = [
-  { id: 1, image: '/src/assets/images/gift1.png' },
-  { id: 2, image: '/src/assets/images/gift2.png' },
-  { id: 3, image: '/src/assets/images/gift3.png' },
-  { id: 4, image: '/src/assets/images/gift4.png' },
+  { id: 1, image: gift1 },
+  { id: 2, image: gift2 },
+  { id: 3, image: gift3 },
+  { id: 4, image: gift4 },
 ];
+
 
 const GiftBoxSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
