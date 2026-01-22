@@ -120,10 +120,7 @@ const GiftBoxSection: React.FC = () => {
                   src={product.image}
                   alt={`Product ${product?.id}`}
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&q=80';
-                  }}
+               
                 />
               </div>
             ))}
@@ -145,11 +142,7 @@ const GiftBoxSection: React.FC = () => {
                 className="w-full h-full object-cover"
                 style={{ imageRendering: 'auto' }}
           
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src =
-                    'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80';
-                }}
+          
               />
             </div>
           </div>
@@ -182,11 +175,7 @@ const GiftBoxSection: React.FC = () => {
                       className="max-w-full max-h-full object-cover"
                       style={{ imageRendering: 'auto' }}
                       loading="eager"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src =
-                          'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80';
-                      }}
+                  
                     />
 
                     {/* Label */}
