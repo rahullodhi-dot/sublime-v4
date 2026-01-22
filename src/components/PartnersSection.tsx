@@ -147,7 +147,7 @@ const PartnersSection: React.FC = () => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="section-subheading  mb-3 sm:mb-4 text-[#C5A059]">
+                }} className="section-subheading  mb-3 sm:mb-4 text-[#000]">
             {sectionData.subheading}
           </p>
           <h2  style={{
@@ -172,7 +172,7 @@ const PartnersSection: React.FC = () => {
           onTouchEnd={() => setIsPaused(false)}
           style={{ scrollBehavior: 'auto' }}
         >
-          {fallbackPartners.map((partner, index) => (
+          {[...fallbackPartners,...fallbackPartners].map((partner, index) => (
             <div
               key={`${partner.id}-${index}`}
               className="flex-shrink-0 flex mx-auto w-36 items-center justify-center transition-transform duration-300"

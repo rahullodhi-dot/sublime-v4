@@ -108,7 +108,7 @@ const WhyChooseUsSection: React.FC = () => {
   {/* Background image layer */}
   <div
     style={{ backgroundImage: `url(${mountain})` }}
-    className="absolute inset-0 bg-cover bg-center opacity-20 z-0"
+    className="absolute inset-0 bg-cover bg-center opacity-10 z-0"
   />
 
   {/* Optional dark/light overlay tint (remove if not needed) */}
@@ -168,13 +168,13 @@ const WhyChooseUsSection: React.FC = () => {
       <>
         {/* Timeline */}
         <div className="hidden lg:block relative">
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#B99F66] z-0"></div>
+          <div className="absolute top-[10px] left-0 right-0 h-[2px] bg-[#B99F66] z-0"></div>
 
-          <div className="absolute top-0 left-0 -translate-y-1/2 z-10">
+          <div className="absolute top-[10px] -left-0 -translate-y-1/2 z-10">
             <div className="w-5 h-5 rounded-full border-[3px] bg-[#B99F66] border-[#B99F66] shadow-md"></div>
           </div>
 
-          <div className="absolute top-0 right-0 -translate-y-1/2 z-10">
+          <div className="absolute top-[10px] right-0 -translate-y-1/2 z-10">
             <div className="w-5 h-5 rounded-full border-[3px] bg-[#B99F66] border-[#B99F66] shadow-md"></div>
           </div>
 

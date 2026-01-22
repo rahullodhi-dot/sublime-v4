@@ -82,7 +82,7 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className=" py-12 sm:py-16 lg:py-20 overflow-x-hidden">
+    <section className=" py-12 bg-[#F6F1E8] sm:py-16 lg:py-20 overflow-x-hidden">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="mb-8 sm:mb-12 mx-auto  text-center">
@@ -93,11 +93,11 @@ const TestimonialsSection: React.FC = () => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}  className="font-karla font-medium text-base leading-none tracking-[0.04em] uppercase text-[#C5A059] mb-2 sm:mb-3">
+                }}  className=" font-medium text-base leading-none tracking-[0.04em] uppercase text-black mb-2 sm:mb-3">
             ONLY BUY GOOD
           </p>
           <h2    style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '38px',
@@ -138,7 +138,7 @@ const TestimonialsSection: React.FC = () => {
               <div className="relative w-[287px] h-[291px] mx-auto mt-[9px] overflow-hidden bg-white rounded-[14px]">
                 {/* Ribbon Badge - Vertical (matching screenshot) */}
                 {product.badge && (
-                  <div className="absolute top-0 left-0 z-10 w-9 h-[130px] flex items-center justify-center bg-[#1A302A]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
+                  <div className="absolute -top-2 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#1A302A]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
                     <div style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,

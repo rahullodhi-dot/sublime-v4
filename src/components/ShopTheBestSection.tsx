@@ -165,7 +165,7 @@ function ProductCard({ product, onSelect, onAddToCart }: ProductCardProps) {
       </div>
 
       {/* Discount Badge - Fixed at Top Left */}
-      <p className="absolute top-0 left-0 z-30 bg-[#EED6B5] text-[#000000] font-karla font-medium shadow-md border-0 w-[103px] h-[30px] text-xs sm:text-sm flex items-center justify-center rounded-tl-[5px] rounded-br-[10px] rounded-tr-none rounded-bl-none">
+      <p className="absolute top-0 left-0 z-30 bg-[#D5C279] text-[#000000] font-karla font-medium shadow-md border-0 w-[103px] h-[30px] text-xs sm:text-sm flex items-center justify-center rounded-tl-[5px] rounded-br-[10px] rounded-tr-none rounded-bl-none">
         {product.discountPrice || 10 }% Off
       </p>
 
@@ -185,9 +185,9 @@ function ProductCard({ product, onSelect, onAddToCart }: ProductCardProps) {
       <CardContent
         className={cn(
           "absolute bottom-0 left-0 right-0 p-4 z-20 rounded-b-[10px]",
-          "bg-[#E7D9C2] h-[40%]",
+          "bg-[#F6F1E8] h-[40%]",
           "md:bg-transparent md:h-0 md:opacity-0 md:pointer-events-none",
-          "md:group-hover:bg-[#E7D9C2] md:group-hover:h-[40%]",
+          "md:group-hover:bg-[#F6F1E8] md:group-hover:h-[40%]",
           "md:group-hover:opacity-100 md:group-hover:pointer-events-auto",
           "transition-all duration-300 ease-in-out"
         )}
@@ -215,7 +215,7 @@ function ProductCard({ product, onSelect, onAddToCart }: ProductCardProps) {
             <span className="font-karla font-bold text-lg text-black">
               ₹{product.price.toFixed(2)}
             </span>
-            <span className="font-karla text-sm text-white/70 line-through">
+            <span className="font-karla text-sm text-black line-through">
               ₹
               {calculateOriginalPrice(
                 product.price,
@@ -352,7 +352,7 @@ export default function ShopTheBestSection() {
 
   let renderedData =  PRODUCTS || shopTheBestProducts ;
   return (
-    <section className="w-full py-10 sm:py-8 lg:py-10 overflow-hidden">
+    <section className="w-full bg-[#F0E3AF] py-10 sm:py-8 lg:py-10 overflow-hidden">
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div style={{fontFamily:"gotham2"}} className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
@@ -361,7 +361,7 @@ export default function ShopTheBestSection() {
               GO THROUGH OUR BEST
             </span>
           </div>
-          <h2 style={{fontFamily:"gotham"}} className="font-lora font-medium text-4xl text-black capitalize">
+          <h2 style={{fontFamily:"gotham"}} className="font-lora font-medium text-4xl text-[#B89B49] capitalize">
             Shop The Best
           </h2>
         </div>

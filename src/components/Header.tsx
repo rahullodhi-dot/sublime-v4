@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { isAuthenticated, getCurrentUser } from '../services/auth.service';
-import DarkLogo from '../assets/images/Dark-Logo.png';
+import DarkLogo from '../assets/images/newWhiteLogo.png';
+
 
 interface HeaderProps {
   onSidebarToggle?: () => void;
@@ -59,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   };
 
   return (
-    <header   className={`   sticky top-0 z-[100]
+    <header   className={` bg-[#0B524D]  sticky top-0 z-[100]
   
      sticky top-0 z-[100] transition-all duration-300 ${isScrolled ? '' : ''}`}>
       <nav className="max-w-[1600px] bg-transparent mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
@@ -69,10 +70,10 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
             {/* Hamburger Menu - Toggle Sidebar */}
             <button
               onClick={onSidebarToggle}
-              className="p-1.5 sm:p-2 text-black hover:text-[#316763] transition-colors"
+              className="p-1.5 sm:p-2 text-[#F6F1E8] hover:text-[#316763] transition-colors"
               aria-label="Toggle sidebar menu"
             >
-              <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
@@ -87,11 +88,11 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               >
                 <Link
                   to="/products?category=loose-tea"
-                  className="flex items-center text-black hover:text-[#316763] transition-colors"
+                  className="flex items-center text-[#F6F1E8] hover:text-[#F6F1E8] transition-colors"
                   style={{
                     fontFamily: "'gotham2', sans-serif",
                     fontWeight: 100,
-                    fontSize: '18px',
+                    fontSize: '14px',
                     lineHeight: '100%',
                     letterSpacing: '0%',
                   }}
@@ -108,7 +109,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                     <Link  style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
-                  fontSize: '18px',
+                fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/products?category=green-tea" className="block font-gotham2 px-4 py-2 text-sm font-gotham text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
@@ -117,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                     <Link  style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
-                  fontSize: '18px',
+                fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/products?category=black-tea" className="block px-4 py-2 text-sm font-gotham2 text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
@@ -126,7 +127,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                     <Link   style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
-                  fontSize: '18px',
+                 fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}to="/products?category=herbal-tea" className="block px-4 py-2 text-sm font-gotham2 text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
@@ -134,8 +135,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                     </Link>
                     <Link  style={{
                   fontFamily: "'gotham2', sans-serif",
-                  fontWeight: 100,
-                  fontSize: '18px',
+                  fontSize: '14px', 
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/products?category=oolong-tea" className="block px-4 py-2 text-sm font-gotham2 text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
@@ -147,11 +147,11 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
 
               <Link
                 to="/products?category=honey"
-                className=" hover:text-[#316763] transition-colors"
+                className="text-[#F6F1E8] hover:text-[#F6F1E8] transition-colors"
                 style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
-                  fontSize: '18px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}
@@ -160,11 +160,11 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               </Link>
               <Link
                 to="/products?category=spices"
-                className="text-gray-900 hover:text-[#316763] transition-colors"
+                className="text-[#F6F1E8] hover:text-[#F6F1E8]transition-colors"
                 style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
-                  fontSize: '18px',
+                   fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}
@@ -173,11 +173,11 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               </Link>
               <Link
                 to="/products?category=dry-fruits"
-                className="text-gray-900 hover:text-[#316763] transition-colors"
+                className="text-[#F6F1E8] hover:text-[#F6F1E8] transition-colors"
                 style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
-                  fontSize: '18px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}
@@ -207,7 +207,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
             {/* Search Icon - Hidden on smallest screens */}
             <button
               onClick={handleSearchClick}
-              className="hidden xs:block p-1.5 sm:p-2 text-gray-900 hover:text-[#316763] transition-colors relative"
+              className="hidden xs:block p-1.5 sm:p-2 text-[#F6F1E8] hover:text-[#316763] transition-colors relative"
               aria-label="Search"
             >
               <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -218,7 +218,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
             {/* Wishlist Icon - Hidden on mobile */}
             <button
               onClick={handleWishlistClick}
-              className="hidden sm:block p-1.5 sm:p-2 text-gray-900 hover:text-[#316763] transition-colors relative"
+              className="hidden sm:block p-1.5 sm:p-2 text-[#F6F1E8] transition-colors relative"
               aria-label="Wishlist"
             >
               <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,7 +229,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
             {/* Cart Icon with Badge */}
             <button
               onClick={handleCartClick}
-              className="p-1.5 sm:p-2 text-gray-900 hover:text-[#316763] transition-colors relative"
+              className="p-1.5 sm:p-2 text-[#F6F1E8]  transition-colors relative"
               aria-label="Shopping Cart"
             >
               <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

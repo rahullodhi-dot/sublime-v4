@@ -105,31 +105,31 @@ const BlogSection: React.FC = () => {
         <div className="flex   flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-8 sm:mb-12 px-2">
           <div className="space-y-2  mx-auto sm:space-y-3 text-center md:text-left">
             {/* LATEST UPDATES with Leaf Icon */}
-            <div className="flex m  items-right gap-2 justify-center md:justify-start">
+            <div className="flex m  items-center  gap-2 justify-center md:justify-center">
               {/* <svg className="h-3.5 w-3.5 ml-32 sm:h-4 sm:w-4 text-[#B89B49]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg> */}
-              {/* <p style={{
+              <p style={{
                 fontFamily: "'gotham2', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '18px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
-              }} className="text-[10px]  ml-auto sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.3em] text-[#C5A059] uppercase">
+              }} className="text-[10px]   sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.3em] text-black uppercase">
                 LATEST UPDATES
-              </p> */}
+              </p>
             </div>
             {/* Latest Blogs Title */}
             <h2 style={{
-              fontFamily: "'gotham', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="text-2xl  sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059] leading-tight" style={{ fontFamily:"gotham" }}>
-              Latest Blogs
+            }} className="text-2xl  sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#B89B49] leading-tight">
+              Read Our  Blogs
             </h2>
           </div>
        

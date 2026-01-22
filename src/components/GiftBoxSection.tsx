@@ -14,7 +14,7 @@ const GIFT_BOXES: GiftBox[] = [
   {
     id: 1,
     name: 'SUMMER SYMPHONY',
-    image: '/src/assets/images/Gemini_Generated_Image_wghp64wghp64wghp 1 (1).png',
+    image: '/src/assets/images/gift1.png',
     title: 'LUXURY GIFT BOX',
     price: '₹2,500',
     description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
@@ -22,7 +22,7 @@ const GIFT_BOXES: GiftBox[] = [
   {
     id: 2,
     name: 'WELLNESS WONDER',
-    image: '/src/assets/images/Gemini_Generated_Image_wghp64wghp64wghp 2 (1).png',
+    image: '/src/assets/images/gift2.png',
     title: 'WELLNESS WONDER',
     price: '₹1,500',
     description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
@@ -30,7 +30,7 @@ const GIFT_BOXES: GiftBox[] = [
   {
     id: 3,
     name: 'BOUQUET OF HIVE',
-    image: '/src/assets/images/Gemini_Generated_Image_wghp64wghp64wghp 3 (1).png',
+    image: '/src/assets/images/gift3.png',
     title: 'BOUQUET OF HIVE TO HOME',
     price: '₹3,500',
     description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
@@ -38,7 +38,7 @@ const GIFT_BOXES: GiftBox[] = [
   {
     id: 4,
     name: 'BOX OF SERENITY',
-    image: '/src/assets/images/Gemini_Generated_Image_wghp64wghp64wghp 4 (1).png',
+    image: '/src/assets/images/gift4.png',
     title: 'BOX OF SERENITY',
     price: '₹4,500',
     description: 'BOX CONTAINS: SUBLIME SIGNATURE BLACK TEA - 100G SUBLIME SIGNATURE EARL GREY-50G REGIONAL RAW HONEY - 225G SALTED ALMONDS - 55G HONEY ALMONDS - 50G CLOVE - 50G CINNAMON - 50G BRASS TEA INFUSER - 1PC PRESENT YOUR LOVED ONES WITH OPULENCE AND WELL-BEING WITH SUBLIME HOUSE OF TEA\'S...',
@@ -46,10 +46,10 @@ const GIFT_BOXES: GiftBox[] = [
 ];
 
 const SMALL_PRODUCTS = [
-  { id: 1, image: '/src/assets/images/Gemini_Generated_Image_l4pps7l4pps7l4pp 6.png' },
-  { id: 2, image: '/src/assets/images/Gemini_Generated_Image_l4pps7l4pps7l4pp 7.png' },
-  { id: 3, image: '/src/assets/images/Gemini_Generated_Image_l4pps7l4pps7l4pp 8.png' },
-  { id: 4, image: '/src/assets/images/Gemini_Generated_Image_l4pps7l4pps7l4pp 9.png' },
+  { id: 1, image: '/src/assets/images/gift1.png' },
+  { id: 2, image: '/src/assets/images/gift2.png' },
+  { id: 3, image: '/src/assets/images/gift3.png' },
+  { id: 4, image: '/src/assets/images/gift4.png' },
 ];
 
 const GiftBoxSection: React.FC = () => {
@@ -66,13 +66,13 @@ const GiftBoxSection: React.FC = () => {
   const currentGiftBox = GIFT_BOXES[currentIndex];
 
   return (
-    <section className="w-full bg-[#E4DEC9] py-8 sm:py-12 lg:py-16 overflow-hidden">
+    <section className="w-full min-h-screen bg-[#E4DEC9] py-8 sm:py-12 lg:py-16 overflow-hidden">
       <div className="w-full relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-          <div className='absolute opacity-30 h-48 -top-20'>
+          <div className='absolute opacity-10 h-64 -top-14'>
             <img src={tokri} alt="" className='h-full'/>
           </div>
-           <div className='absolute  h-32 right-0 -top-10'>
+           <div className='absolute  h-36 opacity-70 right-0 -top-1'>
             <img src={tokri} alt="" className='h-full'/>
           </div>
         <div className="mb-6 z-10 text-center sm:mb-8 lg:mb-10">
@@ -103,13 +103,13 @@ const GiftBoxSection: React.FC = () => {
         </div>
 
         {/* Main Layout - 3 Columns */}
-        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
+        <div className="flex  overflow-hidden flex-col mt-[10%]   lg:flex-row gap-4 sm:gap-6 lg:gap-8">
           {/* Left Column - Small Product Thumbnails - 1 column */}
           <div className="hidden lg:flex lg:col-span-1 flex-col justify-center gap-3">
             {SMALL_PRODUCTS.map((product) => (
               <div
                 key={product.id}
-                className="overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                className="overflow-hidden cursor-pointer"
                 style={{
                   width: '90px',
                   height: '91px',
@@ -119,7 +119,7 @@ const GiftBoxSection: React.FC = () => {
                 <img
                   src={product.image}
                   alt={`Product ${product?.id}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=200&q=80';
@@ -130,9 +130,9 @@ const GiftBoxSection: React.FC = () => {
           </div>
 
           {/* Middle Column - Main Gift Box Display - 4 columns */}
-          <div className="lg:col-span-4 flex items-center" style={{width:"100%",height:"auto",borderRadius:"5px"}}>
+          <div className="lg:col-span-4 flex items-center overflow-hidden" style={{width:'900px',height:"400px",borderRadius:"5px",overflow:"hidden"}}>
             <div
-              className="overflow-hidden w-full shadow-lg"
+              className="overflow-hidden max-w-full shadow-lg"
               style={{
                 height: '400px',
                 borderRadius: '10px',
@@ -144,7 +144,7 @@ const GiftBoxSection: React.FC = () => {
                 alt={currentGiftBox.name}
                 className="w-full h-full object-cover"
                 style={{ imageRendering: 'auto' }}
-                loading="eager"
+          
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src =
@@ -179,7 +179,7 @@ const GiftBoxSection: React.FC = () => {
                     <img
                       src={box.image}
                       alt={box.name}
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full object-cover"
                       style={{ imageRendering: 'auto' }}
                       loading="eager"
                       onError={(e) => {
@@ -210,12 +210,11 @@ const GiftBoxSection: React.FC = () => {
               <div className="flex justify-end gap-3">
                 <button
                   onClick={handlePrev}
-                  className="relative text-white flex items-center justify-center shadow-md transition-colors hover:opacity-90"
+                  className="relative text-white flex items-center rounded-full  justify-center shadow-md transition-colors hover:opacity-90"
                   style={{
                     width: '40px',
                     height: '40px',
                     backgroundColor: '#9a7522',
-                    borderRadius: '5px',
                     opacity: 1,
                   }}
                   aria-label="Previous gift box"
@@ -249,7 +248,7 @@ const GiftBoxSection: React.FC = () => {
                     width: '40px',
                     height: '40px',
                     backgroundColor: '#9a7522',
-                    borderRadius: '5px',
+                    borderRadius: '50%',
                     opacity: 1,
                   }}
                   aria-label="Next gift box"

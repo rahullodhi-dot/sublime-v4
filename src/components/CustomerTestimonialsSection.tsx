@@ -104,7 +104,7 @@ const CustomerTestimonialsSection: React.FC = () => {
   return (
     <section  className="w-full relative py-12 sm:py-16 lg:py-20 overflow-hidden">
       <div>
-        <img src={AboutFrame} alt="" className='absolute w-full h-full bottom-2' />
+        <img src={AboutFrame} alt="" className='absolute w-[200%] h-full bottom-2' />
       </div>
         {/* <div style={{
         animation: "spinSlow   26s linear infinite",
@@ -127,7 +127,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}  className="text-[#C5A059] text-xs sm:text-sm tracking-[0.2em] uppercase mb-3 sm:mb-4 font-karla">
+                }}  className="text-black text-xs sm:text-sm tracking-[0.2em] uppercase mb-3 sm:mb-4 font-karla">
             HEAR THE GOOD
           </p>
           <h2  style={{
@@ -185,7 +185,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                   }`}
                 >
                   {/* Card */}
-                  <div className="bg-gradient-to-br from-[#FFF9F0] to-[#FFF5E6] rounded-3xl p-6 sm:p-8 shadow-xl transition-all duration-700 border-2 border-gray-200">
+                  <div className="bg-[#FFF7EA] rounded-3xl p-6 sm:p-8 shadow-xl transition-all duration-700 border-2 border-gray-200">
                     {/* Profile Image */}
                     <div className="flex justify-center mb-6">
                       <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg transition-all duration-700">

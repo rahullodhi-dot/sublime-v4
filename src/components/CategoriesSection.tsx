@@ -105,13 +105,13 @@ const CategoriesSection: React.FC = () => {
   const repeatedCategories = [...displayCategories, ...displayCategories, ...displayCategories];
 
   return (
- <section
-  className=" py-12 sm:py-16 lg:py-20 min-h-screen"
-  style={{
-    fontFamily: "'gotham', sans-serif",
-    fontWeight: 100,
-  }}
->
+    <section
+      className=" py-12 sm:py-16  bg-[#F6F1E8] lg:py-20 min-h-screen"
+      style={{
+        fontFamily: "'gotham', sans-serif",
+        fontWeight: 100,
+      }}
+    >
 
       <div className="mx-auto h-full   max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
@@ -162,44 +162,43 @@ const CategoriesSection: React.FC = () => {
               className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl transition-all hover:bg-gray-100 active:scale-90"
               aria-label="Scroll left"
             >
-              <svg className="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M5.50586 16.5199L13.7659 24.7799M5.50586 16.5199L13.7659 8.25993M5.50586 16.5199L19.9609 16.5199M27.5325 16.5199L24.0909 16.5199" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-            </button>
-
-            {/* Scrollable Categories Container */}
-            <div className="overflow-hidden -mx-2">
-              <div
-                ref={scrollContainerRef}
-                className="flex gap-5 lg:gap-6 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
-              >
-                {repeatedCategories.map((category, index) => (
-                  <Link
-                    key={`${category.id}-${index}`}
-                    to={`/products?category=${category.slug}`}
-                    className="group flex-shrink-0 w-[312px] h-[442px] relative overflow-hidden rounded-[20px] transition-all duration-300 hover:scale-[1.02] snap-start shadow-lg hover:shadow-2xl"
-                  >
-                    {/* Category Image */}
-                    <div className="absolute inset-0">
-                      <img
-                        src={category.image || 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80'}
-                        alt={category.name}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                    </div>
-
-                    {/* Category Label - Bottom Overlay with Gray Background */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 flex items-center justify-center"
-                      style={{
-                        height: '55px',
-                        background: '#000000B2',
-                        borderBottomLeftRadius: '20px',
-                        borderBottomRightRadius: '20px'
-                      }}
+              </button>
+              {/* Scrollable Categories Container */}
+              <div className="overflow-hidden -mx-2">
+                <div
+                  ref={scrollContainerRef}
+                  className="flex gap-5 lg:gap-6 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
+                >
+                  {repeatedCategories.map((category, index) => (
+                    <Link
+                      key={`${category.id}-${index}`}
+                      to={`/products?category=${category.slug}`}
+                      className="group flex-shrink-0 w-[312px] h-[442px] relative overflow-hidden rounded-[20px] transition-all duration-300 hover:scale-[1.02] snap-start shadow-lg hover:shadow-2xl"
                     >
-                      {/* 
+                      {/* Category Image */}
+                      <div className="absolute inset-0">
+                        <img
+                          src={category.image || 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80'}
+                          alt={category.name}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      {/* Category Label - Bottom Overlay with Gray Background */}
+                      <div
+                        className="absolute bottom-0 left-0 right-0 flex items-center justify-center"
+                        style={{
+                          height: '55px',
+                          background: '#000000B2',
+                          borderBottomLeftRadius: '20px',
+                          borderBottomRightRadius: '20px'
+                        }}
+                      >
+                        {/* 
                         gold: '#C5A059',
               light: '#EBE7E0',
               accent: '#1A352B'
@@ -211,40 +210,40 @@ const CategoriesSection: React.FC = () => {
             sage: '#94A69A', // Muted, dusty sage
             'sage-light': '#EEF2EF',
             gold: '#C8A97E', / */}
-                      <div className="text-white text-center">
-                        {/* Category Name */}
-                        <h3 className="text-[20px] font-medium uppercase tracking-[0.04em] leading-[100%]" style={{
-                          fontFamily: "'gotham2', sans-serif",
-                          fontWeight: 100,
+                        <div className="text-[#F6F1E8] text-center">
+                          {/* Category Name */}
+                          <h3 className="text-[20px] font-medium uppercase tracking-[0.04em] leading-[100%]" style={{
+                            fontFamily: "'gotham2', sans-serif",
+                            fontWeight: 100,
 
-                          fontSize: '18px',
-                          lineHeight: '100%',
-                          letterSpacing: '0%',
-                        }} >{category.name}</h3>
-                        {/* Red Line Below */}
-                        <div className="h-0.5 w-16 lg:w-20 bg-[#C8A97E] mx-auto mt-2"></div>
+                            fontSize: '18px',
+                            lineHeight: '100%',
+                            letterSpacing: '0%',
+                          }} >{category.name}</h3>
+                          {/* Red Line Below */}
+                          <div className="h-0.5 w-16 lg:w-20 bg-[#B89B4A] mx-auto mt-2"></div>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Navigation Arrow - Right */}
-            <button
-              onClick={scrollRight}
-              className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl transition-all hover:bg-gray-100 active:scale-90"
-              aria-label="Scroll right"
-            >
-              <svg className="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+              {/* Navigation Arrow - Right */}
+              <button
+                onClick={scrollRight}
+                className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl transition-all hover:bg-gray-100 active:scale-90"
+                aria-label="Scroll right"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                  <path d="M27.5341 16.52L19.2741 8.26001M27.5341 16.52L19.2741 24.78M27.5341 16.52L13.0791 16.52M5.50747 16.52L8.94914 16.52" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
 
-            {/* Mobile Scroll Hint */}
-            <div className="lg:hidden text-center mt-6">
-              <p className="text-xs text-gray-500">← Swipe to explore more →</p>
-            </div>
+              {/* Mobile Scroll Hint */}
+              <div className="lg:hidden text-center mt-6">
+                <p className="text-xs text-gray-500">← Swipe to explore more →</p>
+              </div>
           </div>
         )}
       </div>

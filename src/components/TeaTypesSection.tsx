@@ -506,7 +506,7 @@ useEffect(() => {
 
 
   return (
-    <section ref={containerRef} className="min-h-screen  relative flex items-center bg-[#F6F2E3] relative overflow-hidden py-12 lg:py-0">
+    <section ref={containerRef} className="min-h-screen  relative flex items-center bg-[#f0e3af]  overflow-hidden py-12 lg:py-0">
       <div ref={bgRef} className="absolute inset-0 pointer-events-none">
          <div className="absolute top-[-20%] right-[-10%] w-[1000px] h-[1000px] bg-stone/60 rounded-full blur-[150px] mix-blend-multiply opacity-10"></div>
          <BotanicalBg />
@@ -521,14 +521,14 @@ useEffect(() => {
           <div className="lg:col-span-5 flex flex-col justify-center order-1 lg:order-1">
             <div className="mb-10">
                 <div ref={labelRef} className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-[1px] bg-gold"></div>
+                    <div className="w-12 h-[1px] bg-[#9A7522]"></div>
                     <span  style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
                   fontSize: '16px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="text-gold uppercase tracking-[0.25em] text-xs ">Explore Our Range </span>
+                }} className="text-[#9A7522] uppercase tracking-[0.25em] text-xs ">Explore Our Range </span>
                 </div>
                 
                 <div ref={headerRef} className="mb-8">
@@ -550,7 +550,7 @@ useEffect(() => {
                   fontWeight: 100,
 
                   fontSize: '16px',
-                  lineHeight: '100%',
+                  lineHeight: '150%',
                   letterSpacing: '0%',
                 }} ref={descRef} className="text-earth text-xs  leading-relaxed  pl-1 border-l-2 border-transparent  text-balance">
                    {activeTea.desc}
@@ -563,7 +563,7 @@ useEffect(() => {
                 <button 
                     key={tea.id} 
                     onMouseEnter={() => handleTeaSelect(tea)}
-                    className={`tea-list-item group  flex items-center justify-between w-full text-left py-4 border-b border-forest/10 transition-all duration-300 ${activeTea.id === tea.id ? 'pl-4 border-gold/40' : 'hover:pl-2'}`}
+                  className={`tea-list-item group  flex items-center justify-between w-full text-left py-4 border-b border-[#000] transition-all duration-300 ${activeTea.id === tea.id ? 'pl-4 border-gold/40' : 'hover:pl-2'}`}
                 >
                     <span  style={{
                   fontFamily: "'gotham2', sans-serif",

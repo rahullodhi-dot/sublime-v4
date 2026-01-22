@@ -23,6 +23,7 @@ import BgImg2 from '../assets/images/bgImg1.png';
 
 import BannerImage from "../assets/images/BannerImage (2).png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
+import V3Video from "../assets/video/V3Video.mp4"
 
 
 
@@ -136,13 +137,13 @@ const Home: React.FC = () => {
   };
 
   // Auto-slide every 6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, currentSlide === 0 ? 45000 : 10000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  //   }, currentSlide === 0 ? 45000 : 10000);
 
-    return () => clearInterval(interval);
-  }, [slides.length, currentSlide]);
+  //   return () => clearInterval(interval);
+  // }, [slides.length, currentSlide]);
 
   // Default colors for each slide type (managed from frontend)
   const getDefaultColors = (slideType: string, index: number) => {
@@ -380,11 +381,11 @@ const Home: React.FC = () => {
           <>
             {/* Slide 1 - Video Background */}
             <div
-              className={`absolute inset-0 transition-opacity duration-700 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              className={`absolute  inset-0 transition-opacity duration-700 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
             >
               <div className="relative w-full  h-full bg-[#1a1a1a]">
-                {/* <video
+                <video
                   autoPlay
                   loop
                   muted
@@ -392,15 +393,15 @@ const Home: React.FC = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                   poster="https://images.unsplash.com/photo-1563281746-cc28e07d6f37?auto=format&fit=crop&w=1920&q=80"
                 >
-                  <source src={MunnarVideo} type="video/mp4" />
-                </video> */}
+                  <source src={V3Video} type="video/mp4" />
+                </video>
 
-                <img src={BannerImage} className='absolute inset-0 w-full h-full object-cover' alt="" />
+                {/* <img src={BannerImage} className='absolute inset-0 w-full h-full object-cover' alt="" /> */}
 
                 {/* <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/35"></div> */}
 
                 <div className="relative h-full w-full  mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center">
-                  <div className="w-full  mx-auto lg:max-w-3xl text-white">
+                  <div className="w-full    mx-auto lg:max-w-3xl text-white">
                     <p style={{
                       fontFamily: "'gotham2', sans-serif",
                       fontWeight: 100,
@@ -415,30 +416,30 @@ const Home: React.FC = () => {
                       fontFamily: "'gotham', sans-serif",
                       fontWeight: 100,
 
-                      fontSize: '64px',
+                      fontSize: '48px',
                       lineHeight: '100%',
                       letterSpacing: '0%',
-                    }} className="hero-heading font-buttain text-center mb-4 sm:mb-6 lg:mb-8 text-black">
-                      SERENITY IN<br />EVERY MOMENT
+                    }} className="hero-heading w-full  text-center mb-4 sm:mb-6 lg:mb-8 text-black">
+                      SERENITY IN EVERY MOMENT
                     </h1>
 
                     <div className="flex justify-center items-center  p-[5px] mx-auto  rounded-[5px]  border-[#F7EBDA]">
                       <Link
                         style={{
-                          fontFamily: "'gotham', sans-serif",
+                          fontFamily: "'gotham2', sans-serif",
                           fontWeight: 100,
 
-                          fontSize: '18px',
+                          fontSize: '16px',
                           lineHeight: '100%',
                           letterSpacing: '0%',
                         }}
                         to="/products"
-                        className="inline-flex mx-auto items-center  text-black justify-center gap-3 xp-5  bg-[#EED6B5] h-[51px] rounded-[4px] w-48 hover:bg-[#EED6B5] transition-all duration-300 text-base font-semibold"
+                        className="inline-flex mx-auto items-center  text-white justify-center gap-3 xp-5  bg-black/80 h-[51px] rounded-[4px] w-48 hover:bg-[#0a0a09] transition-all duration-300 text-base font-semibold"
                       >
                         Explore More
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {/* <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
+                        </svg> */}
                       </Link>
                     </div>
                   </div>
@@ -447,7 +448,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Slide 2 - Tea Product */}
-            <div
+            {/* <div
               className={`absolute inset-0 transition-opacity duration-700 ${currentSlide === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
             >
@@ -516,10 +517,10 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Slide 3 - Honey Product */}
-            <div
+            {/* <div
               className={`absolute inset-0 transition-opacity duration-700 ${currentSlide === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
             >
@@ -588,7 +589,7 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </>
         )}
 
@@ -596,7 +597,7 @@ const Home: React.FC = () => {
         {slides.length > 1 && (
           <>
             {/* Left Arrow */}
-            <button
+            {/* <button
               onClick={(e) => {
                 e.stopPropagation();
                 setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -610,10 +611,10 @@ const Home: React.FC = () => {
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
               </svg>
-            </button>
+            </button> */}
 
             {/* Right Arrow */}
-            <button
+            {/* <button
               onClick={(e) => {
                 e.stopPropagation();
                 setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -627,10 +628,10 @@ const Home: React.FC = () => {
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </button> */}
 
             {/* Dots Indicator */}
-            <div className="absolute bottom-8 sm:bottom-10 md:bottom-12 lg:bottom-16 left-1/2 -translate-x-1/2 z-50 flex gap-3 sm:gap-4" style={{ pointerEvents: 'auto' }}>
+            {/* <div className="absolute bottom-8 sm:bottom-10 md:bottom-12 lg:bottom-16 left-1/2 -translate-x-1/2 z-50 flex gap-3 sm:gap-4" style={{ pointerEvents: 'auto' }}>
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -647,7 +648,7 @@ const Home: React.FC = () => {
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
-            </div>
+            </div> */}
           </>
         )}
       </section>
@@ -658,21 +659,12 @@ const Home: React.FC = () => {
 
       <GiftBoxSection />
       <WhyChooseUsSection />
-
-      <StorySection />
       <TestimonialsSection />
-
-
-
-
-
-
-
-      <PartnersSection />
+      <StorySection />
 
       <CustomerTestimonialsSection />
 
-
+      <PartnersSection />
 
       <BlogSection />
       <NewsletterBanner />
