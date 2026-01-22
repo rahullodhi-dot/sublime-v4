@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0B524D] text-gray-900 border-t border-gray-200 overflow-hidden">
+    <footer className="bg-[#0B524D] text-gray-900  overflow-hidden">
       <div className="mx-auto relative max-w-[1600px] px-4 py-10 sm:px-6 sm:py-12 lg:px-12 lg:py-10 xl:px-10">
         {/* <div className='absolute left-0 opacity-10'>
           <img src={tokri} alt="" />

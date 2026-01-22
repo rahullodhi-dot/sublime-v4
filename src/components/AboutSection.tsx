@@ -99,7 +99,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
         
         {/* Rounded Container with padding and background image */}
         <div
-          className="relative rounded-3xl p-10 sm:p-12 lg:p-16   max-h-[90vh]"
+          className="relative rounded-3xl p-10 sm:p-20 lg:p-16   "
           style={{
             backgroundColor: "#F1E4B0",
 
@@ -126,12 +126,12 @@ Every product of which is packed with authentic quality fresh ingredients, which
             <img src={CornerLeaf} alt="" className='h-full' />
           </div> */}
 
-           <div className='absolute h-36 left-[50%] translate-x-1/2 bottom-20'>
+           <div className='absolute h-36 left-[46%] translate-x-1/2 bottom-24'>
             <img src={PenInk} alt="" className='h-full ' />
           </div>
 
         
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid px-4 grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
             <div className="space-y-4 sm:space-y-5">
               {/* Small Heading */}
@@ -190,12 +190,12 @@ Every product of which is packed with authentic quality fresh ingredients, which
             </div>
 
             {/* Right Column - Image */}
-            <div className="flex  flex-col  justify-center lg:justify-end">
-              <div className="relative self-end rounded-2xl  overflow-hidden w-full sm:w-80 lg:w-96">
+            <div className="flex  flex-col  px-10 justify-center lg:justify-end">
+              <div className="relative max-h-[90%]  self-end items-start rounded-2xl  overflow-hidden w-full sm:w-80 lg:w-96">
                 <img
                   src={displayData.image}
                   alt={displayData.heading}
-                  className="w-full h-[80%] -mt-8 object-cover rounded-2xl shadow-xl"
+                  className="w-full max-h-[80%]  object-cover rounded-2xl shadow-xl"
                   loading="lazy"
                 />
               </div>
