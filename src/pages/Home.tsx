@@ -21,9 +21,9 @@ import HoneyImg from '../assets/images/Honey.png';
 import BgImg1 from '../assets/images/bgImg2.png';
 import BgImg2 from '../assets/images/bgImg1.png';
 
-import BannerImage from "../assets/images/BannerImage (2).png"
+import BannerImage from "../assets/images/bannerImage2.png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
-import V3Video from "../assets/video/V3Video.mp4"
+import V3Video from "../assets/video/bannerVideo4.mp4"
 
 
 
@@ -403,7 +403,7 @@ const Home: React.FC = () => {
                 <div className="relative h-full w-full  mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center">
                   <div className="w-full    mx-auto lg:max-w-3xl text-white">
                     <p style={{
-                      fontFamily: "'gotham2', sans-serif",
+                      fontFamily: "'gotham-book', sans-serif",
                       fontWeight: 100,
 
                       fontSize: '18px',

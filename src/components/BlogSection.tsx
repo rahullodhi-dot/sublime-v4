@@ -99,7 +99,7 @@ const BlogSection: React.FC = () => {
   const displayPosts = blogPosts.length > 0 ? blogPosts : FALLBACK_POSTS;
 
   return (
-    <section   className=" py-10 sm:py-14 lg:py-20 ">
+    <section   className=" py-10 bg-[#f1e4b0] sm:py-14 lg:py-20 ">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="flex   flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-8 sm:mb-12 px-2">
@@ -110,10 +110,10 @@ const BlogSection: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg> */}
               <p style={{
-                fontFamily: "'gotham2', sans-serif",
+                fontFamily: "'gotham-book', sans-serif",
                 fontWeight: 100,
 
-                fontSize: '18px',
+                fontSize: '14px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
               }} className="text-[10px]   sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.3em] text-black uppercase">
@@ -122,13 +122,13 @@ const BlogSection: React.FC = () => {
             </div>
             {/* Latest Blogs Title */}
             <h2 style={{
-              fontFamily: "'gotham2', sans-serif",
+              fontFamily: "'gotham', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="text-2xl  sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#B89B49] leading-tight">
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
               Read Our  Blogs
             </h2>
           </div>
@@ -196,13 +196,13 @@ const BlogSection: React.FC = () => {
                   {/* Title */}
                   <Link to={`/blogs/${post.slug}`}>
                     <h3 style={{
-                  fontFamily: "'gotham', sans-serif",
+                  fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '18px',
-                  lineHeight: '120%',
+                  lineHeight: '150%',
                   letterSpacing: '0%',
-                }} className="text-base sm:text-lg lg:text-xl font-bold text-black leading-snug hover:text-[#285853] transition-colors line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">
+                }} className="text-base sm:text-lg lg:text-xl font-bold text-[#b89b4a] leading-snug transition-colors line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">
                       {post.title}
                     </h3>
                   </Link>
@@ -210,13 +210,13 @@ const BlogSection: React.FC = () => {
                   {/* Description */}
                   {post.excerpt && (
                     <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '14px',
-                  lineHeight: '100%',
+                  lineHeight: '150%',
                   letterSpacing: '0%',
-                }} className="text-xs sm:text-sm leading-relaxed text-black line-clamp-3 flex-grow min-h-[3.5rem]">
+                }} className="text-xs sm:text-sm leading-relaxed text-black line-clamp-3 flex-grow min-h-[3rem]">
                       {post.excerpt}
                     </p>
                   )}
@@ -225,7 +225,7 @@ const BlogSection: React.FC = () => {
                   <div className="mt-auto pt-3 border-t border-gray-100">
                     <Link
                       to={`/blogs/${post.slug}`}
-                      className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#d04b4b] hover:text-black transition-colors uppercase"
+                      className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#316763] hover:text-black transition-colors uppercase"
                     >
                       READ MORE
                     </Link>
@@ -241,7 +241,7 @@ const BlogSection: React.FC = () => {
   
                <Link
             to="/blogs"
-            className="flex mx-auto  items-center justify-center bg-[#9A7522] text-white hover:bg-[#9A7522] transition-all active:scale-95 shadow-md hover:shadow-lg font-karla font-medium text-center"
+            className="flex mx-auto py-2  items-center justify-center bg-[#316763] text-white hover:bg-[#9A7522] transition-all active:scale-95 shadow-md hover:shadow-lg font-karla font-medium text-center"
             // style={{
             //   width: '158px',
             //   height: '35px',
@@ -252,13 +252,15 @@ const BlogSection: React.FC = () => {
             //   letterSpacing: '0.04em',
             // }}
             style={{
-              fontFamily: "'gotham2', sans-serif",
+              fontFamily: "'gotham-book', sans-serif",
+              paddingTop:"4px",
+               paddingBottom:"4px",
               fontWeight: 100,
               width: '220px',
-              height: '35px',
+              height: '40px',
               borderRadius: '3px',
               letterSpacing: '0.04em',
-              fontSize: '16px',
+              fontSize: '12px',
               lineHeight: '100%',
               // letterSpacing: '0%',
             }}

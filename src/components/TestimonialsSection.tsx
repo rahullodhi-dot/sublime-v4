@@ -82,28 +82,28 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className=" py-12 bg-[#F6F1E8] sm:py-16 lg:py-20 overflow-x-hidden">
+    <section className=" py-12 bg-[#d6c27a] sm:py-16 lg:py-20 overflow-x-hidden">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="mb-8 sm:mb-12 mx-auto  text-center">
           <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '18px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}  className=" font-medium text-base leading-none tracking-[0.04em] uppercase text-black mb-2 sm:mb-3">
             ONLY BUY GOOD
           </p>
           <h2    style={{
-                  fontFamily: "'gotham', sans-serif",
-                  fontWeight: 100,
+              fontFamily: "'gotham', sans-serif",
+              fontWeight: 100,
 
-                  fontSize: '38px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }} className="section-heading text-[#C5A059]">
+              fontSize: '38px',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
             Our Bestselling Products
           </h2>
         </div>

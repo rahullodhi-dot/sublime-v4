@@ -1,4 +1,4 @@
-// ✅ FINAL WORKING FILE (with imports)
+//  FINAL WORKING FILE (with imports)
 
 // JUST COPY-PASTE & REPLACE YOUR CURRENT FILE
 
@@ -83,7 +83,7 @@ const GiftBoxSection: React.FC = () => {
   const currentGiftBox = GIFT_BOXES[currentIndex];
 
   return (
-    <section className="w-full min-h-screen bg-[#E4DEC9] py-8 sm:py-12 lg:py-16 overflow-hidden">
+    <section className="w-full min-h-screen bg-[#f1e4b0]  py-8 sm:py-12 lg:py-16 overflow-hidden">
       <div className="w-full relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
           <div className='absolute opacity-10 h-64 -top-14'>
@@ -95,8 +95,8 @@ const GiftBoxSection: React.FC = () => {
         <div className="mb-6 z-10 text-center sm:mb-8 lg:mb-10">
         
           <p style={{
-                  fontFamily: "'gotham2', sans-serif",
-                  fontWeight: 100,
+                  fontFamily: "'gotham-book', sans-serif",
+       
 
                   fontSize: '14px',
                   lineHeight: '100%',
@@ -108,13 +108,13 @@ const GiftBoxSection: React.FC = () => {
             </svg>
           </p>
           <h2 style={{
-                  fontFamily: "'gotham', sans-serif",
-                  fontWeight: 100,
+              fontFamily: "'gotham', sans-serif",
+              fontWeight: 100,
 
-                  fontSize: '38px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className="text-[#B89B49] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-lora leading-tight">
+              fontSize: '38px',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]" >
             Surprises Packed With Joy
           </h2>
         </div>
@@ -122,7 +122,7 @@ const GiftBoxSection: React.FC = () => {
         {/* Main Layout - 3 Columns */}
         <div className="flex  overflow-hidden flex-col mt-[10%]   lg:flex-row gap-4 sm:gap-6 lg:gap-8">
           {/* Left Column - Small Product Thumbnails - 1 column */}
-          <div className="hidden lg:flex lg:col-span-1 flex-col justify-center gap-3">
+          {/* <div className="hidden lg:flex lg:col-span-1 flex-col justify-center gap-3">
             {SMALL_PRODUCTS.map((product) => (
               <div
                 key={product.id}
@@ -141,14 +141,14 @@ const GiftBoxSection: React.FC = () => {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Middle Column - Main Gift Box Display - 4 columns */}
-          <div className="lg:col-span-4 flex items-center overflow-hidden" style={{width:'900px',height:"400px",borderRadius:"5px",overflow:"hidden"}}>
+          <div className="lg:col-span-4 flex items-center overflow-hidden" style={{width:'1200px',height:"450px",borderRadius:"5px",overflow:"hidden"}}>
             <div
               className="overflow-hidden max-w-full shadow-lg"
               style={{
-                height: '400px',
+                height: '500px',
                 borderRadius: '10px',
               }}
             >
@@ -180,7 +180,7 @@ const GiftBoxSection: React.FC = () => {
                         : 'shadow-sm hover:shadow-md'
                     }`}
                     style={{
-                      maxWidth: '149px',
+                      width: '200px',
                       borderRadius: '20px',
                       border: '2px solid rgba(0,0,0,0.1)',
                     }}
@@ -331,10 +331,10 @@ const GiftBoxSection: React.FC = () => {
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '18px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="bg-white text-[#2C2C2C] px-5 py-2.5 rounded font-karla font-bold text-xs hover:bg-gray-50 transition-colors uppercase tracking-wider border border-[#2C2C2C]">
+                }} className="bg-[#f6f1e8] text-[#2C2C2C] px-5 py-2.5 rounded font-karla font-bold text-xs hover:bg-gray-50 transition-colors uppercase tracking-wider border border-[#b89b4a]">
                       EXPLORE MORE
                     </button>
                     <button className="bg-[#9A7522] hover:bg-black text-white px-3 py-2.5 rounded flex items-center justify-center transition-colors">

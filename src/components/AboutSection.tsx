@@ -90,18 +90,21 @@ Every product of which is packed with authentic quality fresh ingredients, which
 
   return (
     <section
-      className="relative py-2 sm:py-12 lg:pt-0 lg:pb-20 overflow-hidden"
+      className="relative py-2 sm:py-12   lg:py-32 overflow-hidden"
       style={{
-        backgroundColor: '#F6F1E8'
+        backgroundImage:`url(${AboutFrame})`,
+               backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="relative  mx-auto max-w-[1600px] px-6 sm:px-8 lg:px-16">
         
         {/* Rounded Container with padding and background image */}
         <div
-          className="relative rounded-3xl p-10 sm:p-20 lg:p-16   "
+          className="relative rounded-3xl p-10 sm:p-20 lg:p-8   "
           style={{
-            backgroundColor: "#F1E4B0",
+            backgroundColor: "#f6f1e8",
 
 
 
@@ -160,7 +163,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
 
               {/* Description Paragraphs */}
               <div style={{
-                fontFamily: "'gotham2', sans-serif",
+                fontFamily: "'gotham-book', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '18px',
@@ -174,7 +177,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
               <div className="pt-2">
                 <Link
                   to={displayData.buttonLink}
-                  className="relative inline-block bg-white rounded-3xl text-[#9A7522] px-6 sm:px-8 py-2.5 sm:py-3  text-sm sm:text-base font-medium shadow-md overflow-hidden group transition-all duration-300 hover:shadow-lg"
+                  className="relative inline-block bg-[#f6f1e8] border-[2px] border-[#9A7522] rounded-3xl text-[#9A7522] px-6 sm:px-8 py-2.5 sm:py-3  text-sm sm:text-base font-medium shadow-md overflow-hidden group transition-all duration-300 hover:shadow-lg"
                 >
                   {/* <span className="absolute inset-0 bg-[#316763] scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center rounded"></span> */}
                   <span style={{
@@ -201,7 +204,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
               </div>
               <div className='self-end  mt-2'>
                 <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '20px',
@@ -209,13 +212,13 @@ Every product of which is packed with authentic quality fresh ingredients, which
                   letterSpacing: '0%',
                 }} className='text-center text-[#9A7522] mb-2 mr-4' >UZMA IRFAN</p>
                 <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className='mr-8 text-[#9A7522]' >Founder Of Sublime House Of Tea</p>
+                }} className='mr-8 text-[#000]' >Founder Of Sublime House Of Tea</p>
               </div>
             </div>
           </div>

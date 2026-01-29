@@ -136,28 +136,28 @@ const PartnersSection: React.FC = () => {
   }
 
   return (
-    <section className="w-full bg-[#F6F2E3] py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <section className="w-full bg-[#316763] py-12 sm:py-16 lg:py-20 overflow-hidden">
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '18px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="section-subheading  mb-3 sm:mb-4 text-[#000]">
+                }} className="section-subheading  mb-3 sm:mb-4 text-[#f1f6e8]">
             {sectionData.subheading}
           </p>
-          <h2  style={{
-                  fontFamily: "'gotham', sans-serif",
-                  fontWeight: 100,
+          <h2 style={{
+              fontFamily: "'gotham', sans-serif",
+              fontWeight: 100,
 
-                  fontSize: '50px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}className="section-heading !text-[#C5A059]">
+              fontSize: '38px',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#f1f6e8]">
             {sectionData.heading}
           </h2>
         </div>
@@ -175,7 +175,7 @@ const PartnersSection: React.FC = () => {
           {[...fallbackPartners,...fallbackPartners].map((partner, index) => (
             <div
               key={`${partner.id}-${index}`}
-              className="flex-shrink-0 flex mx-auto w-36 items-center justify-center transition-transform duration-300"
+              className="flex-shrink-0  p-4 rounded-lg  bg-[#f1f6e8] flex mx-auto w-36 items-center justify-center transition-transform duration-300"
             >
               <img
                 src={partner.logo.url}

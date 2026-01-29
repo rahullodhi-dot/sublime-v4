@@ -102,10 +102,15 @@ const CustomerTestimonialsSection: React.FC = () => {
   const visibleTestimonials = getVisibleTestimonials();
 
   return (
-    <section  className="w-full relative py-12 sm:py-16 lg:py-20 overflow-hidden">
-      <div>
+    <section    style={{
+        backgroundImage:`url(${AboutFrame})`,
+               backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+      }} className="w-full relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+      {/* <div>
         <img src={AboutFrame} alt="" className='absolute w-[200%] h-full bottom-2' />
-      </div>
+      </div> */}
         {/* <div style={{
         animation: "spinSlow   26s linear infinite",
       }}
@@ -121,23 +126,23 @@ const CustomerTestimonialsSection: React.FC = () => {
 
             <div className="text-center  absolute z-10 left-[50%]  -translate-x-1/2 mb-8 sm:mb-12 lg:mb-16">
           <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '18px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}  className="text-black text-xs sm:text-sm tracking-[0.2em] uppercase mb-3 sm:mb-4 font-karla">
             HEAR THE GOOD
           </p>
           <h2  style={{
-                  fontFamily: "'gotham', sans-serif",
-                  fontWeight: 100,
+              fontFamily: "'gotham', sans-serif",
+              fontWeight: 100,
 
-                  fontSize: '38px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }} className="text-[#C5A059] text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-lora font-medium leading-tight">
+              fontSize: '38px',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
             What Our Customers Say
           </h2>
         </div>
@@ -206,7 +211,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <svg
                           key={i}
-                          className="w-5 h-5 sm:w-6 sm:h-6 fill-[#FFD700] transition-all duration-700"
+                          className="w-6 h-6 sm:w-6 sm:h-6 fill-[#9a7523] transition-all duration-700"
                           viewBox="0 0 20 20"
                         >
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -221,11 +226,11 @@ const CustomerTestimonialsSection: React.FC = () => {
 
                     {/* Review Text */}
                     <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '16px',
-                  lineHeight: '100%',
+                  lineHeight: '150%',
                   letterSpacing: '0%',
                 }}  className="text-gray-700 text-sm sm:text-base font-karla text-center mb-6 leading-relaxed min-h-[80px] sm:min-h-[100px] transition-all duration-700">
                       {testimonial.review}
@@ -239,7 +244,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="text-[#D2691E] text-sm sm:text-base font-karla font-semibold text-center transition-all duration-700">
+                }} className="text-[#316763] text-sm sm:text-base font-karla font-semibold text-center transition-all duration-700">
                       {testimonial.name}, {testimonial.location}
                     </p>
                   </div>

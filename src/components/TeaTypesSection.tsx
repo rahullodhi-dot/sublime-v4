@@ -506,7 +506,7 @@ useEffect(() => {
 
 
   return (
-    <section ref={containerRef} className="min-h-screen  relative flex items-center bg-[#f0e3af]  overflow-hidden py-12 lg:py-0">
+    <section ref={containerRef} className="min-h-screen  relative flex items-center bg-[#f1f6e8]  overflow-hidden py-12 lg:py-0">
       <div ref={bgRef} className="absolute inset-0 pointer-events-none">
          <div className="absolute top-[-20%] right-[-10%] w-[1000px] h-[1000px] bg-stone/60 rounded-full blur-[150px] mix-blend-multiply opacity-10"></div>
          <BotanicalBg />
@@ -523,30 +523,32 @@ useEffect(() => {
                 <div ref={labelRef} className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-[1px] bg-[#9A7522]"></div>
                     <span  style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
-                  fontSize: '16px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="text-[#9A7522] uppercase tracking-[0.25em] text-xs ">Explore Our Range </span>
+                }} className="text-[#000] uppercase tracking-[0.25em] text-xs ">Explore Our Range </span>
                 </div>
+
+                
                 
                 <div ref={headerRef} className="mb-8">
                     <h2 className="font-serif text-5xl lg:text-[4rem] text-forest leading-[1] tracking-tight mb-0">
                        <span style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '16px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className="block whitespace-nowrap">{renderLetters("Our Tea Types", "story-char font-gotham2 text-4xl")}</span>
+                }} className="block whitespace-nowrap">{renderLetters("Our Tea Types", "story-chafr font-gotham-light text-[#C5A059]  text-4xl")}</span>
                     </h2>
                 </div>
                 
                 {/* Dynamic Description */}
                 <p style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '16px',

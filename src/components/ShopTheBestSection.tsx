@@ -114,7 +114,7 @@ function StarRating({
           className={cn(
             "w-4 h-4",
             i < rating
-              ? "fill-[#006D5B] text-[#006D5B]"
+              ? "fill-[#9a7523] text-[#9a7523]"
               : "fill-gray-300 text-gray-300"
           )}
         />
@@ -212,23 +212,24 @@ function ProductCard({ product, onSelect, onAddToCart }: ProductCardProps) {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-karla font-bold text-lg text-black">
-              ₹{product.price.toFixed(2)}
-            </span>
-            <span className="font-karla text-sm text-black line-through">
+             <span style={{fontFamily:"gotham-light"}} className=" text-xl text-gray-400 line-through">
               ₹
               {calculateOriginalPrice(
                 product.price,
                 product.discountPrice,
                 product.discountPercentagePrice
-              )}
+              ) || product.price + 140}
             </span>
+            <span className="font-karla font-bold text-lg text-black">
+              ₹{product.price.toFixed(2)}
+            </span>
+           
           </div>
 
           <button
             // size="icon"
             // variant="secondary"
-            className=" h-12 rounded-[10px] bg-black  text-[#316763] shadow-lg transition-all flex gap-5  justify-center items-center px-5"
+            className=" h-12 rounded-[10px] bg-[#9a7523]  text-[#316763] shadow-lg transition-all flex gap-5  justify-center items-center px-5"
             onClick={(e) => {
               e.stopPropagation();
               onAddToCart?.();
@@ -352,16 +353,23 @@ export default function ShopTheBestSection() {
 
   let renderedData =  PRODUCTS || shopTheBestProducts ;
   return (
-    <section className="w-full bg-[#F0E3AF] py-10 sm:py-8 lg:py-10 overflow-hidden">
+    <section className="w-full bg-[#f6f1e8] h-screen py-10 sm:py-8 lg:py-10 overflow-hidden">
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
-        <div style={{fontFamily:"gotham2"}} className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
+        <div  className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
           <div className="flex items-center gap-2 mb-3">
-            <span className="font-karla font-bold text-xs tracking-[0.2em] uppercase text-black">
+            <span style={{fontFamily:"gotham-book"}} className="font-karla text-xs tracking-[0.2em] uppercase text-black">
               GO THROUGH OUR BEST
             </span>
           </div>
-          <h2 style={{fontFamily:"gotham"}} className="font-lora font-medium text-4xl text-[#B89B49] capitalize">
+          <h2 style={{
+              fontFamily: "'gotham', sans-serif",
+              fontWeight: 100,
+
+              fontSize: '38px',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
             Shop The Best
           </h2>
         </div>

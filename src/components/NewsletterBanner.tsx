@@ -212,10 +212,10 @@ const NewsletterBanner: React.FC = () => {
           <p
             className="text-white"
             style={{
-              fontFamily: "'gotham2', sans-serif",
+              fontFamily: "'gotham-light'",
               fontWeight: 100,
               fontSize: '16px',
-              lineHeight: '140%',
+              lineHeight: '150%',
             }}
             
           >
@@ -235,15 +235,15 @@ const NewsletterBanner: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             disabled={isSubmitting || isSubmitted}
             className="w-full border border-white/80 bg-white/40 placeholder-white/70 py-3 px-4 rounded outline-none focus:bg-white/20 transition"
-            style={{ fontFamily: "Karla, sans-serif" }}
+            style={{ fontFamily: "gotham-light, sans-serif" }}
           />
 
           <button
             type="submit"
             disabled={isSubmitting || isSubmitted}
-            className="bg-[#9A7522] hover:[#9A7522] disabled:opacity-50 w-[214px] h-[50px] rounded text-white transition flex items-center justify-center"
+            className="bg-red-600 hover:[#9A7522] disabled:opacity-50 w-[214px] h-[50px] rounded text-white transition flex items-center justify-center"
             style={{
-              fontFamily: "Lora, serif",
+              fontFamily: "gotham-book",
               fontWeight: 500,
               fontSize: '18px',
               letterSpacing: '0.03em',
