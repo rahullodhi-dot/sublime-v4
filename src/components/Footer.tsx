@@ -40,7 +40,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 
 //     {/* Company Description */}
 //     <p style={{
-//       fontFamily: "'gotham-book', sans-serif",
+//       fontFamily: "'gotham-light', sans-serif",
 //       fontWeight: 100,
 
 //       fontSize: '15px',
@@ -56,7 +56,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         to="/contact"
 //         className="flex items-center  rounded py-3 px-4 bg-[#F6F1E8]  text-[#9A7522] justify-center gap-2 font-karla font-light text-[18px] leading-[30px] text-[#1A302A] capitalize  hover:border-[#316763] transition-all active:scale-95"
 //         style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '15px',
@@ -73,7 +73,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         to="/products?category=gifting"
 //         className="flex items-center py-3 px-4 border bg-[#F6F1E8] rounded justify-center gap-2 font-karla font-light text-[18px] leading-[30px] text-[#9A7522] capitalize   hover:border-[#316763] transition-all active:scale-95"
 //         style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '15px',
@@ -133,7 +133,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //   {/* Discover Column */}
 //   <div className="space-y-3 sm:space-y-4">
 //     <h4 style={{
-//       fontFamily: "'gotham-book', sans-serif",
+//       fontFamily: "'gotham-light', sans-serif",
 //       fontWeight: 100,
 
 //       fontSize: '16px',
@@ -142,7 +142,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //     }} className="text-lora font-semibold text-base leading-[30px] text-[#F6F1E8] uppercase tracking-wide">DISCOVER</h4>
 //     <ul className="space-y-2 sm:space-y-6">
 //       <li style={{
-//         fontFamily: "'gotham-book', sans-serif",
+//         fontFamily: "'gotham-light', sans-serif",
 //         fontWeight: 100,
 
 //         fontSize: '18px',
@@ -150,7 +150,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         letterSpacing: '0%',
 //       }}>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -161,7 +161,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         </Link>
 //       </li>
 //       <li style={{
-//         fontFamily: "'gotham-book', sans-serif",
+//         fontFamily: "'gotham-light', sans-serif",
 //         fontWeight: 100,
 
 //         fontSize: '12px',
@@ -180,7 +180,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         </Link>
 //       </li>
 //       <li style={{
-//         fontFamily: "'gotham-book', sans-serif",
+//         fontFamily: "'gotham-light', sans-serif",
 //         fontWeight: 100,
 
 //         fontSize: '12px',
@@ -188,7 +188,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         letterSpacing: '0%',
 //       }}>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -199,7 +199,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         </Link>
 //       </li>
 //       <li style={{
-//         fontFamily: "'gotham-book', sans-serif",
+//         fontFamily: "'gotham-light', sans-serif",
 //         fontWeight: 100,
 
 //         fontSize: '12px',
@@ -207,7 +207,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         letterSpacing: '0%',
 //       }}>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -218,7 +218,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         </Link>
 //       </li>
 //       <li style={{
-//         fontFamily: "'gotham-book', sans-serif",
+//         fontFamily: "'gotham-light', sans-serif",
 //         fontWeight: 100,
 
 //         fontSize: '12px',
@@ -226,7 +226,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //         letterSpacing: '0%',
 //       }}>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -252,7 +252,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //     <ul className="space-y-2 sm:space-y-1">
 //       <li>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -264,7 +264,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //       </li>
 //       <li>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -276,7 +276,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //       </li>
 //       <li>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -288,7 +288,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //       </li>
 //       <li>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -300,7 +300,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //       </li>
 //       <li>
 //         <Link style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -329,7 +329,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //           <path d="M11.5 7C12.163 7 12.7989 7.26339 13.2678 7.73223C13.7366 8.20107 14 8.83696 14 9.5C14 9.8283 13.9353 10.1534 13.8097 10.4567C13.6841 10.76 13.4999 11.0356 13.2678 11.2678C13.0356 11.4999 12.76 11.6841 12.4567 11.8097C12.1534 11.9353 11.8283 12 11.5 12C10.837 12 10.2011 11.7366 9.73223 11.2678C9.26339 10.7989 9 10.163 9 9.5C9 8.83696 9.26339 8.20107 9.73223 7.73223C10.2011 7.26339 10.837 7 11.5 7ZM11.5 8C11.1022 8 10.7206 8.15804 10.4393 8.43934C10.158 8.72064 10 9.10218 10 9.5C10 9.89782 10.158 10.2794 10.4393 10.5607C10.7206 10.842 11.1022 11 11.5 11C11.8978 11 12.2794 10.842 12.5607 10.5607C12.842 10.2794 13 9.89782 13 9.5C13 9.10218 12.842 8.72064 12.5607 8.43934C12.2794 8.15804 11.8978 8 11.5 8ZM6.8 12.36L11.5 20.09L16.2 12.36C16.71 11.5 17 10.55 17 9.5C17 8.04131 16.4205 6.64236 15.3891 5.61091C14.3576 4.57946 12.9587 4 11.5 4C10.0413 4 8.64236 4.57946 7.61091 5.61091C6.57946 6.64236 6 8.04131 6 9.5C6 10.55 6.29 11.5 6.8 12.36ZM17.05 12.88L11.5 22L5.95 12.88C5.35 11.89 5 10.74 5 9.5C5 7.77609 5.68482 6.12279 6.90381 4.90381C8.12279 3.68482 9.77609 3 11.5 3C13.2239 3 14.8772 3.68482 16.0962 4.90381C17.3152 6.12279 18 7.77609 18 9.5C18 10.74 17.65 11.89 17.05 12.88Z" fill="#F6F1E8" />
 //         </svg>
 //         <p style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 //           fontSize: '12px',
 //           lineHeight: '130%',
@@ -341,7 +341,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //           <path d="M16.04 19.506C13.2575 18.7925 10.7179 17.3445 8.68671 15.3133C6.65555 13.2821 5.20749 10.7425 4.494 7.96C3.949 5.819 5.79 4 8 4L9 4C9.552 4 9.995 4.449 10.05 4.998C10.1405 5.9084 10.3555 6.80207 10.689 7.654L9.169 9.174C10.3554 11.6489 12.3511 13.6446 14.826 14.831L16.346 13.311C17.1979 13.6448 18.0916 13.8602 19.002 13.951C19.552 14.005 20 14.448 20 15L20 16C20 18.21 18.181 20.051 16.04 19.506Z" stroke="#F6F1E8" stroke-linecap="round" stroke-linejoin="round" />
 //         </svg>
 //         <a style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -356,7 +356,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 //           <path d="M4.616 19C4.15533 19 3.771 18.846 3.463 18.538C3.155 18.23 3.00067 17.8453 3 17.384V6.616C3 6.15533 3.15433 5.771 3.463 5.463C3.77167 5.155 4.15567 5.00067 4.615 5H19.385C19.845 5 20.229 5.15433 20.537 5.463C20.845 5.77167 20.9993 6.156 21 6.616V17.385C21 17.845 20.8457 18.2293 20.537 18.538C20.2283 18.8467 19.8443 19.0007 19.385 19H4.616ZM12 12.116L4 6.885V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.436 18 4.616 18H19.385C19.5643 18 19.7117 17.9423 19.827 17.827C19.9423 17.7117 20 17.564 20 17.384V6.884L12 12.116ZM12 11L19.692 6H4.308L12 11ZM4 6.885V6V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.436 18 4.616 18H4V6.885Z" fill="#F6F1E8" />
 //         </svg>
 //         <a style={{
-//           fontFamily: "'gotham-book', sans-serif",
+//           fontFamily: "'gotham-light', sans-serif",
 //           fontWeight: 100,
 
 //           fontSize: '12px',
@@ -375,7 +375,7 @@ import DarkLogo from '../assets/images/newWhiteLogo.png';
 // <div className="mt-8 sm:mt-10 lg:mt-3 border-t border-[#316763] pt-4 sm:pt-6">
 //   <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
 //     <p style={{
-//       fontFamily: "'gotham-book', sans-serif",
+//       fontFamily: "'gotham-light', sans-serif",
 //       fontWeight: 100,
 
 //       fontSize: '12px',
@@ -573,7 +573,7 @@ const Footer: React.FC = () => {
               fontSize: '14px',
               lineHeight: '130%',
               letterSpacing: '0%',
-            }} className="text-karla font-light  leading-[30px] text-[#F6F1E8] mt-3 sm:mt-4">
+            }} className="text-karla font-light  tracking-[0.09rem] leading-[30px] text-[#F6F1E8] mt-3 sm:mt-4">
               Sublime House of Tea is more than just a cup of tea, a jar of honey, or a spice. Founded in 2013, Sublime is an attempt to bring freshness, superior quality, and authenticity to our daily lives.
             </p>
 
@@ -623,9 +623,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Discover Column */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4 ml-12">
             <h4 style={{
-              fontFamily: "'gotham-book', sans-serif",
+              fontFamily: "'gotham', sans-serif",
               fontWeight: 100,
 
               fontSize: '16px',
@@ -634,7 +634,7 @@ const Footer: React.FC = () => {
             }} className="text-lora font-semibold text-base leading-[30px] text-[#F6F1E8] uppercase tracking-wide">DISCOVER</h4>
             <ul className="space-y-2 sm:space-y-6">
               <li style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham-light', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '18px',
@@ -642,10 +642,10 @@ const Footer: React.FC = () => {
                 letterSpacing: '0%',
               }}>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/faq" className="  text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -653,18 +653,18 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham-light', sans-serif",
                 fontWeight: 100,
 
-                fontSize: '12px',
+                fontSize: '14px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
               }}>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/about" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -672,18 +672,18 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham-light', sans-serif",
                 fontWeight: 100,
 
-                fontSize: '12px',
+                fontSize: '14px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
               }}>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/legal/disclaimer" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -691,18 +691,18 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham-light', sans-serif",
                 fontWeight: 100,
 
-                fontSize: '12px',
+                fontSize: '14px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
               }}>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/blogs" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -710,18 +710,18 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham-light', sans-serif",
                 fontWeight: 100,
 
-                fontSize: '12px',
+                fontSize: '14px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
               }}>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/contact" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -744,10 +744,10 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 sm:space-y-1">
               <li>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/returns" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -756,10 +756,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/privacy-policy" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -768,10 +768,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/terms-of-service" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -780,10 +780,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/brochure" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -792,10 +792,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} to="/tracking" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -821,9 +821,9 @@ const Footer: React.FC = () => {
                   <path d="M11.5 7C12.163 7 12.7989 7.26339 13.2678 7.73223C13.7366 8.20107 14 8.83696 14 9.5C14 9.8283 13.9353 10.1534 13.8097 10.4567C13.6841 10.76 13.4999 11.0356 13.2678 11.2678C13.0356 11.4999 12.76 11.6841 12.4567 11.8097C12.1534 11.9353 11.8283 12 11.5 12C10.837 12 10.2011 11.7366 9.73223 11.2678C9.26339 10.7989 9 10.163 9 9.5C9 8.83696 9.26339 8.20107 9.73223 7.73223C10.2011 7.26339 10.837 7 11.5 7ZM11.5 8C11.1022 8 10.7206 8.15804 10.4393 8.43934C10.158 8.72064 10 9.10218 10 9.5C10 9.89782 10.158 10.2794 10.4393 10.5607C10.7206 10.842 11.1022 11 11.5 11C11.8978 11 12.2794 10.842 12.5607 10.5607C12.842 10.2794 13 9.89782 13 9.5C13 9.10218 12.842 8.72064 12.5607 8.43934C12.2794 8.15804 11.8978 8 11.5 8ZM6.8 12.36L11.5 20.09L16.2 12.36C16.71 11.5 17 10.55 17 9.5C17 8.04131 16.4205 6.64236 15.3891 5.61091C14.3576 4.57946 12.9587 4 11.5 4C10.0413 4 8.64236 4.57946 7.61091 5.61091C6.57946 6.64236 6 8.04131 6 9.5C6 10.55 6.29 11.5 6.8 12.36ZM17.05 12.88L11.5 22L5.95 12.88C5.35 11.89 5 10.74 5 9.5C5 7.77609 5.68482 6.12279 6.90381 4.90381C8.12279 3.68482 9.77609 3 11.5 3C13.2239 3 14.8772 3.68482 16.0962 4.90381C17.3152 6.12279 18 7.77609 18 9.5C18 10.74 17.65 11.89 17.05 12.88Z" fill="#F6F1E8" />
                 </svg>
                 <p style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '130%',
                   letterSpacing: '0%',
                 }} className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]">Prestige Falcon Towers, 19, Brunton Road, Bengaluru 560025</p>
@@ -833,10 +833,10 @@ const Footer: React.FC = () => {
                   <path d="M16.04 19.506C13.2575 18.7925 10.7179 17.3445 8.68671 15.3133C6.65555 13.2821 5.20749 10.7425 4.494 7.96C3.949 5.819 5.79 4 8 4L9 4C9.552 4 9.995 4.449 10.05 4.998C10.1405 5.9084 10.3555 6.80207 10.689 7.654L9.169 9.174C10.3554 11.6489 12.3511 13.6446 14.826 14.831L16.346 13.311C17.1979 13.6448 18.0916 13.8602 19.002 13.951C19.552 14.005 20 14.448 20 15L20 16C20 18.21 18.181 20.051 16.04 19.506Z" stroke="#F6F1E8" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <a style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} href="tel:08069496126" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
@@ -848,10 +848,10 @@ const Footer: React.FC = () => {
                   <path d="M4.616 19C4.15533 19 3.771 18.846 3.463 18.538C3.155 18.23 3.00067 17.8453 3 17.384V6.616C3 6.15533 3.15433 5.771 3.463 5.463C3.77167 5.155 4.15567 5.00067 4.615 5H19.385C19.845 5 20.229 5.15433 20.537 5.463C20.845 5.77167 20.9993 6.156 21 6.616V17.385C21 17.845 20.8457 18.2293 20.537 18.538C20.2283 18.8467 19.8443 19.0007 19.385 19H4.616ZM12 12.116L4 6.885V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.436 18 4.616 18H19.385C19.5643 18 19.7117 17.9423 19.827 17.827C19.9423 17.7117 20 17.564 20 17.384V6.884L12 12.116ZM12 11L19.692 6H4.308L12 11ZM4 6.885V6V17.385C4 17.5643 4.05767 17.7117 4.173 17.827C4.28833 17.9423 4.436 18 4.616 18H4V6.885Z" fill="#F6F1E8" />
                 </svg>
                 <a style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
 
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} href="mailto:mohammed.maqsood@sublime.in" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors break-all">
@@ -885,9 +885,9 @@ const Footer: React.FC = () => {
     rel="noopener noreferrer"
     className="flex items-center gap-2 sm:gap-3  transition-colors"
     style={{
-      fontFamily: "'gotham-book', sans-serif",
+      fontFamily: "'gotham-light', sans-serif",
       fontWeight: 100,
-      fontSize: "12px",
+      fontSize: "14px",
       lineHeight: "100%",
       letterSpacing: "0%",
       color: "#F6F1E8",
@@ -906,9 +906,9 @@ const Footer: React.FC = () => {
     rel="noopener noreferrer"
     className="flex items-center gap-2 sm:gap-3  transition-colors"
     style={{
-      fontFamily: "'gotham-book', sans-serif",
+      fontFamily: "'gotham-light', sans-serif",
       fontWeight: 100,
-      fontSize: "12px",
+      fontSize: "14px",
       lineHeight: "100%",
       letterSpacing: "0%",
       color: "#F6F1E8",
@@ -925,9 +925,9 @@ const Footer: React.FC = () => {
     href="/contact"
     className="flex items-center gap-2 sm:gap-3  transition-colors"
     style={{
-      fontFamily: "'gotham-book', sans-serif",
+      fontFamily: "'gotham-light', sans-serif",
       fontWeight: 100,
-      fontSize: "12px",
+      fontSize: "14px",
       lineHeight: "100%",
       letterSpacing: "0%",
       color: "#F6F1E8",
@@ -943,9 +943,9 @@ const Footer: React.FC = () => {
     href="/products?category=gifting"
     className="flex items-center gap-2 sm:gap-3  transition-colors"
     style={{
-      fontFamily: "'gotham-book', sans-serif",
+      fontFamily: "'gotham-light', sans-serif",
       fontWeight: 100,
-      fontSize: "12px",
+      fontSize: "14px",
       lineHeight: "100%",
       letterSpacing: "0%",
       color: "#F6F1E8",
@@ -969,8 +969,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* BOTTOM */}
-        <div className="pt-8 flex flex-col   border-t md:flex-row justify-between text-[10px] tracking-[0.3em] uppercase text-white text-center">
-          <p style={{fontFamily:"gotham-book",fontSize:"12px"}} className=' mx-auto'>© 2026 Sublime House of Tea | All rights reserved</p>
+        <div className="pt-8 flex flex-col   border-t md:flex-row justify-between text-[10px] tracking-[0.3em] uppercase text-[#f6f1e8] text-center">
+          <p style={{fontFamily:"gotham-light",fontSize:"12px"}} className=' mx-auto'>© 2026 Sublime House of Tea | All rights reserved</p>
        
         </div>
       </div>

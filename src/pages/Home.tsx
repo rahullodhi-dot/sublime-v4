@@ -403,24 +403,25 @@ const Home: React.FC = () => {
                 <div className="relative h-full w-full  mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center">
                   <div className="w-full    mx-auto lg:max-w-3xl text-white">
                     <p style={{
-                      fontFamily: "'gotham-book', sans-serif",
-                      fontWeight: 100,
+                      fontFamily: "'gotham-book'",
+                      fontWeight: 300,
 
-                      fontSize: '18px',
+                      fontSize: '15px',
                       lineHeight: '100%',
                       letterSpacing: '0%',
-                    }} className="mb-6 sm:mb-8 lg:mb-10 text-center text-black   text-lg leading-[35px] capitalize">
+                    }} className="mb-6 sm:mb-8 font-medium lg:mb-10 text-center text-black uppercase   text-lg leading-[35px] ">
                       To gather the finest  leaves, spices and little treasures of nature,
                     </p>
                     <h1 style={{
                       fontFamily: "'gotham', sans-serif",
                       fontWeight: 100,
 
-                      fontSize: '48px',
+                      fontSize: '54px',
                       lineHeight: '100%',
                       letterSpacing: '0%',
-                    }} className="hero-heading w-full  text-center mb-4 sm:mb-6 lg:mb-8 text-black">
-                      SERENITY IN EVERY MOMENT
+                    }} className="hero-heading w-full  text-center mb-4 sm:mb-6 lg:mb-8 capitalize text-black">
+                      {/* SERENITY IN EVERY MOMENT */}
+                      Serenity in every moment
                     </h1>
 
                     <div className="flex justify-center items-center  p-[5px] mx-auto  rounded-[5px]  border-[#F7EBDA]">

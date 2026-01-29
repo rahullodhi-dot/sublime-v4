@@ -220,7 +220,7 @@ function ProductCard({ product, onSelect, onAddToCart }: ProductCardProps) {
                 product.discountPercentagePrice
               ) || product.price + 140}
             </span>
-            <span className="font-karla font-bold text-lg text-black">
+            <span style={{fontFamily:"gotham-book"}} className=" font-bold text-lg text-black">
               ₹{product.price.toFixed(2)}
             </span>
            
@@ -358,7 +358,14 @@ export default function ShopTheBestSection() {
         {/* Header */}
         <div  className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
           <div className="flex items-center gap-2 mb-3">
-            <span style={{fontFamily:"gotham-book"}} className="font-karla text-xs tracking-[0.2em] uppercase text-black">
+            <span style={{
+                fontFamily: "'gotham-book', sans-serif",
+                fontWeight: 100,
+
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
               GO THROUGH OUR BEST
             </span>
           </div>

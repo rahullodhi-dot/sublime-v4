@@ -229,7 +229,7 @@ const TEA_TYPES = [
   {
     id: 'green',
     label: 'Green Tea',
-    origin: 'Shizuoka, Japan',
+    origin: 'Monsinram, Meghalaya',
     desc: 'A refreshing infusion of tender green leaves, celebrated for its purity, balance, and gentle vitality.',
     image: GreenTea
   },
@@ -243,7 +243,7 @@ const TEA_TYPES = [
   {
     id: 'white',
     label: 'White Tea',
-    origin: 'Fujian, China',
+    origin: 'Darjiling, Assam',
     desc: 'A soothing blend of natural herbs and flowers, crafted for calm moments and mindful indulgence.',
     image: WhiteTea
   },

@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import productImg1 from '../assets/images/productImg1.png';
+import productImg1 from '../assets/images/black2.png';
 import productImg2 from '../assets/images/productImg2.png';
 import productImg3 from '../assets/images/productImg3.png';
-import productImg from '../assets/images/productImg.png';
+import productImg from '../assets/images/yellow.png';
 import group530 from '../assets/images/Group 530.png';
 import group531 from '../assets/images/Group 531.png';
 
@@ -82,18 +82,18 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className=" py-12 bg-[#d6c27a] sm:py-16 lg:py-20 overflow-x-hidden">
+    <section className=" py-12 bg-[#f1e4b0] sm:py-16 lg:py-20 overflow-x-hidden">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="mb-8 sm:mb-12 mx-auto  text-center">
           <p style={{
-                  fontFamily: "'gotham-book', sans-serif",
-                  fontWeight: 100,
+                fontFamily: "'gotham-book', sans-serif",
+                fontWeight: 100,
 
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className=" font-medium text-base leading-none tracking-[0.04em] uppercase text-black mb-2 sm:mb-3">
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
             ONLY BUY GOOD
           </p>
           <h2    style={{
@@ -103,7 +103,7 @@ const TestimonialsSection: React.FC = () => {
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl mt-3 lg:text-5xl font-bold text-[#C5A059]">
             Our Bestselling Products
           </h2>
         </div>
@@ -202,10 +202,10 @@ const TestimonialsSection: React.FC = () => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}  className="font-['Open_Sans'] font-normal text-[22px] leading-[30px] tracking-[0%] text-center text-gray-900">
+                }}  className="font-['Open_Sans']  -mt-3 font-normal text-[22px] leading-[30px] tracking-[0%] text-center text-gray-900">
                     ₹{product.price}
                   </span>
-                  {product.quantity && (
+                  {/* {product.quantity && (
                     <span style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
@@ -214,7 +214,7 @@ const TestimonialsSection: React.FC = () => {
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }}  className="text-karla text-xs text-gray-500">{product.quantity}</span>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>

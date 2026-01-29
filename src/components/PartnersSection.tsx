@@ -141,13 +141,13 @@ const PartnersSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <p style={{
-                  fontFamily: "'gotham-book', sans-serif",
-                  fontWeight: 100,
+                fontFamily: "'gotham-book', sans-serif",
+                fontWeight: 100,
 
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }} className="section-subheading  mb-3 sm:mb-4 text-[#f1f6e8]">
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-[#f6f1e8] mb-3 uppercase">
             {sectionData.subheading}
           </p>
           <h2 style={{
@@ -157,7 +157,7 @@ const PartnersSection: React.FC = () => {
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#f1f6e8]">
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#f6f1e8]">
             {sectionData.heading}
           </h2>
         </div>

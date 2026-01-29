@@ -181,13 +181,13 @@ Every product of which is packed with authentic quality fresh ingredients, which
                 >
                   {/* <span className="absolute inset-0 bg-[#316763] scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center rounded"></span> */}
                   <span style={{
-                    fontFamily: "'gotham2', sans-serif",
+                    fontFamily: "'gotham-book', sans-serif",
                     fontWeight: 100,
 
-                    fontSize: '16px',
+                    fontSize: '14px',
                     lineHeight: '100%',
                     letterSpacing: '0%',
-                  }} className="relative z-10">{displayData.buttonText}</span>
+                  }} className="relative z-10 uppercase">{displayData.buttonText}</span>
                 </Link>
               </div>
             </div>
@@ -204,7 +204,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
               </div>
               <div className='self-end  mt-2'>
                 <p style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '20px',

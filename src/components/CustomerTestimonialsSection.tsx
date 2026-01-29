@@ -126,13 +126,13 @@ const CustomerTestimonialsSection: React.FC = () => {
 
             <div className="text-center  absolute z-10 left-[50%]  -translate-x-1/2 mb-8 sm:mb-12 lg:mb-16">
           <p style={{
-                  fontFamily: "'gotham-book', sans-serif",
-                  fontWeight: 100,
+                fontFamily: "'gotham-book', sans-serif",
+                fontWeight: 100,
 
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className="text-black text-xs sm:text-sm tracking-[0.2em] uppercase mb-3 sm:mb-4 font-karla">
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase mb-3">
             HEAR THE GOOD
           </p>
           <h2  style={{
@@ -268,7 +268,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                 className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? 'bg-[#316763] w-8 sm:w-10'
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    : 'bg-[#f6f1e8] hover:bg-gray-800'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

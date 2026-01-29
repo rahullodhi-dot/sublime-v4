@@ -744,7 +744,14 @@ const WhyChooseUsSection: React.FC = () => {
 
         <div className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
           <div className="flex items-center gap-2 mb-3">
-            <span style={{ fontFamily: "gotham-book" }} className="font-karla text-xs tracking-[0.2em] uppercase text-black">
+            <span style={{
+                fontFamily: "'gotham-book', sans-serif",
+                fontWeight: 100,
+
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
               AWESOME PRODUCTS
             </span>
           </div>
@@ -771,13 +778,13 @@ const WhyChooseUsSection: React.FC = () => {
               className={`feature-item min-w-[250px] ml-32 px-5 -mr-10  text-center  flex flex-col   ${i % 2 === 0 ? 'mb-[140px]' : 'mt-[140px]'
                 }`}
             >
-              <h2 className="text-2xl text-center font-bold text-#1A261C">
+              <h2 className="text-xl text-center font-bold text-#1A261C">
                 {/* {f.title} */}
 
                 {/* {splitText(`${f.title}`, "lux-char font-gotham text-lg block ")} */}
-                <p>{f.title}</p>
+                <p style={{fontFamily:"gotham"}}>{f.title}</p>
               </h2>
-              <p className="text-[18px] font-medium text-[#9a7523] text-center">
+              <p style={{lineHeight:"130%",fontFamily:"gotham-book"}} className="text-[14px] mt-3  text-[#9a7523] text-center">
                 {/* {splitText( `${f.desc}`, "lux-char  whitespace-nowrap text-sm ")} */}
                 {f.desc}
               </p>
@@ -862,7 +869,7 @@ const WhyChooseUsSection: React.FC = () => {
                 </div>
 
                 <GifContainer
-                  className={`${i % 2 === 0 ? '' : 'rotate-180'} h-[65%] w-[64%]`}
+                  className={`${i % 2 === 0 ? '' : 'rotate-180'} h-[65%] w-[65%]`}
                   gifUrl={features[i].icon}
                 />
               </div>

@@ -234,8 +234,8 @@ const NewsletterBanner: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isSubmitting || isSubmitted}
-            className="w-full border border-white/80 bg-white/40 placeholder-white/70 py-3 px-4 rounded outline-none focus:bg-white/20 transition"
-            style={{ fontFamily: "gotham-light, sans-serif" }}
+            className="w-full border text-sm border-white/80 bg-white/40 placeholder-white/70 py-3 px-4 rounded outline-none focus:bg-white/20 transition"
+            style={{ fontFamily: "gotham-light" }}
           />
 
           <button
