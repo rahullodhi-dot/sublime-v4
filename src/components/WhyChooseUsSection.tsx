@@ -745,7 +745,7 @@ const WhyChooseUsSection: React.FC = () => {
         <div className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
           <div className="flex items-center gap-2 mb-3">
             <span style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '12px',
@@ -756,14 +756,14 @@ const WhyChooseUsSection: React.FC = () => {
             </span>
           </div>
           <h2 style={{
-              fontFamily: "'gotham', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
-            Why Buy From Sublime
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]">
+            Why Choose Us
           </h2>
         </div>
 
@@ -869,7 +869,7 @@ const WhyChooseUsSection: React.FC = () => {
                 </div>
 
                 <GifContainer
-                  className={`${i % 2 === 0 ? '' : 'rotate-180'} h-[65%] w-[65%]`}
+                  className={`${i % 2 === 0 ? '' : 'rotate-180'} h-[60%]`}
                   gifUrl={features[i].icon}
                 />
               </div>

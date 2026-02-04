@@ -60,7 +60,7 @@ const BASE_PRODUCTS: Product[] = [
 // Repeat products for scrolling
 const PRODUCTS = [...BASE_PRODUCTS, ...BASE_PRODUCTS, ...BASE_PRODUCTS];
 
-const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GOOD",heading="Our Bestselling Products"}) => {
+const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="Our Bestselling Products"}) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -91,7 +91,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
         {/* Header */}
         <div className="mb-8 sm:mb-12 mx-auto  text-center">
           <p style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '12px',
@@ -101,13 +101,13 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
          {subHeading}
           </p>
           <h2    style={{
-              fontFamily: "'gotham', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl mt-3 lg:text-5xl font-bold text-[#C5A059]">
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl mt-3 lg:text-5xl font-bold text-[#9a7523]">
           {heading}
           </h2>
         </div>
@@ -145,13 +145,13 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
                 {product.badge && (
                   <div className="absolute   -top-1 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#9a7523] " style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
                     <div style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '12px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}  className=" font-light text-[8px] leading-[24px] tracking-normal capitalize text-center text-white [writing-mode:vertical-rl] rotate-180 -mt-8">
+                }}  className=" font-light text-[8px] leading-[24px] tracking-wider capitalize text-center text-white [writing-mode:vertical-rl] rotate-180 -mt-8">
                       Bestseller
                     </div>
                   </div>
@@ -199,7 +199,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
                 </div>
                  <div className='-mt-6'>
                   <span style={{
-                  fontFamily: "'gotham-book', sans-serif",
+                  fontFamily: "'gotham', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '14px',

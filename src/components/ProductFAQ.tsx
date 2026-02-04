@@ -62,7 +62,7 @@ const ProductFAQ = () => {
           <p 
             className="text-sm mb-2"
             style={{
-              fontFamily: "'gotham-book', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 500,
               fontSize: '14px',
               lineHeight: '100%',

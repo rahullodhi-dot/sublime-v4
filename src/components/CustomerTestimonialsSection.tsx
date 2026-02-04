@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import round1 from "../assets/images/roound1.png"
-import AboutFrame from "../assets/images/AboutFrame.png"
+import AboutFrame from "../assets/images/csback.png"
 
 interface Testimonial {
   id: number;
@@ -102,16 +102,16 @@ const CustomerTestimonialsSection: React.FC = () => {
   const visibleTestimonials = getVisibleTestimonials();
 
   return (
-    <section    style={{
-        backgroundImage:`url(${AboutFrame})`,
-               backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-      }} className="w-full relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <section style={{
+      backgroundImage: `url(${AboutFrame})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }} className="w-full relative py-12 sm:py-16 lg:py-20 ">
       {/* <div>
         <img src={AboutFrame} alt="" className='absolute w-[200%] h-full bottom-2' />
       </div> */}
-        {/* <div style={{
+      {/* <div style={{
         animation: "spinSlow   26s linear infinite",
       }}
         className='absolute -right-[11%] -top-8    w-72 h-72 pointer-events-none'>
@@ -124,31 +124,31 @@ const CustomerTestimonialsSection: React.FC = () => {
         <img src={round1} alt="" className='h-full w-full block' />
       </div> */}
 
-            <div className="text-center  absolute z-10 left-[50%]  -translate-x-1/2 mb-8 sm:mb-12 lg:mb-16">
-          <p style={{
-                fontFamily: "'gotham-book', sans-serif",
-                fontWeight: 100,
+      <div className="text-center  absolute z-10 left-[50%]  -translate-x-1/2 mb-8 sm:mb-12 lg:mb-16">
+        <p style={{
+          fontFamily: "'gotham', sans-serif",
+          fontWeight: 100,
 
-                fontSize: '12px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase mb-3">
-            HEAR THE GOOD
-          </p>
-          <h2  style={{
-              fontFamily: "'gotham', sans-serif",
-              fontWeight: 100,
+          fontSize: '12px',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+        }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase mb-3">
+          HEAR THE GOOD
+        </p>
+        <h2 style={{
+          fontFamily: "'gotham2', sans-serif",
+          fontWeight: 100,
 
-              fontSize: '38px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
-            What Our Customers Say
-          </h2>
-        </div>
-      <div   className="w-full max-w-[1600px] mt-32 mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+          fontSize: '38px',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+        }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]">
+          What Our Customers Say
+        </h2>
+      </div>
+      <div className="w-full max-w-[1600px] mt-32 mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Section Header */}
-  
+
 
         {/* Carousel Container */}
         <div className="relative">
@@ -159,8 +159,8 @@ const CustomerTestimonialsSection: React.FC = () => {
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#9a7522] hover:bg-[#9a7522] text-white flex items-center justify-center shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed -ml-2 sm:-ml-5"
             aria-label="Previous testimonial"
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path d="M5.50781 16.5198L13.7678 24.7798M5.50781 16.5198L13.7678 8.25978M5.50781 16.5198L19.9628 16.5198M27.5345 16.5198L24.0928 16.5198" stroke="#F6F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
 
@@ -170,8 +170,8 @@ const CustomerTestimonialsSection: React.FC = () => {
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#9a7522] hover:bg-[#9a7522] text-white flex items-center justify-center shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed -mr-2 sm:-mr-5"
             aria-label="Next testimonial"
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path d="M27.5322 16.5198L19.2722 8.25977M27.5322 16.5198L19.2722 24.7798M27.5322 16.5198L13.0772 16.5198M5.50552 16.5198L8.94719 16.5198" stroke="#F6F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
 
@@ -183,11 +183,10 @@ const CustomerTestimonialsSection: React.FC = () => {
               return (
                 <div
                   key={`${testimonial.id}-${index}`}
-                  className={`transition-all duration-700 ${
-                    isCenter
+                  className={`transition-all duration-700 ${isCenter
                       ? 'w-full sm:w-[380px] lg:w-[420px] scale-100 sm:scale-110 z-10'
                       : 'hidden sm:block sm:w-[320px] lg:w-[360px] scale-90 pointer-events-none'
-                  }`}
+                    }`}
                 >
                   {/* Card */}
                   <div className="bg-[#FFF7EA] rounded-3xl p-6 sm:p-8 shadow-xl transition-all duration-700 border-2 border-gray-200">
@@ -226,25 +225,25 @@ const CustomerTestimonialsSection: React.FC = () => {
 
                     {/* Review Text */}
                     <p style={{
-                  fontFamily: "'gotham-light', sans-serif",
-                  fontWeight: 100,
+                      fontFamily: "'gotham-light', sans-serif",
+                      fontWeight: 100,
 
-                  fontSize: '16px',
-                  lineHeight: '150%',
-                  letterSpacing: '0%',
-                }}  className="text-gray-700 text-sm sm:text-base font-karla text-center mb-6 leading-relaxed min-h-[80px] sm:min-h-[100px] transition-all duration-700">
+                      fontSize: '16px',
+                      lineHeight: '150%',
+                      letterSpacing: '0%',
+                    }} className="text-gray-700 text-sm sm:text-base font-karla text-center mb-6 leading-relaxed min-h-[80px] sm:min-h-[100px] transition-all duration-700">
                       {testimonial.review}
                     </p>
 
                     {/* Customer Name & Location */}
-                    <p  style={{
-                  fontFamily: "'gotham2', sans-serif",
-                  fontWeight: 100,
+                    <p style={{
+                      fontFamily: "'gotham2', sans-serif",
+                      fontWeight: 100,
 
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }} className="text-[#316763] text-sm sm:text-base font-karla font-semibold text-center transition-all duration-700">
+                      fontSize: '18px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                    }} className="text-[#316763] text-sm sm:text-base font-karla font-semibold text-center transition-all duration-700">
                       {testimonial.name}, {testimonial.location}
                     </p>
                   </div>
@@ -254,7 +253,7 @@ const CustomerTestimonialsSection: React.FC = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8 sm:mt-10">
+          {/* <div className="flex justify-center gap-2 mt-8 sm:mt-10">
             {TESTIMONIALS.map((_, index) => (
               <button
                 key={index}
@@ -265,15 +264,14 @@ const CustomerTestimonialsSection: React.FC = () => {
                     setTimeout(() => setIsAnimating(false), 700);
                   }
                 }}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === currentIndex
                     ? 'bg-[#316763] w-8 sm:w-10'
                     : 'bg-[#f6f1e8] hover:bg-gray-800'
-                }`}
+                  }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

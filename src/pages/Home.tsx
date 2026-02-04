@@ -384,13 +384,13 @@ const Home: React.FC = () => {
               className={`absolute  inset-0 transition-opacity duration-700 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
             >
-              <div className="relative w-full  h-full ">
+              <div className="relative w-full  h-full  ">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover "
                   poster="https://images.unsplash.com/photo-1563281746-cc28e07d6f37?auto=format&fit=crop&w=1920&q=80"
                 >
                   <source src={V3Video} type="video/mp4" />
@@ -409,7 +409,7 @@ const Home: React.FC = () => {
                       fontSize: '15px',
                       lineHeight: '100%',
                       letterSpacing: '0%',
-                    }} className="mb-6 sm:mb-8 font-medium lg:mb-10 text-center text-black uppercase   text-lg leading-[35px] ">
+                    }} className="mb-6 sm:mb-8 font-medium lg:mb-10 text-center text-white uppercase   text-lg leading-[35px] ">
                       To gather the finest  leaves, spices and little treasures of nature,
                     </p>
                     <h1 style={{
@@ -419,7 +419,7 @@ const Home: React.FC = () => {
                       fontSize: '54px',
                       lineHeight: '100%',
                       letterSpacing: '0%',
-                    }} className="hero-heading w-full  text-center mb-4 sm:mb-6 lg:mb-8 capitalize text-black">
+                    }} className="hero-heading w-full  text-center mb-4 sm:mb-6 lg:mb-8 capitalize text-white">
                       {/* SERENITY IN EVERY MOMENT */}
                       Serenity in every moment
                     </h1>
@@ -435,7 +435,7 @@ const Home: React.FC = () => {
                           letterSpacing: '0%',
                         }}
                         to="/products"
-                        className="inline-flex mx-auto items-center  text-white justify-center gap-3 xp-5  bg-black/80 h-[51px] rounded-[4px] w-48 hover:bg-[#0a0a09] transition-all duration-300 text-base font-semibold"
+                        className="inline-flex mx-auto items-center  text-black justify-center gap-3 xp-5  bg-white/80 h-[51px] rounded-[4px] w-48 hover:bg-[#fff] transition-all duration-300 text-black font-semibold"
                       >
                         Explore More
                         {/* <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -660,8 +660,8 @@ const Home: React.FC = () => {
 
       <GiftBoxSection />
       <WhyChooseUsSection />
-      <TestimonialsSection />
-      <StorySection />
+      <TestimonialsSection subHeading="Only Buy Good" />
+      {/* <StorySection /> */}
 
       <CustomerTestimonialsSection />
 

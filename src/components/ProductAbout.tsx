@@ -32,7 +32,7 @@ const ProductAbout = ({ description = "", image }: ProductAboutProps) => {
             <h2
               className="mb-6"
               style={{
-                fontFamily: "'gotham', serif",
+                fontFamily: "'gotham2', serif",
                 fontWeight: 500,
                 fontSize: "38px",
                 lineHeight: "100%",

@@ -9,6 +9,7 @@ import tokri from '../assets/images/tokri.png';
 import TeaLeaf from "../assets/images/TealLeaf.png";
 import product1 from "../assets/images/product1.png";
 import product2 from "../assets/images/product2.png";
+import FrequntyleBuy from "../components/FrequntyleBuy";
 
 interface CartItem {
     id: number;
@@ -101,7 +102,7 @@ const Cart: React.FC = () => {
                 <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" />
 
                 <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
-                    <h1 style={{ fontFamily: "gotham" }} className="text-3xl font-bold mb-2">My Wishlist</h1>
+                    <h1 style={{ fontFamily: "gotham" }} className="text-3xl font-bold mb-2 text-[#9a7523]">Cart</h1>
                     <Breadcrumb items={breadcrumbItems} />
                 </div>
             </div>
@@ -130,7 +131,7 @@ const Cart: React.FC = () => {
                                 Quantity
                             </div>
                             <div>
-                                Subtotol
+                                Subtotal
                             </div>
                         </div>
                         {cartItems.map((item) => (
@@ -148,7 +149,7 @@ const Cart: React.FC = () => {
                                     <div className="flex-1">
                                         <h3 style={{fontFamily:"gotham-book"}} className="text-lg font-medium">{item.name}</h3>
 
-                                        <button style={{fontFamily:"gotham-light"}} className="flex items-center gap-1 text-sm text-[#0f0f0f] mt-1">
+                                        <button style={{fontFamily:"gotham-light"}} className="flex items-center underline gap-1 text-sm text-[#0f0f0f] mt-1">
                                             <Heart size={16} /> Move to Wishlist
                                         </button>
 
@@ -191,43 +192,43 @@ const Cart: React.FC = () => {
                     </div>
 
                     {/* Summary */}
-                    <div>
-                        <div style={{fontFamily:"gotham-book"}} className="bg-[#f5f1e8] font-medium p-6 rounded-lg border shadow-sm sticky top-4">
-                            <h2 className="text-xl font-semibold text-[#0f0f0f] mb-4">
+                    <div className="">
+                        <div style={{fontFamily:"gotham-book"}} className="bg-[#f6f1e8] border-2  border-[#9a7523]   font-medium pt-6 pb-0  px-0 rounded-lg  shadow-sm sticky top-4">
+                            <h2 className="text-xl font-semibold text-[#0f0f0f] mb-4 text-center">
                                 SUMMARY
                             </h2>
-                              <div className="flex  text-sm justify-between mb-3">
+                              <div className="flex  text-sm justify-between border-b py-3 mb-3 px-6">
                                 <span>Price ({cartItems.length} items)</span>
                                 <span>₹{subtotal.toFixed(2)}</span>
                             </div>
 
-                            <div className="flex text-sm justify-between mb-3">
+                            <div className="flex text-sm justify-between border-b py-3 mb-3 px-6">
                                 <span>Subtotal</span>
                                 <span>₹{subtotal.toFixed(2)}</span>
                             </div>
 
-                            <div className="flex text-sm justify-between mb-6">
+                            <div className="flex text-sm justify-between   mb-6 px-6">
                                 <span>Order Total Incl. Tax</span>
                                 <span className="text-lg font-semibold">
                                     ₹{subtotal.toFixed(2)}
                                 </span>
                             </div>
 
-                            <button className="w-full text-lg bg-[#9A7523] text-white py-3 rounded-lg">
+                            <button style={{fontFamily:"gotham2"}} className="w-full text-lg  bg-[#9A7523] text-white py-3 rounded-b-lg">
                                 Proceed to Checkout
                             </button>
                         </div>
 
                         <div className="w-fit mx-auto  mt-6 ">
-                            <button  style={{fontFamily:"gotham-book"}} className="capitalize text-lg underline">
-                                continoue shopping
+                            <button  style={{fontFamily:"gotham"}} className="uppercase text-lg underline">
+                                continue shopping
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <TestimonialsSection  subHeading="ONLY BUY GOOD" heading="Frequently Bought Together" />
+            <FrequntyleBuy  subHeading="ONLY BUY GOOD" heading="Frequently Bought Together" />
             {/* <NewsletterBanner /> */}
         </div>
     );

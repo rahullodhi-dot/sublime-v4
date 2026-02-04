@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import p from "../assets/images/p1.png"
 
 interface Testimonial {
     id: number;
@@ -65,10 +66,10 @@ const CustomerTestimonialsSection: React.FC = () => {
     return (
         <section className="w-full py-16 bg-[#f1e4b0]">
             <div className="text-center mb-12">
-                <p style={{fontFamily:"gotham-book"}} className="text-sm text-gray-700 uppercase">
-                    Hear from our happy customers
+                <p style={{fontFamily:"gotham-book"}} className="text-sm text-black font-bold uppercase">
+                    Hear The Good
                 </p>
-                <h2 style={{fontFamily:"gotham2"}} className="text-4xl font-bold text-[#C5A059]">
+                <h2 style={{fontFamily:"gotham-book"}} className="text-4xl font-bold text-[#C5A059]">
                     What Our Customers Say
                 </h2>
             </div>
@@ -76,9 +77,11 @@ const CustomerTestimonialsSection: React.FC = () => {
             <div className="relative max-w-[1200px] mx-auto">
                 <button
                     onClick={() => scroll("left")}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#C5A059] text-white p-3 rounded-full"
+                    className="absolute left-0 top-[55%]  -translate-y-1/2 z-10 bg-[#f6f1e8] text-white p-2 rounded-full"
                 >
-                    <ChevronLeft />
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path d="M5.50781 16.5198L13.7678 24.7798M5.50781 16.5198L13.7678 8.25978M5.50781 16.5198L19.9628 16.5198M27.5345 16.5198L24.0928 16.5198" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
                 </button>
 
                 <div
@@ -143,11 +146,18 @@ const CustomerTestimonialsSection: React.FC = () => {
                                     </div>
 
                                     {/* Gift image */}
-                                    <img
-                                        src={t.image}
+                                   <div className="flex gap-1">
+                                      <img
+                                        src={p}
                                         alt="gift"
-                                        className="w-12 h-12 object-contain"
+                                        className="w-12 h-12 object-contain  "
                                     />
+                                      <img
+                                        src={p}
+                                        alt="gift"
+                                        className="w-12 h-12 object-contain  "
+                                    />
+                                   </div>
                                 </div>
                             )}
 
@@ -171,11 +181,11 @@ const CustomerTestimonialsSection: React.FC = () => {
                                 </div>
                             )}
 
-                            <span style={{fontFamily:"gotham-book"}} className="text-sm text-gray-700 mt-4 line-clamp-3">
+                            <span style={{fontFamily:"gotham-book"}} className="text-sm text-gray-700 mt-4 line-clamp-3 px-2">
                                 {t.review}
                             </span>
 
-                            <span  style={{fontFamily:"gotham-book"}} className="text-sm text-[#C5A059] font-semibold mt-1 hover:underline">
+                            <span  style={{fontFamily:"gotham-book"}} className="text-sm text-[#C5A059] font-semibold mt-1 hover:underline px-2">
                                 Read More
                             </span>
 
@@ -191,11 +201,20 @@ const CustomerTestimonialsSection: React.FC = () => {
 
                 <button
                     onClick={() => scroll("right")}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#C5A059] text-white p-3 rounded-full"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#f6f1e8] text-white p-2 rounded-full"
                 >
-                    <ChevronRight />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path d="M27.5322 16.5198L19.2722 8.25977M27.5322 16.5198L19.2722 24.7798M27.5322 16.5198L13.0772 16.5198M5.50552 16.5198L8.94719 16.5198" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
                 </button>
+
+                <div className=" flex justify-center items-center gap-3">
+                    <button style={{fontFamily:"gotham2"}} className="border px-6 py-3 rounded-lg border-[#9a7523] text-[#9a7523] bg-[#f6f1e8] text-sm">Show More Reviews </button>
+                    <button style={{fontFamily:"gotham-book"}} className="border px-6 py-3 rounded-lg border-[#9a7523] text-[#f6f1e8] bg-[#9a7523] text-sm">Write A Review</button>
+                </div>
             </div>
+
+         
         </section>
     );
 };

@@ -110,7 +110,7 @@ const BlogSection: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg> */}
               <p style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '12px',
@@ -122,14 +122,14 @@ const BlogSection: React.FC = () => {
             </div>
             {/* Latest Blogs Title */}
             <h2 style={{
-              fontFamily: "'gotham', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',
               lineHeight: '100%',
-              letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]">
-              Read Our  Blogs
+              letterSpacing: '4%',
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]">
+            Latest  Blogs
             </h2>
           </div>
        
@@ -225,7 +225,7 @@ const BlogSection: React.FC = () => {
                   <div className="mt-auto pt-3 border-t border-gray-100">
                     <Link
                       to={`/blogs/${post.slug}`}
-                      className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#316763] hover:text-black transition-colors uppercase"
+                      className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#9a7523] hover:text-black transition-colors uppercase"
                     >
                       READ MORE
                     </Link>

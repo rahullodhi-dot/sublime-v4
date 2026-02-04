@@ -141,7 +141,7 @@ const PartnersSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <p style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '12px',
@@ -151,7 +151,7 @@ const PartnersSection: React.FC = () => {
             {sectionData.subheading}
           </p>
           <h2 style={{
-              fontFamily: "'gotham', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',

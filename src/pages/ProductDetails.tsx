@@ -705,7 +705,7 @@ export default function ProductDetailPage() {
 
         <div className="flex flex-col mt-12 gap-4 justify-center items-center">
 
-          <p style={{fontFamily:"gotham-light"}} className="text-[#000000] text-lg  tracking-[4%] leading-[100%] ">Brew Method</p>
+          <p style={{fontFamily:"gotham-light"}} className="text-[#000000] text-lg  tracking-[4%] leading-[100%] uppercase font-bold ">Brew Methods</p>
           <h2 className="text-[#9A7523] text-[50px] font-medium">How To Brew</h2>
           {/* <div className="flex gap-3">
             <button className="bg-[#316763] px-9 rounded-lg py-2 text-white">Hot Brew</button>
@@ -727,7 +727,7 @@ export default function ProductDetailPage() {
         <CustomerTestimonialsSection addrevviw={true}/>
 
         {/* <div className="bg-red-500"> */}
-           <TestimonialsSection bgClr="#f6f1e8"/>
+           <TestimonialsSection subheading="    " bgClr="#f6f1e8"/>
         {/* </div> */}
         {/* <YouMayAlsoLike/> */}
 

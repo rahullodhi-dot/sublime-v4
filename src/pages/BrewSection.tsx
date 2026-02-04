@@ -97,11 +97,11 @@ const BrewSection = () => {
               className="h-[300px] w-[22rem] object-contain"
             />
             <div className="md:w-[40%]">
-              <h3 className="font-lora text-3xl mb-2">
+              <h3  style={{fontFamily:"gotham2"}} className="font-lora text-3xl mb-2">
                 Boil 250 ml water
               </h3>
-              <p className="text-sm leading-7">
-                Bring fresh filtered water to a boil and let it cool slightly.
+              <p  style={{fontFamily:"gotham-book"}}className="text-sm leading-7">
+               Bring 250 ml of fresh, filtered water to a boil.For the best flavor, allow the water to cool slightly to 75–85°C (not fully boiling). Direct boiling water can make green tea taste bitter.
               </p>
             </div>
           </div>
@@ -114,11 +114,11 @@ const BrewSection = () => {
               className="h-[300px] w-[12rem] object-contain"
             />
             <div className="md:w-[40%] mb-20 ">
-              <h3 className="font-lora text-3xl mb-2">
+              <h3 style={{fontFamily:"gotham2"}} className="font-lora text-3xl mb-2">
                 1 teaspoon tea leaves
               </h3>
-              <p className="text-sm leading-7">
-                Use 1–2 grams of tea per cup and warm your vessel.
+              <p style={{fontFamily:"gotham-book"}} className="text-sm leading-7">
+              Use 1–2 grams of tea per 180–200 ml of water (roughly 1 teaspoon per cup). Rinse the teapot or cup with hot water to maintain brewing temperature.
               </p>
             </div>
           </div>
@@ -131,11 +131,11 @@ const BrewSection = () => {
               className="h-[300px] w-[22rem] object-contain"
             />
             <div className="md:w-[40%]">
-              <h3 className="font-lora text-3xl mb-2">
+              <h3  style={{fontFamily:"gotham2"}} className="font-lora text-3xl mb-2">
                 Strain & enjoy
               </h3>
               <p className="text-sm leading-7">
-                Strain immediately and enjoy hot or customized.
+              Strain the tea to prevent over-steeping. Serve hot and enjoy as is, or add honey, lemon, or milk depending on the tea type.
               </p>
             </div>
           </div>

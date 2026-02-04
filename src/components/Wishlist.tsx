@@ -17,10 +17,10 @@ const wishlistItems = [
 ];
 
 const breadcrumbItems = [
-    { label: "ProductDetails", path: `ProductDetails/` },
-      { label: "Cart", path: `Cart/` },
-  { label: "wishlist", path: `wishlist/` },
-  { label: "" },
+    { label: "Loose-Tea", path: `Loose-Tea  /` },
+      { label: "Green-Tea", path: `Green-Tea/` },
+  { label: "wishlist", path: `wishlist/`,isBold:true },
+
 ];
 
 export default function WishlistPage() {
@@ -68,7 +68,7 @@ export default function WishlistPage() {
         <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" />
 
         <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
-          <h1 style={{fontFamily:"gotham"}} className="text-3xl font-bold mb-2">My Wishlist</h1>
+          <h1 style={{fontFamily:"gotham2"}} className="text-3xl text-[#9a7523] font-bold mb-2">My Wishlist</h1>
           <Breadcrumb items={breadcrumbItems} />
         </div>
       </div>
@@ -103,17 +103,21 @@ export default function WishlistPage() {
               {/* Image + Heart */}
               <div className="relative w-full h-[291px]   rounded-t-[14px]">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-[14px]" />
-
+   {/* <div className="h-2 w-12 bg-red-700 we absolute top-0 ">
+                          h
+                        </div> */}
                 {product.badge && (
                   <div className="absolute -top-2 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#b89b4a]" 
                        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
+                     
                     <div style={{
-                      fontFamily: "'gotham2', sans-serif",
+                      fontFamily: "'gotham-book', sans-serif",
                       fontWeight: 100,
                       fontSize: '12px',
                       lineHeight: '100%',
                     }}  
-                         className="font-light text-[8px] leading-[24px] tracking-normal capitalize text-center text-white [writing-mode:vertical-rl] rotate-180 -mt-8">
+                         className="font-light text-[8px] leading-[48px] tracking-wider capitalize text-center text-white [writing-mode:vertical-rl] rotate-180 -mt-8">
+
                       Bestseller
                     </div>
                   </div>
@@ -136,8 +140,8 @@ export default function WishlistPage() {
                 {/* Weight + Price + Cart controls */}
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span style={{fontFamily:"gotham-light"}} className="text-[#9a7523]  mb-2 text-sm">
-                      Net Weight {product.weight}
+                    <span style={{fontFamily:"gotham2"}} className="text-[#9a7523]  mb-2 text-sm">
+                      Net Weight - {product.weight}
                     </span>
                     <span style={{fontFamily:"gotham-book"}} className="text-[22px] leading-[30px]">
                       {product.price}

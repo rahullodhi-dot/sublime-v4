@@ -6,6 +6,7 @@
 
 import React, { useState } from 'react';
 import tokri from "../assets/images/tokri.png";
+import bottomTree from "../assets/images/bottomTree.png";
 
 // IMPORT IMAGES (NO DIRECT PATHS)
 import gift1 from "../assets/images/gift1.png";
@@ -83,19 +84,22 @@ const GiftBoxSection: React.FC = () => {
   const currentGiftBox = GIFT_BOXES[currentIndex];
 
   return (
-    <section className="w-full min-h-screen bg-[#f1e4b0]  py-8 sm:py-12 lg:py-16 overflow-hidden">
+    <section className="w-full min-h-screen relative bg-[#f1e4b0]  py-8 sm:py-12 lg:py-16 overflow-hidden">
+        <img src={bottomTree} alt="Bottom Tree" className="  h-full object-contain absolute bottom-0 left-0  z-0 opacity-20 " />
+        <img src={bottomTree} alt="Bottom Tree" className="   object-contain absolute bottom-0 right-0  z-0 opacity-20 scale-x-[-1] h-[70%] " />
       <div className="w-full relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-          <div className='absolute opacity-10 h-64 -top-14'>
+          {/* <div className='absolute opacity-10 h-64 -top-14'>
             <img src={tokri} alt="" className='h-full'/>
           </div>
            <div className='absolute  h-36 opacity-70 right-0 -top-1'>
             <img src={tokri} alt="" className='h-full'/>
-          </div>
+          </div> */}
+        
         <div className="mb-6 z-10 text-center sm:mb-8 lg:mb-10">
         
           <p style={{
-                fontFamily: "'gotham-book', sans-serif",
+                fontFamily: "'gotham', sans-serif",
                 fontWeight: 100,
 
                 fontSize: '12px',
@@ -108,13 +112,13 @@ const GiftBoxSection: React.FC = () => {
             </svg> */}
           </p>
           <h2 style={{
-              fontFamily: "'gotham', sans-serif",
+              fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,
 
               fontSize: '38px',
               lineHeight: '100%',
               letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C5A059]" >
+            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]" >
             Surprises Packed With Joy
           </h2>
         </div>
