@@ -7,6 +7,7 @@ import ProductsGrid from '../components/ProductsGrid';
 import TeaDetailModal from '../components/TeaDetailModal';
 import { productSchema } from '../utils/schemas';
 import { teaProductsData } from '../data/teaProducts';
+import BulkOrderBanner from '../components/BulkOrderBanner';
 
 const CategoriesTest: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -70,18 +71,21 @@ const CategoriesTest: React.FC = () => {
           sortBy={sortBy}
           onSortChange={handleSortChange}
         />
-
+{/* 
         <div className="bg-white border-b border-gray-200">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 py-3">
             <Breadcrumb items={[{ label: 'Loose Tea' }, { label: 'View All' }]} />
           </div>
-        </div>
+        </div> */}
+
 
         <ProductsGrid
           products={teaProductsData}
           viewMode={viewMode}
           onProductClick={handleProductClick}
         />
+
+        <BulkOrderBanner/>
 
         <TeaDetailModal
           product={selectedProduct}

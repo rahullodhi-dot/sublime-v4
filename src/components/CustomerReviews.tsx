@@ -1,0 +1,203 @@
+import React, { useRef } from "react";
+import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+
+interface Testimonial {
+    id: number;
+    name: string;
+    location: string;
+    rating: number;
+    review: string;
+    image?: string;
+    verified?: boolean;
+    date?: string;
+    type: "type1" | "type2" | "type3";
+}
+
+const TESTIMONIALS: Testimonial[] = [
+    {
+        id: 1,
+        name: "Anita Sharma",
+        location: "Bengaluru",
+        rating: 5,
+        review: "Sublime Signature Rich flavour, premium ingredients, and a de products. a delightful everyday!",
+        image: "/src/assets/images/Ellipse 96.png",
+        verified: true,
+        date: "Jan 15, 2026",
+        type: "type1",
+    },
+    {
+        id: 2,
+        name: "Vaibhav Vedsav",
+        location: "Kolkata",
+        rating: 5,
+        review: "Rich flavour, premium ingredients, and a delightful everyday",
+        image: "/src/assets/images/Ellipse 97.png",
+        verified: true,
+        date: "Feb 2, 2026",
+        type: "type2",
+    },
+    {
+        id: 3,
+        name: "Rahul Lodhi",
+        location: "Mumbai",
+        rating: 5,
+        review: "Amazing quality & taste. Highly recommended!  delightful everyday",
+        verified: true,
+        date: "Mar 12, 2026",
+        type: "type3",
+    },
+];
+
+const CustomerTestimonialsSection: React.FC = () => {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: "left" | "right") => {
+        if (!scrollRef.current) return;
+        scrollRef.current.scrollBy({
+            left:
+                direction === "left"
+                    ? -scrollRef.current.clientWidth
+                    : scrollRef.current.clientWidth,
+            behavior: "smooth",
+        });
+    };
+
+    return (
+        <section className="w-full py-16 bg-[#f1e4b0]">
+            <div className="text-center mb-12">
+                <p style={{fontFamily:"gotham-book"}} className="text-sm text-gray-700 uppercase">
+                    Hear from our happy customers
+                </p>
+                <h2 style={{fontFamily:"gotham2"}} className="text-4xl font-bold text-[#C5A059]">
+                    What Our Customers Say
+                </h2>
+            </div>
+
+            <div className="relative max-w-[1200px] mx-auto">
+                <button
+                    onClick={() => scroll("left")}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#C5A059] text-white p-3 rounded-full"
+                >
+                    <ChevronLeft />
+                </button>
+
+                <div
+                    ref={scrollRef}
+                    className="flex gap-8 min-h-[380px] overflow-x-auto  justify-center items-center no-scrollbar px-8"
+                >
+                    {TESTIMONIALS.map((t) => (
+                        <div
+                            key={t.id}
+                            className="relative  pb-12 bg-[#fff] rounded-lg border shadow-lg p-6 pt-16  h-[270px] w-[360px] flex-shrink-0"
+                        >
+
+                            <div className="flex gap-1 mt-3 absolute right-4 top-3">
+                                {[...Array(t.rating)].map((_, i) => (
+                                    <svg
+                                        key={i}
+                                        className="w-6 h-6 fill-[#9a7523]"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                ))}
+                            </div>
+                            {/* ===== Avatar / RL (same position) ===== */}
+                            <div className="w-20 h-20 absolute -top-12 left-6 rounded-full border-2 border-white shadow-lg bg-white flex items-center justify-center ">
+                                {t.type === "type3" ? (
+                                    <span className="text-[#C5A059] font-bold text-xl">
+                                        RL
+                                    </span>
+                                ) : (
+                                    <img
+                                        src={t.image}
+                                        alt={t.name}
+                                        className="w-full h-full object-cover rounded-full"
+                                    />
+                                )}
+
+                                {/* TYPE 2 → verified on image */}
+                                {t.type === "type2" && t.verified && (
+
+                                    // <CheckCircle  />
+
+                                    <svg className="absolute  -right-2 w-5 h-5 text-[#9a7523] bg-white rounded-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="11.5" cy="12.5" r="8.5" fill="#F6F1E8" />
+                                        <path d="M23 12L20.56 9.22004L20.9 5.54004L17.29 4.72004L15.4 1.54004L12 3.00004L8.6 1.54004L6.71 4.72004L3.1 5.53004L3.44 9.21004L1 12L3.44 14.78L3.1 18.47L6.71 19.29L8.6 22.47L12 21L15.4 22.46L17.29 19.28L20.9 18.46L20.56 14.78L23 12ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58004L18 9.00004L10 17Z" fill="#316763" />
+                                    </svg>
+                                )}
+                            </div>
+
+
+
+                            {/* ===== TYPE 1 ===== */}
+                            {t.type === "type1" && (
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <p className="font-semibold">{t.name}</p>
+                                        {t.verified && (
+                                            <button style={{fontFamily:"gotham2"}} className="mt-1 px-3 py-1 text-xs bg-[#C5A059] text-white rounded">
+                                                Verified
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {/* Gift image */}
+                                    <img
+                                        src={t.image}
+                                        alt="gift"
+                                        className="w-12 h-12 object-contain"
+                                    />
+                                </div>
+                            )}
+
+                            {/* ===== TYPE 2 ===== */}
+                            {t.type === "type2" && (
+                                <p className="font-semibold">{t.name}</p>
+                            )}
+
+
+
+                            {/* ===== TYPE 3 ===== */}
+                            {t.type === "type3" && (
+                                <div className="flex items-center gap-2">
+                                    <p className="font-semibold">{t.name}</p>
+                                    {t.verified && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="11.5" cy="12.5" r="8.5" fill="#F6F1E8" />
+                                            <path d="M23 12L20.56 9.22004L20.9 5.54004L17.29 4.72004L15.4 1.54004L12 3.00004L8.6 1.54004L6.71 4.72004L3.1 5.53004L3.44 9.21004L1 12L3.44 14.78L3.1 18.47L6.71 19.29L8.6 22.47L12 21L15.4 22.46L17.29 19.28L20.9 18.46L20.56 14.78L23 12ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58004L18 9.00004L10 17Z" fill="#316763" />
+                                        </svg>
+                                    )}
+                                </div>
+                            )}
+
+                            <span style={{fontFamily:"gotham-book"}} className="text-sm text-gray-700 mt-4 line-clamp-3">
+                                {t.review}
+                            </span>
+
+                            <span  style={{fontFamily:"gotham-book"}} className="text-sm text-[#C5A059] font-semibold mt-1 hover:underline">
+                                Read More
+                            </span>
+
+
+
+
+                            <div style={{fontFamily:"gotham-book"}} className="flex justify-end absolute bottom-2  text-xs text-gray-500 mt-4">
+                                {t.date}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <button
+                    onClick={() => scroll("right")}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#C5A059] text-white p-3 rounded-full"
+                >
+                    <ChevronRight />
+                </button>
+            </div>
+        </section>
+    );
+};
+
+export default CustomerTestimonialsSection;

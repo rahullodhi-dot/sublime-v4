@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from 'react';
+
+
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import GirlImage from '../assets/images/founderImage.jpg';
-import BgImage from '../assets/images/Group365.png';
+
 import AboutFrame from "../assets/images/AboutFrame.png"
-import CornerLeaf from "../assets/images/CornerLeaf.png"
+
 import PenInk from "../assets/images/penInk.png"
+import Pen from '../assets/images/Pen.png'
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 interface AboutData {
   heading: string;
@@ -18,6 +26,10 @@ interface AboutData {
 const AboutSection: React.FC = () => {
   const [aboutData, setAboutData] = useState<AboutData | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLTableSectionElement>(null);
+  const penDivRef = useRef<HTMLDivElement>(null);
 
   // Fallback static content
   const fallbackData: AboutData = {
@@ -73,6 +85,72 @@ Every product of which is packed with authentic quality fresh ingredients, which
     fetchAboutData();
   }, []);
 
+
+
+useEffect(() => {
+  if (!containerRef.current || !penDivRef.current) return;
+
+  const paths = gsap.utils.toArray<SVGPathElement>("path", containerRef.current);
+  if (!paths.length) return;
+
+  // Initialize paths
+  paths.forEach((path) => {
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = `${length}`;
+    path.style.strokeDashoffset = `${length}`;
+    path.style.stroke = "#9A7522";
+    path.style.fill = "transarent";
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 90%",
+      toggleActions: "play none none none",
+    },
+  });
+
+  // Animate each path
+  paths.forEach((path) => {
+    const length = path.getTotalLength();
+
+    // Animate stroke drawing
+      tl.to(penDivRef.current, {
+  motionPath: {
+    path: path,
+    align: path,
+    alignOrigin: [0,0],
+  },
+  duration: 0.3,
+  ease: "power2.out",
+}, "<")
+    
+    tl.to(path, {
+      strokeDashoffset: 0,
+      duration: 0.3,
+      fill: "#9A7522",
+      ease: "power2.out",
+      onUpdate: () => {
+        // Move pen along path manually
+        const point = path.getPointAtLength(length - parseFloat(path.style.strokeDashoffset));
+        gsap.set(penDivRef.current, {
+          x: point.x,
+          y: point.y,
+        });
+      },
+    });
+  });
+
+  // Fade out the pen at its final position
+  tl.to(penDivRef.current, {
+    opacity: 0,
+    duration: 0.3,
+    ease: "power1.out",
+  },"-=0.5");
+
+}, [aboutData]);
+
+
   const displayData = aboutData || fallbackData;
 
   if (loading) {
@@ -90,70 +168,45 @@ Every product of which is packed with authentic quality fresh ingredients, which
 
   return (
     <section
-      className="relative py-2 sm:py-12   lg:py-32 overflow-hidden"
+      ref={sectionRef}
+      className="relative py-2 sm:py-12 lg:py-32 overflow-hidden"
       style={{
-        backgroundImage:`url(${AboutFrame})`,
-               backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+        backgroundImage: `url(${AboutFrame})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="relative  mx-auto max-w-[1600px] px-6 sm:px-8 lg:px-16">
-        
-        {/* Rounded Container with padding and background image */}
+      <div className="relative mx-auto max-w-[1600px] px-6 sm:px-8 lg:px-16">
+
         <div
-          className="relative rounded-3xl p-10 sm:p-20 lg:p-8   "
+          className="relative rounded-3xl p-10 sm:p-20 lg:p-8"
           style={{
             backgroundColor: "#f6f1e8",
-
-
-
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
         >
-
-          {/*
-
-          <div className='absolute top-0 right-0  h-36'>
-            <img src={CornerLeaf} alt="" className='h-full' />
-          </div>
-             <div className='absolute top-0 left-0 scale-x-[-1] h-36'>
-            <img src={CornerLeaf} alt="" className='h-full' />
-          </div>
-             <div className='absolute bottom-0 left-0 scale-y-[-1] scale-x-[-1] h-36'>
-            <img src={CornerLeaf} alt="" className='h-full' />
-          </div>
-            <div className='absolute bottom-0 right-0 scale-y-[-1] scale-x-[1] h-36'>
-            <img src={CornerLeaf} alt="" className='h-full' />
-          </div> */}
-
-           <div className='absolute h-36 left-[46%] translate-x-1/2 bottom-24'>
+          <div className='absolute h-36 left-[46%] translate-x-1/2 bottom-24'>
             <img src={PenInk} alt="" className='h-full ' />
           </div>
 
-        
           <div className="grid px-4 grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Left Column - Text Content */}
             <div className="space-y-4 sm:space-y-5">
-              {/* Small Heading */}
               <p style={{
                 fontFamily: "'gotham', sans-serif",
                 fontWeight: 100,
-
                 fontSize: '38px',
                 lineHeight: '100%',
                 letterSpacing: '0%',
-              }} className="text-xs sm:text-sm font-semibold uppercase  text-[#B89B4A]">
-            Crafting Legacy
+              }} className="text-xs sm:text-sm font-semibold uppercase text-[#B89B4A]">
+                Crafting Legacy
               </p>
 
-              {/* Main Heading */}
               <h2 style={{
                 fontFamily: "'buttain', sans-serif",
                 fontWeight: 100,
-
                 fontSize: '38px',
                 lineHeight: '150%',
                 letterSpacing: '0%',
@@ -161,29 +214,24 @@ Every product of which is packed with authentic quality fresh ingredients, which
                 Since 1998
               </h2>
 
-              {/* Description Paragraphs */}
               <div style={{
                 fontFamily: "'gotham-book', sans-serif",
                 fontWeight: 100,
-
                 fontSize: '18px',
                 lineHeight: '150%',
                 letterSpacing: '0%',
-              }} className="space-y-6 z-10 font-normal text-xs  leading-[200%] text-[#1A302A] text-justify whitespace-pre-line">
+              }} className="space-y-6 z-10 font-normal text-xs leading-[200%] text-[#1A302A] text-justify whitespace-pre-line">
                 {displayData.description}
               </div>
 
-              {/* Read More Button */}
               <div className="pt-2">
                 <Link
                   to={displayData.buttonLink}
-                  className="relative inline-block bg-[#f6f1e8] border-[2px] border-[#9A7522] rounded-3xl text-[#9A7522] px-6 sm:px-8 py-2.5 sm:py-3  text-sm sm:text-base font-medium shadow-md overflow-hidden group transition-all duration-300 hover:shadow-lg"
+                  className="relative inline-block bg-[#f6f1e8] border-[2px] border-[#9A7522] rounded-3xl text-[#9A7522] px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium shadow-md overflow-hidden group transition-all duration-300 hover:shadow-lg"
                 >
-                  {/* <span className="absolute inset-0 bg-[#316763] scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center rounded"></span> */}
                   <span style={{
                     fontFamily: "'gotham-book', sans-serif",
                     fontWeight: 100,
-
                     fontSize: '14px',
                     lineHeight: '100%',
                     letterSpacing: '0%',
@@ -192,33 +240,95 @@ Every product of which is packed with authentic quality fresh ingredients, which
               </div>
             </div>
 
-            {/* Right Column - Image */}
-            <div className="flex  flex-col  px-10 justify-center lg:justify-end">
-              <div className="relative max-h-[90%]  self-end items-start rounded-2xl  overflow-hidden w-full sm:w-80 lg:w-96">
+            <div className="flex flex-col px-10 justify-center lg:justify-end">
+              <div className="relative max-h-[90%] self-end items-start rounded-2xl overflow-hidden w-full sm:w-80 lg:w-96">
                 <img
                   src={displayData.image}
                   alt={displayData.heading}
-                  className="w-full max-h-[80%]  object-cover rounded-2xl shadow-xl"
+                  className="w-full max-h-[80%] object-cover rounded-2xl shadow-xl"
                   loading="lazy"
                 />
               </div>
-              <div className='self-end  mt-2'>
-                <p style={{
-                  fontFamily: "'gotham2', sans-serif",
-                  fontWeight: 100,
+              <div className='self-end  mt-2 relative'>
+                <div ref={containerRef} style={{
+                  display: "flex",
+                  gap: "2px",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minHeight: "40px"
+                }} className=''>
 
-                  fontSize: '20px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }} className='text-center text-[#9A7522] mb-2 mr-4' >UZMA IRFAN</p>
+                  <div ref={penDivRef} className='absolute h-12 w-12 '>
+                    <img src={Pen} alt="pen" className='h-full w-full block scale-x-[1] scale-y-[-1]     drop-shadow-[0_25px_35px_rgba(0,0,0,0.35)]
+         drop-shadow-[0_8px_10px_rgba(0,0,0,0.15)]
+                    ' />
+                  </div>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+                      <path
+                        stroke="#9A7522"
+                        strokeWidth="1.5" d="M5.96188 14.22C2.32188 14.22 0.00187507 12.12 0.00187507 8.06V-9.53674e-07H2.46188V7.96C2.46188 10.56 3.80188 11.96 6.00188 11.96C8.18188 11.96 9.52188 10.64 9.52188 8.06V-9.53674e-07H11.9819V7.94C11.9819 12.12 9.62188 14.22 5.96188 14.22Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.000781149 14V12.18L8.25922 2.18H0.259219V-9.53674e-07H11.4592V1.82L3.19922 11.82H11.4592V14H-0.000781149Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H2.61922L6.87922 6.62L11.1392 -9.53674e-07H13.7592V14H11.2992V3.96L6.87922 10.56H6.79922L2.41922 4V14H-0.000781178Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.00156248 14.1L6.15844 -2.52724e-05H8.43844L14.5984 14.1H11.9984L10.5784 10.72H3.95844L2.51844 14.1H-0.00156248ZM4.85844 8.53998H9.67844L7.25844 2.93998L4.85844 8.53998Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  &nbsp;
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="3" height="14" viewBox="0 0 3 14" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.00140619 14V-9.53674e-07H2.45859V14H-0.00140619Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H6.23922C7.99922 -9.53674e-07 9.37922 0.52 10.2792 1.4C11.0192 2.16 11.4392 3.2 11.4392 4.42V4.46C11.4392 6.76 10.0592 8.14 8.09922 8.7L11.8792 14H8.97922L5.53922 9.12H2.45922V14H-0.000781178ZM2.45922 6.94H6.05922C7.81922 6.94 8.93922 6.02 8.93922 4.6V4.56C8.93922 3.06 7.85922 2.24 6.03922 2.24H2.45922V6.94Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H10.4192V2.24H2.45922V6.06H9.51922V8.3H2.45922V14H-0.000781178Z" fill="transparent" />
+                    </svg>
+                  </span>
+
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.00156248 14.1L6.15844 -2.52724e-05H8.43844L14.5984 14.1H11.9984L10.5784 10.72H3.95844L2.51844 14.1H-0.00156248ZM4.85844 8.53998H9.67844L7.25844 2.93998L4.85844 8.53998Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <span className='char'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                      <path stroke="#9A7522"
+                        strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H2.27922L9.77922 9.68V-9.53674e-07H12.1992V14H10.1392L2.41922 4.04V14H-0.000781178Z" fill="transparent" />
+                    </svg>
+                  </span>
+                  {/* Continue for all remaining letters like you had */}
+                </div>
                 <p style={{
                   fontFamily: "'gotham-light', sans-serif",
                   fontWeight: 100,
-
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className='mr-8 text-[#000]' >Founder Of Sublime House Of Tea</p>
+                }} className='mr-8 text-[#000]'>Founder Of Sublime House Of Tea</p>
               </div>
             </div>
           </div>
@@ -229,4 +339,3 @@ Every product of which is packed with authentic quality fresh ingredients, which
 };
 
 export default AboutSection;
-

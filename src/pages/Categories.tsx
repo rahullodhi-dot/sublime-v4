@@ -53,7 +53,7 @@ const Categories: React.FC = () => {
 
   // Filter products based on active filter
   const getFilteredProducts = () => {
-    let filtered = [...teaProductsData];
+    let filtered = [...teaProductsData]; // Duplicate data for testing
 
     // Apply category filter
     if (activeFilter !== 'VIEW ALL') {
@@ -75,6 +75,7 @@ const Categories: React.FC = () => {
   };
 
   const filteredProducts = getFilteredProducts();
+  
 
   const structuredData = teaProductsData.map(product =>
     productSchema({

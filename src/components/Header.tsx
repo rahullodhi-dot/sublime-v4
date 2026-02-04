@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
             {/* Hamburger Menu - Toggle Sidebar */}
             <button
               onClick={onSidebarToggle}
-              className="p-1.5 sm:p-2 text-[#F6F1E8] hover:text-[#316763] transition-colors"
+              className="p-1.5 sm:p-2 text-[#F6F1E8]  transition-colors"
               aria-label="Toggle sidebar menu"
             >
               <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

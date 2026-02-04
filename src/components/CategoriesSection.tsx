@@ -175,7 +175,8 @@ const CategoriesSection: React.FC = () => {
                   {repeatedCategories.map((category, index) => (
                     <Link
                       key={`${category.id}-${index}`}
-                      to={`/products?category=${category.slug}`}
+                      // to={`/products?category=${category.slug}`}
+                      to={"/productDetails"}
                       className="group flex-shrink-0 w-[312px] h-[442px] relative overflow-hidden rounded-[20px] transition-all duration-300 hover:scale-[1.02] snap-start shadow-lg hover:shadow-2xl"
                     >
                       {/* Category Image */}

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import productImg1 from '../assets/images/black2.png';
 import productImg2 from '../assets/images/productImg2.png';
 import productImg3 from '../assets/images/productImg3.png';
@@ -32,6 +32,7 @@ const BASE_PRODUCTS: Product[] = [
     id: 2,
     name: 'Black Tea',
     price: 350,
+        quantity: '350g',
     image: productImg2,
     hoverImage: group530,
     badge: 'ONLY BUY GOOD',
@@ -41,6 +42,7 @@ const BASE_PRODUCTS: Product[] = [
     name: 'Saffron Turmeric Tea',
     price: 255,
     image: productImg3,
+        quantity: '150g',
     hoverImage: group531,
     badge: 'ONLY BUY GOOD',
   },
@@ -49,6 +51,7 @@ const BASE_PRODUCTS: Product[] = [
     name: 'Garam Masala Powder',
     price: 357,
     image: productImg,
+        quantity: '200g',
     hoverImage: productImg,
     badge: 'ONLY BUY GOOD',
   },
@@ -57,7 +60,7 @@ const BASE_PRODUCTS: Product[] = [
 // Repeat products for scrolling
 const PRODUCTS = [...BASE_PRODUCTS, ...BASE_PRODUCTS, ...BASE_PRODUCTS];
 
-const TestimonialsSection: React.FC = () => {
+const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GOOD",heading="Our Bestselling Products"}) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -80,9 +83,10 @@ const TestimonialsSection: React.FC = () => {
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
+  const navigate = useNavigate()
 
   return (
-    <section className=" py-12 bg-[#f1e4b0] sm:py-16 lg:py-20 overflow-x-hidden">
+    <section className={`py-12 bg-[${bgClr}] sm:py-16 lg:py-20 overflow-x-hidden`}>
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div className="mb-8 sm:mb-12 mx-auto  text-center">
@@ -94,7 +98,7 @@ const TestimonialsSection: React.FC = () => {
                 lineHeight: '100%',
                 letterSpacing: '0%',
               }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
-            ONLY BUY GOOD
+         {subHeading}
           </p>
           <h2    style={{
               fontFamily: "'gotham', sans-serif",
@@ -104,7 +108,7 @@ const TestimonialsSection: React.FC = () => {
               lineHeight: '100%',
               letterSpacing: '0%',
             }} className="section-heading text-2xl sm:text-3xl md:text-4xl mt-3 lg:text-5xl font-bold text-[#C5A059]">
-            Our Bestselling Products
+          {heading}
           </h2>
         </div>
 
@@ -130,9 +134,10 @@ const TestimonialsSection: React.FC = () => {
               {PRODUCTS.map((product, index) => (
             <div
               key={`${product.id}-${index}`}
-              className="group relative rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 w-[calc(100%-20px)] sm:w-[calc(50%-12px)] lg:w-[calc(25%-22.5px)] snap-start"
+              className="group relative rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 w-[calc(100%-20px)] sm:w-[calc(50%-12px)] lg:w-[calc(25%-1.5px)] snap-start"
               onMouseEnter={() => setHoveredId(product.id)}
               onMouseLeave={() => setHoveredId(null)}
+              onClick={()=>navigate(`/productDetails`)}
             >
               {/* Product Image with Hover Effect */}
               <div className="relative w-[287px] h-[291px] mx-auto mt-[9px] overflow-hidden bg-white rounded-[14px]">
@@ -170,7 +175,7 @@ const TestimonialsSection: React.FC = () => {
               </div>
 
               {/* Product Info */}
-              <div className="p-4">
+              <div className="p-4 ">
                 <div className="flex items-start justify-between -mb-1">
                   <h3 style={{
                   fontFamily: "'gotham2', sans-serif",
@@ -179,7 +184,7 @@ const TestimonialsSection: React.FC = () => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}  className="font-karla font-medium text-[22px] leading-[30px] tracking-[0%] capitalize text-[#000000] line-clamp-2 pr-2 flex-1">
+                }}  className="font-karla  font-medium text-[22px] leading-[30px] tracking-[0%] capitalize text-[#000000] line-clamp-2 pr-2 flex-1">
                     {product.name}
                   </h3>
                   <Link
@@ -192,11 +197,22 @@ const TestimonialsSection: React.FC = () => {
                     </svg>
                   </Link>
                 </div>
-                
-                {/* Price */}
-                <div className="flex items-baseline gap-2">
+                 <div className='-mt-6'>
                   <span style={{
-                  fontFamily: "'gotham2', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
+                  fontWeight: 100,
+
+                  fontSize: '14px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                }}  className=" text-[16px] leading-[30px] tracking-[0%] text-center text-[#9a7523]">
+                   Net Weight  {product.quantity}
+                  </span>
+                 </div>
+                {/* Price */}
+                <div className="flex mt-3 items-baseline gap-2">
+                  <span style={{
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '18px',

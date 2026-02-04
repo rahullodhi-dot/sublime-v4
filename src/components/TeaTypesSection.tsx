@@ -212,7 +212,6 @@
 // export default TeaTypesSection;
 
 
-
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';

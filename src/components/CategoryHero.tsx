@@ -1,29 +1,42 @@
 import React from 'react';
-import CategoriBg from '../assets/images/CategoriBg.png';
+import texture from '../assets/images/AboutFrame.png';
+import tokri from "../assets/images/tokri.png"
+import TeaLeaf from "../assets/images/TealLeaf.png"
+import Breadcrumb from './Breadcrumb';
+
 
 interface CategoryHeroProps {
   title: string;
 }
 
+const breadcrumbItems = [
+    { label: "ProductDetails", path: `ProductDetails/` },
+      { label: "Cart", path: `Cart/` },
+  { label: "wishlist", path: `wishlist/` },
+  { label: "" },
+];
+
 const CategoryHero: React.FC<CategoryHeroProps> = ({ title }) => {
   return (
-    <div 
-      className="relative bg-cover bg-center py-12 sm:py-16 lg:py-20"
-      style={{
-        backgroundImage: `url(${CategoriBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="text-center">
-          <h1 className="section-heading text-[40px] sm:text-[50px] lg:text-[60px]">
-            {title}
-          </h1>
+    <div
+        style={{
+          backgroundImage: `url(${texture})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+        className="relative py-12  h-64"
+      >
+        <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
+        <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" />
+
+        <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
+          <h1 style={{fontFamily:"gotham"}} className="text-3xl font-bold mb-2">My Wishlist</h1>
+          <Breadcrumb items={breadcrumbItems} />
         </div>
       </div>
-    </div>
   );
 };
 
 export default CategoryHero;
+

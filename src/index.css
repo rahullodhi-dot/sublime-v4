@@ -231,6 +231,17 @@
     text-transform: capitalize;
     color: #000000;
   }
+
+  /* Hide scrollbar but allow scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
   
   /* Responsive Section Headings */
   @media (max-width: 1024px) {

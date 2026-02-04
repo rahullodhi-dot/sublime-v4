@@ -1,7 +1,7 @@
-import productImg from '../assets/images/productImg.png';
-import productImg1 from '../assets/images/productImg1.png';
-import productImg2 from '../assets/images/productImg2.png';
-import productImg3 from '../assets/images/productImg3.png';
+import productImg from '../assets/images/pruple.png';
+import productImg1 from '../assets/images/green.png';
+import productImg2 from '../assets/images/brown.png';
+// import productImg3 from '../assets/images/productImg3.png';
 
 export const teaProductsData = [
   {
@@ -67,7 +67,7 @@ export const teaProductsData = [
     description: 'Sublime\'s Energising Elaichi Tea Brings A Harmonious Blend Of Assam Black Tea Infused With Fresh Cardamom, Adding Tea Sensation...',
     fullDescription: 'Premium Assam black tea infused with aromatic cardamom pods. This energizing blend offers a perfect balance of robust tea flavor with the sweet, spicy notes of fresh elaichi.',
     price: 365,
-    image: productImg3,
+    image: productImg1,
     ingredients: 'Assam Black Tea, Green Cardamom Pods',
     benefits: [
       'Natural energy boost',

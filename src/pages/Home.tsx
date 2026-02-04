@@ -668,7 +668,7 @@ const Home: React.FC = () => {
       <PartnersSection />
 
       <BlogSection />
-      <NewsletterBanner />
+      {/* <NewsletterBanner /> */}
     </div>
   );
 };

@@ -11,6 +11,8 @@ import Signup from './pages/Signup';
 import OTP from './pages/OTP';
 import ProtectedRoute from './components/ProtectedRoute';
 import ComingSoon from './pages/ComingSoon';
+import WishlistPage from './components/Wishlist';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -31,16 +33,20 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
+          {/* <Route
             path="product/:id"
             element={
               <ProtectedRoute>
                 <ProductDetails />
               </ProtectedRoute>
             }
-          />
+          /> */}
           <Route path="categories" element={<CategoriesTest />} />
           <Route path="blogs" element={<ComingSoon />} />
+          <Route path="/ProductDetails" element={<ProductDetails />} />
+          <Route path="/Wishlist" element={<WishlistPage />} />
+          <Route path="/Cart" element={<Cart />} />
+
         </Route>
       </Routes>
     </Router>

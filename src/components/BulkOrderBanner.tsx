@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import bulk from "../assets/images/bulk.png"
 
 const BulkOrderBanner: React.FC = () => {
   console.log('BulkOrderBanner rendering...');
@@ -8,15 +9,15 @@ const BulkOrderBanner: React.FC = () => {
     <section className="bg-[#f5f1e8] py-8 sm:py-12 lg:py-16 w-full">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div 
-          className="relative overflow-hidden rounded-2xl sm:rounded-3xl h-[300px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-gradient-to-br from-green-900 to-green-700"
+          className="relative overflow-hidden rounded-2xl sm:rounded-3xl h-[500px] sm:h-[350px] lg:h-[600px] flex items-center justify-center bg-gradient-to-br from-green-900 to-green-700"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1563281746-cc28e07d6f37?auto=format&fit=crop&w=1920&q=80)',
+            backgroundImage: `url(${bulk})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'bottom',
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div>
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div> */}
           
           {/* Content */}
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
