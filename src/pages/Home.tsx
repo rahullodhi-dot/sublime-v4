@@ -23,7 +23,7 @@ import BgImg2 from '../assets/images/bgImg1.png';
 
 import BannerImage from "../assets/images/bannerImage2.png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
-import V3Video from "../assets/video/bannerVideo4.mp4"
+import V3Video from "../assets/video/finalBanner.mp4"
 
 
 
@@ -384,7 +384,7 @@ const Home: React.FC = () => {
               className={`absolute  inset-0 transition-opacity duration-700 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
             >
-              <div className="relative w-full  h-full bg-[#1a1a1a]">
+              <div className="relative w-full  h-full ">
                 <video
                   autoPlay
                   loop

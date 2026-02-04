@@ -8,6 +8,7 @@ import TeaDetailModal from '../components/TeaDetailModal';
 import { productSchema } from '../utils/schemas';
 import { teaProductsData } from '../data/teaProducts';
 import BulkOrderBanner from '../components/BulkOrderBanner';
+import BlogSection from '../components/BlogSection';
 
 const CategoriesTest: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -86,6 +87,7 @@ const CategoriesTest: React.FC = () => {
         />
 
         <BulkOrderBanner/>
+        <BlogSection/>
 
         <TeaDetailModal
           product={selectedProduct}

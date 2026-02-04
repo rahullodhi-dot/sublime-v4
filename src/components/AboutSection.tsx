@@ -11,6 +11,7 @@ import Pen from '../assets/images/Pen.png'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import newBg from "../assets//images/aboutNewFrame.png"
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -182,7 +183,7 @@ useEffect(() => {
         <div
           className="relative rounded-3xl p-10 sm:p-20 lg:p-8"
           style={{
-            backgroundColor: "#f6f1e8",
+            backgroundImage: `url(${newBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
@@ -240,7 +241,7 @@ useEffect(() => {
               </div>
             </div>
 
-            <div className="flex flex-col px-10 justify-center lg:justify-end">
+            <div className="flex flex-col px-10 justify-center  lg:justify-end">
               <div className="relative max-h-[90%] self-end items-start rounded-2xl overflow-hidden w-full sm:w-80 lg:w-96">
                 <img
                   src={displayData.image}
@@ -248,8 +249,8 @@ useEffect(() => {
                   className="w-full max-h-[80%] object-cover rounded-2xl shadow-xl"
                   loading="lazy"
                 />
-              </div>
-              <div className='self-end  mt-2 relative'>
+
+                  <div className='  flex justify-center items-center flex-col mt-2 relative'>
                 <div ref={containerRef} style={{
                   display: "flex",
                   gap: "2px",
@@ -328,8 +329,10 @@ useEffect(() => {
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} className='mr-8 text-[#000]'>Founder Of Sublime House Of Tea</p>
+                }} className=' text-[#000]'>Founder Of Sublime </p>
               </div>
+              </div>
+            
             </div>
           </div>
         </div>

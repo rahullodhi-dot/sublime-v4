@@ -140,10 +140,10 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
               onClick={()=>navigate(`/productDetails`)}
             >
               {/* Product Image with Hover Effect */}
-              <div className="relative w-[287px] h-[291px] mx-auto mt-[9px] overflow-hidden bg-white rounded-[14px]">
+              <div className="relative w-[287px] h-[291px] mx-auto mt-[9px]  bg-white rounded-[14px]">
                 {/* Ribbon Badge - Vertical (matching screenshot) */}
                 {product.badge && (
-                  <div className="absolute -top-2 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#1A302A]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
+                  <div className="absolute   -top-1 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#9a7523] " style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
                     <div style={{
                   fontFamily: "'gotham2', sans-serif",
                   fontWeight: 100,

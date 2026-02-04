@@ -99,10 +99,10 @@ export default function WishlistPage() {
           <ChevronRight className="w-6 h-6" />
         </button>
           {wishlistItems.map((product) => (
-            <div key={product.id} className="rounded-2xl overflow-hidden min-w-[300px] flex-shrink-0 bg-white shadow-md">
+            <div key={product.id} className="rounded-2xl  min-w-[300px] flex-shrink-0 bg-white shadow-md">
               {/* Image + Heart */}
-              <div className="relative w-full h-[291px] overflow-hidden rounded-t-[14px]">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+              <div className="relative w-full h-[291px]   rounded-t-[14px]">
+                <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-[14px]" />
 
                 {product.badge && (
                   <div className="absolute -top-2 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#b89b4a]" 

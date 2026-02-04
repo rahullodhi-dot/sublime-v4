@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
             {/* Form Section */}
             <div className='flex-1 border py-3 px-8 rounded-lg bg-[#F1E4B0] overflow-auto'>
               <h3 className="text-2xl font-semibold text-[#9a7523]">How can I help you?</h3>
-              <p style={{fontFamily:"gotham-light"}} className="text-gray-400 mb-6 text-sm ">
+              <p style={{fontFamily:"gotham-light"}} className="text-[#2A2A2A] mb-6 text-sm ">
                 Looking for assistance? Chat to our friendly team.
               </p>
 

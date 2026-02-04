@@ -13,14 +13,14 @@ const BulkOrderBanner: React.FC = () => {
           style={{
             backgroundImage: `url(${bulk})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'bottom',
+            backgroundPosition: 'center',
           }}
         >
           {/* Overlay */}
           {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div> */}
           
           {/* Content */}
-          <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
+          <div className="relative z-10 text-start  mr-auto px-8 sm:px-12 max-w-3xl">
             <p className="font-karla font-medium text-[10px] sm:text-[12px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/90 mb-3 sm:mb-4">
               GIVE LOVED ONES
             </p>
@@ -36,7 +36,8 @@ const BulkOrderBanner: React.FC = () => {
             
             <Link
               to="/bulk-order"
-              className="inline-block bg-[#316763] hover:bg-[#285853] text-white font-karla font-medium text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-3.5 rounded-md uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg"
+              style={{fontFamily:"gotham-book"}}
+              className="inline-block bg-[#f6f1e8] font-semibold hover:bg-[#f6f1e8] text-[#9a7523] font-karla  text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-3.5 rounded-md uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg"
             >
               ORDER NOW
             </Link>

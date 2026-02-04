@@ -87,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                 onMouseLeave={() => setIsLooseTeaDropdownOpen(false)}
               >
                 <Link
-                  to="/products?category=loose-tea"
+                  to="/categories"
                   className="flex items-center text-[#F6F1E8] hover:text-[#F6F1E8] transition-colors"
                   style={{
                     fontFamily: "'gotham-book', sans-serif",
@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                 fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} to="/products?category=green-tea" className="block font-gotham-book px-4 py-2 text-sm font-gotham text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
+                }}     to="/categories" className="block font-gotham-book px-4 py-2 text-sm font-gotham text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
                       Green Tea
                     </Link>
                     <Link  style={{
@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                 fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} to="/products?category=black-tea" className="block px-4 py-2 text-sm font-gotham-book text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
+                }}     to="/categories" className="block px-4 py-2 text-sm font-gotham-book text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
                       Black Tea
                     </Link>
                     <Link   style={{
@@ -130,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                  fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}to="/products?category=herbal-tea" className="block px-4 py-2 text-sm font-gotham-book text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
+                }}    to="/categories" className="block px-4 py-2 text-sm font-gotham-book text-gray-700 hover:bg-gray-50 hover:text-[#316763]">
                       Herbal Tea
                     </Link>
                     <Link  style={{
@@ -146,7 +146,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               </div>
 
               <Link
-                to="/products?category=honey"
+                 to="/categories"
                 className="text-[#F6F1E8] hover:text-[#F6F1E8] transition-colors"
                 style={{
                   fontFamily: "'gotham-book', sans-serif",
@@ -159,7 +159,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                 Honey
               </Link>
               <Link
-                to="/products?category=spices"
+               to="/categories"
                 className="text-[#F6F1E8] hover:text-[#F6F1E8]transition-colors"
                 style={{
                   fontFamily: "'gotham-book', sans-serif",
@@ -172,7 +172,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                 Spices
               </Link>
               <Link
-                to="/products?category=dry-fruits"
+             to="/categories"
                 className="text-[#F6F1E8] hover:text-[#F6F1E8] transition-colors"
                 style={{
                   fontFamily: "'gotham-book', sans-serif",
