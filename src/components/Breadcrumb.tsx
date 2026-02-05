@@ -30,7 +30,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
           {item.path ? (
             <Link 
             style={{fontFamily:` ${item.isBold ? "gotham" : "gotham-light"}`}}
-              to={item.path}
+              to={`/${item.path}`}
               className={`text-karla font-light text-[14px]   capitalize transition-colors ${item.isBold ? 'font-bold text-[#9a7523] ' : 'text-[#9a7523]'}`}
             >
               {item.label}

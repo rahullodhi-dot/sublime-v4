@@ -10,10 +10,8 @@ interface CategoryHeroProps {
 }
 
 const breadcrumbItems = [
-    { label: "ProductDetails", path: `ProductDetails/` },
-      { label: "Cart", path: `Cart/` },
-  { label: "wishlist", path: `wishlist/` },
-  { label: "" },
+    { label: "categories", path: `categories/` },
+  
 ];
 
 const CategoryHero: React.FC<CategoryHeroProps> = ({ title }) => {
@@ -31,7 +29,7 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({ title }) => {
         <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" />
 
         <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
-          <h1 style={{fontFamily:"gotham"}} className="text-3xl font-bold mb-2">My Wishlist</h1>
+          <h1 style={{fontFamily:"gotham"}} className="text-3xl font-bold mb-2">Categories</h1>
           <Breadcrumb items={breadcrumbItems} />
         </div>
       </div>

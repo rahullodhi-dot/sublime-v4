@@ -68,8 +68,7 @@ const Cart: React.FC = () => {
     );
 
     const breadcrumbItems = [
-        { label: "Loose Tea", path: "/loose-tea" },
-        { label: "Honey", path: "/honey" },
+       
         { label: "Cart" },
     ];
 

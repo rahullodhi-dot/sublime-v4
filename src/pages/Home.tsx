@@ -23,7 +23,7 @@ import BgImg2 from '../assets/images/bgImg1.png';
 
 import BannerImage from "../assets/images/bannerImage2.png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
-import V3Video from "../assets/video/finalBanner.mp4"
+import V3Video from "../assets/video/finalv.mp4"
 
 
 

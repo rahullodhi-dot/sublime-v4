@@ -178,7 +178,7 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
 
   return (
     <div
-      onClick={() => navigate(`/product-details/${slug}`)}
+      onClick={() => navigate(`/productDetails`)}
       className={`tea-card group relative cursor-pointer bg-[#f1e4b0] rounded-xl transition-all duration-300
       ${isList
         ? "grid grid-cols-[220px_1fr_200px] gap-8 items-center p-5"

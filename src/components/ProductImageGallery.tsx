@@ -194,6 +194,7 @@ const ProductImageGallery = ({ images, productName }: ProductImageGalleryProps) 
                 </button> */}
 
                 {/* Share Icon - Top Right (White Circle with Black Share Icon) */}
+                
                 <button
                   onClick={handleShare}
                   className="absolute top-3 sm:top-4 right-3 sm:right-4 w-11 h-11 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 z-10"

@@ -17,8 +17,6 @@ const wishlistItems = [
 ];
 
 const breadcrumbItems = [
-    { label: "Loose-Tea", path: `Loose-Tea  /` },
-      { label: "Green-Tea", path: `Green-Tea/` },
   { label: "wishlist", path: `wishlist/`,isBold:true },
 
 ];
