@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   const handleProfileClick = () => {
     if (isAuth) {
       // TODO: Open profile dropdown or navigate to profile
-      navigate('/profile');
+      navigate('/login');
     } else {
       navigate('/login');
     }

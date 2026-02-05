@@ -120,6 +120,7 @@ const Categories: React.FC = () => {
         />
 
         <div className="bg-white border-b border-gray-200">
+          
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 py-3">
             <Breadcrumb items={[{ label: 'Loose Tea' }, { label: 'View All' }]} />
           </div>
