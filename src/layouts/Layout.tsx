@@ -20,7 +20,7 @@ const Layout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#f6f1e8] flex flex-col overflow-x-hidden">
-  {showTopBar && <TopBar showCloseBtn={()=>setshowTopBar(false)}/>}
+  {/* {showTopBar && <TopBar showCloseBtn={()=>setshowTopBar(false)}/>} */}
       <Header onSidebarToggle={toggleSidebar} />
       <div className="flex flex-1 relative overflow-x-hidden">
         {/* Sidebar - Slides in from left when open */}

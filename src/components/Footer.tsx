@@ -513,7 +513,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative bg-[#316763] text-[#E8EDE6] overflow-hidden">
 
-      <div className="absolute top-0 left-0 h-full">
+      <div className="absolute  top-0 left-0 h-full">
         <img
           src={bottomTree}
           alt=""
@@ -530,7 +530,7 @@ const Footer: React.FC = () => {
 
 
       {/* THREE BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute  inset-0 z-0 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 18], fov: 35 }}>
           <Rig />
           <ambientLight intensity={0.6} />
@@ -544,14 +544,14 @@ const Footer: React.FC = () => {
       {/* SOFT GOLD GLOW */}
       <div className="absolute -top-40 left-0 w-[600px] h-[600px] bg-gold/10 blur-[200px] rounded-full" />
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 pt-20 pb-10">
+      <div className="relative z-10   container mx-auto px-6 lg:px-12 pt-20 pb-10">
 
         {/* MAIN GRID */}
 
 
-        <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1  px-24 py-10  gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-6">
           {/* Company Info - Left Column */}
-          <div className="space-y-4 lg:col-span-1">
+          <div className="space-y-4 lg:col-span-2 ">
             {/* Logo */}
             <Link
               to="/"
@@ -581,7 +581,7 @@ const Footer: React.FC = () => {
 
 
             {/* Horizontal Line */}
-            <div className="">
+            {/* <div className="">
               {/* Social Media Icons */}
               {/* <div className="flex items-center gap-3 sm:gap-3">
                 <a
@@ -619,11 +619,11 @@ const Footer: React.FC = () => {
                   </svg>
                 </a>
               </div> */}
-            </div>
+            {/* </div> */} 
           </div>
 
           {/* Discover Column */}
-          <div className="space-y-3 sm:space-y-4 ml-12">
+          <div className="space-y-3  sm:space-y-4 ml-12">
             <h4 style={{
               fontFamily: "'gotham'",
               fontWeight: 100,
@@ -806,7 +806,7 @@ const Footer: React.FC = () => {
           </div> */}
 
           {/* Address Column */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-4 sm:space-y-4 lg:col-span-2">
             <h4 style={{
               fontFamily: "'gotham', sans-serif",
               fontWeight: 100,
@@ -815,8 +815,8 @@ const Footer: React.FC = () => {
               lineHeight: '100%',
               letterSpacing: '0%',
             }} className="text-lora font-semibold text-base leading-[30px] text-[#f6f1e8] uppercase tracking-wide">CONTACT</h4>
-            <div className="space-y-2.5 sm:space-y-3">
-              <div className="flex items-start gap-2 sm:gap-3">
+            <div className="space-y-2.5 sm:space-y-3 mb-3        ">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
                   <path d="M11.5 7C12.163 7 12.7989 7.26339 13.2678 7.73223C13.7366 8.20107 14 8.83696 14 9.5C14 9.8283 13.9353 10.1534 13.8097 10.4567C13.6841 10.76 13.4999 11.0356 13.2678 11.2678C13.0356 11.4999 12.76 11.6841 12.4567 11.8097C12.1534 11.9353 11.8283 12 11.5 12C10.837 12 10.2011 11.7366 9.73223 11.2678C9.26339 10.7989 9 10.163 9 9.5C9 8.83696 9.26339 8.20107 9.73223 7.73223C10.2011 7.26339 10.837 7 11.5 7ZM11.5 8C11.1022 8 10.7206 8.15804 10.4393 8.43934C10.158 8.72064 10 9.10218 10 9.5C10 9.89782 10.158 10.2794 10.4393 10.5607C10.7206 10.842 11.1022 11 11.5 11C11.8978 11 12.2794 10.842 12.5607 10.5607C12.842 10.2794 13 9.89782 13 9.5C13 9.10218 12.842 8.72064 12.5607 8.43934C12.2794 8.15804 11.8978 8 11.5 8ZM6.8 12.36L11.5 20.09L16.2 12.36C16.71 11.5 17 10.55 17 9.5C17 8.04131 16.4205 6.64236 15.3891 5.61091C14.3576 4.57946 12.9587 4 11.5 4C10.0413 4 8.64236 4.57946 7.61091 5.61091C6.57946 6.64236 6 8.04131 6 9.5C6 10.55 6.29 11.5 6.8 12.36ZM17.05 12.88L11.5 22L5.95 12.88C5.35 11.89 5 10.74 5 9.5C5 7.77609 5.68482 6.12279 6.90381 4.90381C8.12279 3.68482 9.77609 3 11.5 3C13.2239 3 14.8772 3.68482 16.0962 4.90381C17.3152 6.12279 18 7.77609 18 9.5C18 10.74 17.65 11.89 17.05 12.88Z" fill="#F6F1E8" />
                 </svg>
@@ -860,9 +860,10 @@ const Footer: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                <button style={{ fontFamily: "gotham-book" }} className='border justify-center items-center border-[#9a7523] px-3 text-sm py-1 bg-[#f6f1e8] text-[#9a7523] rounded-lg flex gap-1'> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <button style={{ fontFamily: "gotham-book" }} className='border justify-center whitespace-nowrap items-center flex-nowrap w-fit border-[#9a7523] px-3 text-sm py-1 bg-[#f6f1e8] text-[#9a7523] rounded-lg  gap-1'> 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className='inline'>
                   <path d="M4.9245 4.5H19.0785C19.2198 4.5 19.3385 4.548 19.4345 4.644C19.5305 4.74 19.5785 4.859 19.5785 5.001C19.5785 5.143 19.5305 5.26167 19.4345 5.357C19.3385 5.45233 19.2198 5.5 19.0785 5.5H4.9245C4.7825 5.5 4.66384 5.452 4.5685 5.356C4.47317 5.26 4.42517 5.141 4.4245 4.999C4.42384 4.857 4.47184 4.73833 4.5685 4.643C4.66517 4.54767 4.78384 4.5 4.9245 4.5ZM5.3095 19.5C5.08084 19.5 4.88884 19.4227 4.7335 19.268C4.57817 19.1133 4.50084 18.9213 4.5015 18.692V13.5H4.0575C3.80484 13.5 3.5945 13.3983 3.4265 13.195C3.2585 12.9917 3.20784 12.7637 3.2745 12.511L4.2745 8.127C4.31584 7.94433 4.41184 7.79433 4.5625 7.677C4.71317 7.559 4.8845 7.5 5.0765 7.5H18.9265C19.1185 7.5 19.2898 7.55867 19.4405 7.676C19.5912 7.794 19.6872 7.94433 19.7285 8.127L20.7285 12.511C20.7952 12.7643 20.7445 12.9923 20.5765 13.195C20.4085 13.3977 20.1985 13.4993 19.9465 13.5H19.5015V19C19.5015 19.142 19.4535 19.2607 19.3575 19.356C19.2615 19.4513 19.1425 19.4993 19.0005 19.5C18.8585 19.5007 18.7398 19.4527 18.6445 19.356C18.5492 19.2593 18.5015 19.1407 18.5015 19V13.5H13.5015V18.692C13.5015 18.9213 13.4242 19.1133 13.2695 19.268C13.1148 19.4227 12.9228 19.5 12.6935 19.5H5.3095ZM5.5015 18.5H12.5015V13.5H5.5015V18.5ZM4.2815 12.5H19.7215L18.7935 8.5H5.2095L4.2815 12.5Z" fill="#9A7522" />
-                </svg>Locate us</button>
+                </svg><span>Locate us</span></button>
                 <button style={{ fontFamily: "gotham-book" }} className='border justify-center items-center border-[#9a7523] px-3 text-sm py-1 bg-[#f6f1e8] text-[#9a7523] rounded-lg flex gap-1'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M4 11V19C4 19.5304 4.21071 20.0391 4.58579 20.4142C4.96086 20.7893 5.46957 21 6 21H18C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19V11" stroke="#9A7522" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M12 5.5C12 4.57174 11.6313 3.6815 10.9749 3.02513C10.3185 2.36875 9.42826 2 8.5 2C7.83696 2 7.20107 2.26339 6.73223 2.73223C6.26339 3.20107 6 3.83696 6 4.5C6 5.16304 6.26339 5.79893 6.73223 6.26777C7.20107 6.73661 7.83696 7 8.5 7H12M12 5.5V7M12 5.5C12 4.57174 12.3687 3.6815 13.0251 3.02513C13.6815 2.36875 14.5717 2 15.5 2C16.163 2 16.7989 2.26339 17.2678 2.73223C17.7366 3.20107 18 3.83696 18 4.5C18 4.8283 17.9353 5.15339 17.8097 5.45671C17.6841 5.76002 17.4999 6.03562 17.2678 6.26777C17.0356 6.49991 16.76 6.68406 16.4567 6.8097C16.1534 6.93534 15.8283 7 15.5 7H12" stroke="#9A7522" stroke-linejoin="round" />

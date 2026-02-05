@@ -99,10 +99,14 @@ const BlogSection: React.FC = () => {
   const displayPosts = blogPosts.length > 0 ? blogPosts : FALLBACK_POSTS;
 
   return (
-    <section   className=" py-10 bg-[#f1e4b0] sm:py-14 lg:py-20 ">
-      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16">
+    <section   className=" py-10 bg-[#f1e4b0] sm:py-14 lg:py-20 relative ">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-16 relative">
+
+       
         {/* Header */}
         <div className="flex   flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-8 sm:mb-12 px-2">
+
+
           <div className="space-y-2  mx-auto sm:space-y-3 text-center md:text-left">
             {/* LATEST UPDATES with Leaf Icon */}
             <div className="flex m  items-center  gap-2 justify-center md:justify-center">
@@ -151,7 +155,29 @@ const BlogSection: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 relative">
+             
+          <button
+            // onClick={handlePrev}
+            // disabled={isAnimating}
+            className="absolute -left-1 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#9a7522] hover:bg-[#9a7522] text-white flex items-center justify-center shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed -ml-2 sm:-ml-5"
+            aria-label="Previous testimonial"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path d="M5.50781 16.5198L13.7678 24.7798M5.50781 16.5198L13.7678 8.25978M5.50781 16.5198L19.9628 16.5198M27.5345 16.5198L24.0928 16.5198" stroke="#F6F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <button
+            // onClick={handleNext}
+            // disabled={isAnimating}
+            className="absolute -right-1 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#9a7522] hover:bg-[#9a7522] text-white flex items-center justify-center shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed -mr-2 sm:-mr-5"
+            aria-label="Next testimonial"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path d="M27.5322 16.5198L19.2722 8.25977M27.5322 16.5198L19.2722 24.7798M27.5322 16.5198L13.0772 16.5198M5.50552 16.5198L8.94719 16.5198" stroke="#F6F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
             {displayPosts.map((post) => (
               <article
                 key={post.id}
@@ -237,7 +263,9 @@ const BlogSection: React.FC = () => {
           </div>
         )}
 
-         <div className=' block w-full mt-10 mx-auto'>
+
+
+         {/* <div className=' block w-full mt-10 mx-auto'>
   
                <Link
             to="/blogs"
@@ -268,7 +296,7 @@ const BlogSection: React.FC = () => {
 
             VIEW ALL ARTICLES
           </Link>
- </div>
+ </div> */}
       </div>
     </section>
   );
