@@ -61,7 +61,10 @@ const Profile: React.FC = () => {
       case 'support':
         return <HelpSupport />;
       case 'wishlist':
-        return <WishlistPage />;
+        return <div className='max-h-[500px] overflow-y-auto no-scrollbar'>
+          <WishlistPage showTop = {false}/>
+         
+        </div>;
       default:
         return <MyOrders order={order} />;
     }

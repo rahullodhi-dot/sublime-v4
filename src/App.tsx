@@ -13,7 +13,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ComingSoon from './pages/ComingSoon';
 import WishlistPage from './components/Wishlist';
 import Cart from './pages/Cart';
+import "leaflet/dist/leaflet.css";
+
 import Profile from './pages/Profile';
+import StoreLocation from './pages/StoreLocator';
 
 function App() {
   return (
@@ -48,6 +51,7 @@ function App() {
           <Route path="/Wishlist" element={<WishlistPage />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/store" element={<StoreLocation />} />
 
         </Route>
       </Routes>

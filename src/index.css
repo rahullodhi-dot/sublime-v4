@@ -242,6 +242,41 @@
   display: none;             /* Chrome, Safari */
 }
 
+
+/* Remove default leaflet white box */
+.leaflet-tooltip.store-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Your custom card */
+.store-tooltip .tooltip-content {
+  background: #B89B4A;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Button styling */
+.store-tooltip .btn {
+  margin-top: 6px;
+  background: white;
+  color: #9a7523;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+/* Remove the small arrow */
+.leaflet-tooltip-top:before {
+  display: none !important;
+}
+
   
   /* Responsive Section Headings */
   @media (max-width: 1024px) {
