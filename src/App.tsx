@@ -13,6 +13,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ComingSoon from './pages/ComingSoon';
 import WishlistPage from './components/Wishlist';
 import Cart from './pages/Cart';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/ProductDetails" element={<ProductDetails />} />
           <Route path="/Wishlist" element={<WishlistPage />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/profile" element={<Profile />} />
 
         </Route>
       </Routes>

@@ -658,10 +658,7 @@ export default function ProductDetailPage() {
 
   // ---------------- Breadcrumb ----------------
   const breadcrumbItems: BreadcrumbItem[] = [
-    {
-      label: "productDetails  ",
-      path: `productDetails`
-    },
+
     {
       label: product.slug,
     },

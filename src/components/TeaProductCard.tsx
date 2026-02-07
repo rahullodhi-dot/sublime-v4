@@ -337,8 +337,9 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
           </span>
 
           <button
+          style={{fontFamily:"gotham-book"}}
             onClick={(e) => e.stopPropagation()}
-            className="bg-[#9a7523] text-white px-4 py-3 rounded-lg text-sm"
+            className="bg-[#9a7523] text-white px-4 py-3 tracking-wider rounded-lg text-sm"
           >
             Add to Cart
           </button>

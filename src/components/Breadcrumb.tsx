@@ -36,7 +36,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
               {item.label}
             </Link>
           ) : (
-            <span style={{fontFamily:"gotham"}} className="text-karla font-bold text-[14px] text-[#9a7523] hover:text-[#316763]">
+            <span style={{fontFamily:"gotham"}} className="text-karla capitalize font-bold text-[14px] text-[#9a7523] hover:text-[#316763]">
               {item.label}
             </span>
           )}

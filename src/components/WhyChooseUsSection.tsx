@@ -442,445 +442,251 @@
 // };
 
 
-
-import React, { useRef, useState, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AnimatedTitle from './ui/AnimatedTitle.tsx';
-// import whyChooseUsBg from '../assests/whyChooseUs.jpg';
-import GifContainer from './GifContainer.tsx';
-
-import girl from '../assets/images/whiteGirl.gif';
-import door from '../assets/images/whiteBox.gif';
-import lotus from '../assets/images/whiteLotus.gif';
-import leafgif from '../assets/images/whiteLeaf.gif';
-import lotusleaf from "../assets/images/v4leaf.png"
-// import CornerLeaf from "../assest/CornerLeaf.png"
+import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+import GifContainer from "./GifContainer";
+
+import girl from "../assets/images/whiteGirl.gif";
+import door from "../assets/images/whiteBox.gif";
+import lotus from "../assets/images/whiteLotus.gif";
+import leafgif from "../assets/images/whiteLeaf.gif";
+import lotusleaf from "../assets/images/v4leaf.png";
 
 const features = [
-  { icon: leafgif, title: 'Wellness Enhancing', desc: "A lifestyle designed to elevate your body, mind, and spirit." },
-  { icon: lotus, title: 'Direct from Growers', desc: "From the hands that harvest to yours-pure, authentic, and direct." },
-  { icon: door, title: 'Sourced Fresh in Small Batches', desc: "Crafted in small batches to ensure unmatched freshness and quality." },
-  { icon: girl, title: 'Led by Visionaries', desc: "Shaped by leaders who believe in innovation and progress." }
+  { icon: leafgif, title: "Wellness Enhancing", desc: "A lifestyle designed to elevate your body, mind, and spirit." },
+  { icon: lotus, title: "Direct from Growers", desc: "From the hands that harvest to yours-pure, authentic, and direct." },
+  { icon: door, title: "Sourced Fresh in Small Batches", desc: "Crafted in small batches to ensure unmatched freshness and quality." },
+  { icon: girl, title: "Led by Visionaries", desc: "Shaped by leaders who believe in innovation and progress." }
 ];
 
-const WhyChooseUsSection: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const svgContainerRef = useRef<HTMLDivElement>(null);
+const anchors = [0, 0.33, 0.66, 0.999];
+
+const imgAnc = [
+  (anchors[0] + anchors[1]) / 2,
+  // (anchors[1] + anchors[2]) / 2,
+  (anchors[2] + anchors[3]) / 2,
+];
+
+
+
+
+export default function WhyChooseUsSection() {
   const pathRef = useRef<SVGPathElement>(null);
-  const [points, setPoints] = useState<{ x: number; y: number }[]>([]);
-  const [imgPoints,setImgPoits] = useState<{x:Number,y:Number}[]>([]);
+  const [points, setPoints] = useState<any[]>([]);
+  const [imgPoints, setImgPoints] = useState<any[]>([]);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const sectionRef = useRef<HTMLTableSectionElement>(null)
 
-  function getHungPoint(path, progress, index, offset = 80) {
-    const total = path.getTotalLength();
-    const length = total * progress;
-
-    const p = path.getPointAtLength(length);
-    const pPrev = path.getPointAtLength(Math.max(0, length - 1));
-    const pNext = path.getPointAtLength(Math.min(total, length + 1));
-
-    const dx = pNext.x - pPrev.x;
-    const dy = pNext.y - pPrev.y;
-
-    let nx = -dy;
-    let ny = dx;
-
-    const mag = Math.hypot(nx, ny);
-    nx /= mag;
-    ny /= mag;
-
-    const direction = index % 2 === 0 ? -1 : 1;
-
-    return {
-      anchor: p,
-      icon: {
-        x: p.x + nx * offset * direction,
-        y: p.y + ny * offset * direction
-      }
-    };
-  }
-
-  const anchors = [0, 0.33, 0.66, 1];
-  const imgAnc = [0.16,0.44,0.84]
-
-  
-
-  useEffect(() => {
-    if (!pathRef.current || !svgContainerRef.current) return;
+  const calculate = () => {
+    if (!pathRef.current) return;
 
     const path = pathRef.current;
-    const svg = path.ownerSVGElement;
-    const container = svgContainerRef.current;
-    const rect = container.getBoundingClientRect();
+    const total = path.getTotalLength();
 
-    const svgPoint = svg.createSVGPoint();
+    const getHung = (progress: number, index: number) => {
+      const path = pathRef.current!;
+      const total = path.getTotalLength();
+      const len = total * progress;
 
-    const calculated =  (anc)=>{
-      return anc.map((t, i) => {
-      const data = getHungPoint(path, t, i);
+      const p = path.getPointAtLength(len);
+      const p2 = path.getPointAtLength(Math.min(total, len + 1));
 
-      svgPoint.x = data.icon.x;
-      svgPoint.y = data.icon.y;
-      const iconScreen = svgPoint.matrixTransform(svg.getScreenCTM());
+      const dx = p2.x - p.x;
+      const dy = p2.y - p.y;
 
-      svgPoint.x = data.anchor.x;
-      svgPoint.y = data.anchor.y;
-      const anchorScreen = svgPoint.matrixTransform(svg.getScreenCTM());
+      // normal
+      let nx = -dy;
+      let ny = dx;
+
+      const mag = Math.hypot(nx, ny);
+      nx /= mag;
+      ny /= mag;
+
+      //  direction flip only for icon
+      const dir = index % 2 === 0 ? -1 : 1;
+
+      const iconOffset = index % 2 === 0 ? 70 : 80;
 
       return {
-        iconX: iconScreen.x - rect.left,
-        iconY: iconScreen.y - rect.top,
-        anchorX: anchorScreen.x - rect.left,
-        anchorY: anchorScreen.y - rect.top
+        anchorX: p.x,
+        anchorY: p.y,
+        iconX: p.x + nx * iconOffset * dir,
+        iconY: p.y + ny * iconOffset * dir,
+        nx,
+        ny,
+        dir
       };
-      
+
+    };
+
+    setPoints(anchors.map((a, i) => getHung(a, i)));
+    setImgPoints(imgAnc.map((a, i) => getHung(a, i)));
+
+
+  };
+
+
+
+
+  useEffect(() => {
+    calculate();
+
+    const path = pathRef.current!;
+    const totalLenght = path.getTotalLength();
+    gsap.set(path,{strokeDasharray:"6,6",strokeDashoffset:totalLenght});
+    gsap.to(path,{
+      strokeDashoffset:0,
+      ease:"none",
+      scrollTrigger:{
+        trigger:sectionRef.current,
+        start:"top bottom",
+        end:"bottom top",
+        scrub:1,
+        toggleActions:"play reverse play reverse"
+      }
     });
-
-    }
-
-    console.log(calculated(anchors))
-    setPoints(calculated(anchors));
-    setImgPoits(calculated(imgAnc))
-  }, []);
-
-
-
-  const splitText = (text: string, cls = "") =>
-    text.split("").map((c, i) => (
-      <span key={i} className={`  ${cls}`}>
-        {c === " " ? "\u00A0" : c}
-      </span>
-    ));
-
-  /* ================= GSAP (NO STYLE CHANGES) ================= */
-
-  // useLayoutEffect(() => {
-  //   if (!pathRef.current || !containerRef.current) return;
-
-  //   const ctx = gsap.context(() => {
-  //     const path = pathRef.current!;
-  //     const length = path.getTotalLength();
-
-  //     /* KEEP DASH STYLE — JUST OFFSET */
-  //     gsap.set(path, {
-  //       strokeDasharray: "6 6",
-  //       strokeDashoffset: length
-  //     });
-
-  //     /* SVG DASHED PROGRESS */
-  //     gsap.to(path, {
-  //       strokeDashoffset: 0,
-  //       ease: "none",
-  //       scrollTrigger: {
-  //         trigger: containerRef.current,
-  //         start: "top bottom",     //  START ONLY WHEN SECTION ENTERS
-  //         end: "bottom top",       //  FULL SECTION SCROLL
-  //         scrub: 0.7,
-  //         invalidateOnRefresh: true,
-  //         // toggleActions: "play none none reverse"
-  //       }
-  //     });
-
-  //     /* CONNECTORS — APPEAR AFTER SVG REACHES */
-  //     // gsap.fromTo(
-  //     //   "line, circle",
-  //     //   { opacity: 0 },
-  //     //   {
-  //     //     opacity: 1,
-  //     //     stagger: 0.15,
-  //     //     scrollTrigger: {
-  //     //       trigger: containerRef.current,
-  //     //       start: "top 70%",       // AFTER SVG IS VISIBLE
-  //     //       toggleActions: "play none none reverse"
-  //     //     }
-  //     //   }
-  //     // );
-  //   }, containerRef);
-
-  //   return () => ctx.revert();
-  // }, []);
-
-
-  useEffect(() => {
-    if (!pathRef.current || !containerRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const path = pathRef.current!;
-      const length = path.getTotalLength();
-
-      // Smooth dash drawing
-      gsap.set(path, {
-        strokeDasharray: "6 6",
-        strokeDashoffset: length
-      });
-
-      /* SVG DASHED PROGRESS */
-      gsap.to(path, {
-        strokeDashoffset: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",     //  START ONLY WHEN SECTION ENTERS
-          end: "bottom top",       //  FULL SECTION SCROLL
-          scrub: 1,
-          invalidateOnRefresh: true
-        }
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-
-      /* ================= MASTER ================= */
-      const master = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 75%",
-          end: "bottom bottom",
-          scrub: 0.7, //  smoother
-        },
-      });
-
-      /* ================= TITLE ================= */
-      master.fromTo(
-        ".lux-charh",
-        { y: 32, opacity: 0, rotateX: 10 },
-        {
-          y: 0,
-          opacity: 1,
-          rotateX: 0,
-          stagger: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 95%",  // jab section top viewport me 90% position pe ho
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-
-      /* ================= CARD BASE ================= */
-      gsap.set(".lux-card", {
-        opacity: 0,
-        clipPath: "inset(0 0 80% 0)",
-        y: 40,
-        scale: 0.97,
-      });
-
-      /* ================= CARD REVEAL ================= */
-      master.to(
-        ".lux-card",
-        {
-          opacity: 1,
-          clipPath: "inset(0 0 0% 0)",
-          y: 0,
-          scale: 1,
-          ease: "power3.out",
-          stagger: 0.12,
-        },
-        0.25
-      );
-
-      /* ================= INNER CONTENT ================= */
-      master.fromTo(
-        ".lux-inner",
-        {
-          y: 24,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
-          stagger: 0.15,
-        },
-        0.45
-      );
-
-
-
-    }, containerRef);
-
-    return () => ctx.revert();
+    window.addEventListener("resize", calculate);
+    return () => window.removeEventListener("resize", calculate);
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="py-32  min-h-screen  container relative font-Gotham bg-[#F5F4F0] relative overflow-hidden"
-    >
-      {/* <div className="absolute inset-0 pointer-events-none mix-blend-overlay">
-        <img
-          src={whyChooseUsBg}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div> */}
-
-      {/* <img src={CornerLeaf} alt="" className='absolute top-50 right-0 w-32   opacity-50' />
-   <img src={CornerLeaf} alt="" className='absolute top-50 -left-0 w-32 scale-x-[-1] opacity-50' />
-     <img src={CornerLeaf} alt="" className='absolute bottom-4 right-0 w-32 scale-y-[-1] scale-x-[1]    opacity-50' />
-   <img src={CornerLeaf} alt="" className='absolute bottom-4 -left-0 w-32 scale-y-[-1] scale-x-[-1] opacity-50' /> */}
-      {/* <img src={CornerLeaf} alt="" className='absolute bottom-0 -left-[120px] opacity-80 rotate-[35deg]' /> */}
-      {/* <img src={CornerLeaf} alt="" className='absolute bottom-0 right-0 -rotate-[35deg] opacity-80' /> */}
+    <section ref={sectionRef} className="py-24 bg-[#F5F4F0]">
 
 
+      <div className="flex flex-col items-center gap-2 mb-3">
+        <span style={{
+          fontFamily: "'gotham', sans-serif",
+          fontWeight: 100,
 
-      <div className="max-w-[1600px] mx-auto px-6 relative z-10">
-        {/* <h2 style={{fontFamily:"gotham-book"}} className="text-forest block tracking-tight"> */}
-        {/* {splitText("Why Buy From Sublime", "lux-char font-gotham-book ")} */}
+          fontSize: '12px',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+        }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
+          AWESOME PRODUCTS
+        </span>
 
+        <h2 style={{
+          fontFamily: "'gotham2', sans-serif",
+          fontWeight: 100,
 
-        {/* </h2> */}
+          fontSize: '38px',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+        }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]">
+          Why Choose Us
+        </h2>
+      </div>
 
+      <div className="max-w-[1400px] mx-auto px-6 py-20">
 
-        <div className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
-          <div className="flex items-center gap-2 mb-3">
-            <span style={{
-                fontFamily: "'gotham', sans-serif",
-                fontWeight: 100,
-
-                fontSize: '12px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-              }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
-              AWESOME PRODUCTS
-            </span>
-          </div>
-          <h2 style={{
-              fontFamily: "'gotham2', sans-serif",
-              fontWeight: 100,
-
-              fontSize: '38px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-            }} className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]">
-            Why Choose Us
-          </h2>
-        </div>
-
-
-        <div
-          ref={svgContainerRef}
-          className="relative  ml-[20px] container max-w-[1280px] mx-auto  h-[22vw] mt-20   flex  items-center justify-center"
-        >
-          {features.map((f, i) => (
-            <div
-              key={i}
-              className={`feature-item min-w-[250px] ml-32 px-5 -mr-10  text-center  flex flex-col   ${i % 2 === 0 ? 'mb-[140px]' : 'mt-[140px]'
-                }`}
-            >
-              <h2 className="text-xl text-center font-bold text-#1A261C">
-                {/* {f.title} */}
-
-                {/* {splitText(`${f.title}`, "lux-char font-gotham text-lg block ")} */}
-                <p style={{fontFamily:"gotham"}}>{f.title}</p>
-              </h2>
-              <p style={{lineHeight:"130%",fontFamily:"gotham-book"}} className="text-[14px] mt-3  text-[#9a7523] text-center">
-                {/* {splitText( `${f.desc}`, "lux-char  whitespace-nowrap text-sm ")} */}
-                {f.desc}
-              </p>
-            </div>
-          ))}
-
-          {/* <svg xmlns="http://www.w3.org/2000/svg" width="1181" height="389" viewBox="0 0 1181 389" fill="none">
-<path  ref={pathRef} d="M0.0390625 379.264C233.283 388 152.975 2.74693 402.914 2.74693C618.397 2.74693 568.305 388 792.007 388C1048.22 388 944.145 0.999947 1180.04 0.999947" stroke="black" stroke-width="2" stroke-dasharray="6 6"/>
-</svg> */}
-
+        <div className="w-full max-w-[1280px] mx-auto">
           <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 973 389"
-            fill="none"
+            ref={svgRef}
+            viewBox="0 0 1300 500"
+            className="w-full h-full  pl-24"
+            preserveAspectRatio="xMidYMid meet"
+            style={{ overflow: "visible" }}
           >
             <path
               ref={pathRef}
-              d="
-             M0.0390625 379.264C233.283 388 152.975 2.74693 402.914 2.74693C618.397 2.74693 568.305 388 792.007 388C1048.22 388 944.145 0.999947 1180.04 0.999947
-              "
+              d="M0.039 379.264C233.283 388 152.975 2.746 402.914 2.746C618.397 2.746 568.305 388 792.007 388C1048.22 388 944.145 1 1180.04 1"
               stroke="#1A261C"
-              strokeWidth="3"
-              strokeDasharray="8 8 "
+              strokeWidth="2"
+              strokeDasharray="6 6"
               fill="none"
             />
+
+            {imgPoints.map((p, i) => (
+
+
+              <foreignObject
+                key={i}
+                x={p.anchorX - 50}
+                y={p.anchorY - 0}
+                width="60"
+                height="120"
+                style={{ overflow: "visible" }}
+              >
+                <img src={lotusleaf} className="w-full h-full object-contain" />
+              </foreignObject>
+            ))}
+
+
+            {points.map((p, i) => {
+              const isTopContent = i === 0 || i === 2;   // 1st & 3rd → content upar
+              const isBottomContent = i === 1 || i === 3; // 2nd & 4th → content neeche
+
+              return (
+                <g key={i}>
+                  {/* line (rope) */}
+                  <line
+                    x1={p.anchorX}
+                    y1={p.anchorY}
+                    x2={p.iconX}
+                    y2={p.iconY}
+                    stroke="#000"
+                    strokeWidth="1.5"
+                  />
+
+                  {/* dot */}
+                  <circle cx={p.anchorX} cy={p.anchorY} r="3" fill="#000" />
+
+                  {/* Hanging content */}
+                  <foreignObject
+                    x={p.iconX - 80}
+                    y={isTopContent ? p.iconY - (i === 2 ? 220 : 190) : p.iconY - 40}
+                    width="160"
+                    height="260"
+                    style={{ overflow: "visible" }}
+                  >
+
+                    <div className="flex flex-col items-center text-center relative">
+
+                      {/*  Content above GIF (1 & 3) */}
+                      {isTopContent && (
+                        <>
+                          <p style={{ fontFamily: "gotham-book" }} className="text-2xl  w-[190%]  font-semibold mb-2">
+                            {features[i].title}
+                          </p>
+                          <p className="text-lg text-[#9a7523] w-[200%] px-3 mb-3">
+                            {features[i].desc}
+                          </p>
+                        </>
+                      )}
+
+                      {/* GIF circle */}
+                      <div className="h-[110px] w-[110px] rounded-full border border-[#] bg-[#316763] flex items-center justify-center relative">
+                        <GifContainer gifUrl={features[i].icon} />
+
+                     
+                      </div>
+
+                      {/* 🔻 Content below GIF (2 & 4) */}
+                      {isBottomContent && (
+                        <div className="mt-3 mb-3 w-[190%]  text-2xl font-semibold " >
+                          <p style={{ fontFamily: "gotham-book" }} className="mt-3 mb-3 w-full  text-2xl font-semibold">
+                            {features[i].title}
+                          </p>
+                          <p className="text-lg text-[#9a7523] px-3">
+                            {features[i].desc}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </foreignObject>
+                </g>
+              );
+            })}
+
+
           </svg>
-
-          {
-            imgPoints?.length > 0 && imgPoints?.map((i,x)=>(
-              <div className='absolute  h-24 w-24 ' style={{left:i.iconX,top:i.iconY}}> 
-
-              <img src={lotusleaf} className='absolute top-0 right-2 h-24   -translate-y-1/2  translate-x-1/2 w-24' alt="" />
-
-              </div>
-            ))
-          }
-
-          {points.map((p, i) => (
-            <div key={i} className="absolute " style={{ left: 0, top: i % 2 === 0 ? "-18px" : "18px" }}>
-
-              <svg
-                className="absolute pointer-events-none"
-                style={{ left: 0, top: 0 }}
-                width="100%"
-                height="100%"
-              >
-                <line
-                  x1={p.anchorX}
-                  y1={p.anchorY}
-                  x2={p.iconX}
-                  y2={p.iconY}
-                  stroke="#E8B879"
-                  strokeWidth="1.5"
-                />
-                <circle
-                  cx={p.anchorX}
-                  cy={p.anchorY}
-                  r="3"
-                  fill="#e88726"
-                />
-              </svg>
-
-
-
-
-
-
-
-              <div
-                className={`absolute flex flex-col -translate-x-1/2 -translate-y-1/2
-                 h-[130px] w-[130px] rounded-full border border-sublime-gold
-                bg-[#316763] backdrop-blur-md flex items-center justify-center ${i % 2 === 0 ? '' : 'rotate-180'
-                  }`}
-                style={{
-                  left: p.iconX,
-                  top: p.iconY
-                }}
-              >
-
-                <div className="absolute h-2 w-2 rounded-full bg-black -bottom-2">
-                  <div className="absolute h-4 w-0.5 -translate-x-1/2 left-[50%] bg-black -bottom-4"></div>
-                </div>
-
-                <GifContainer
-                  className={`${i % 2 === 0 ? '' : 'rotate-180'} h-[60%]`}
-                  gifUrl={features[i].icon}
-                />
-              </div>
-            </div>
-          ))}
         </div>
+
       </div>
     </section>
   );
-};
-
-export default WhyChooseUsSection;
-
+}
 

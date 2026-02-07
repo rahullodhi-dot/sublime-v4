@@ -23,7 +23,7 @@ import BgImg2 from '../assets/images/bgImg1.png';
 
 import BannerImage from "../assets/images/bannerImage2.png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
-import V3Video from "../assets/video/finalv.mp4"
+import V3Video from "../assets/video/FinalVideo.mp4"
 
 
 
@@ -384,13 +384,13 @@ const Home: React.FC = () => {
               className={`absolute  inset-0 transition-opacity duration-700 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
             >
-              <div className="relative w-full  h-full  ">
+              <div className="relative w-full h-full   ">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover "
+                  className="absolute   w-full h-full object-cover "
                   poster="https://images.unsplash.com/photo-1563281746-cc28e07d6f37?auto=format&fit=crop&w=1920&q=80"
                 >
                   <source src={V3Video} type="video/mp4" />

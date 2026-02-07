@@ -11,15 +11,16 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  // const [user, setUser] = useState<any>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLooseTeaDropdownOpen, setIsLooseTeaDropdownOpen] = useState(false);
   const [cartCount] = useState(2); // TODO: Get from cart context/state
+const user = JSON.parse(localStorage.getItem("authUser") || "null");
 
   useEffect(() => {
     const checkAuth = () => {
       setIsAuth(isAuthenticated());
-      setUser(getCurrentUser());
+      // setUser(getCurrentUser());
     };
     
     checkAuth();
@@ -51,11 +52,11 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   };
 
   const handleProfileClick = () => {
-    if (isAuth) {
+    if (!user) {
       // TODO: Open profile dropdown or navigate to profile
       navigate('/login');
     } else {
-      navigate('/login');
+      navigate('/profile');
     }
   };
 

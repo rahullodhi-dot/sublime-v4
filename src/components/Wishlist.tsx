@@ -63,7 +63,7 @@ export default function WishlistPage() {
         className="relative py-12"
       >
         <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
-        <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" />
+        <img src={TeaLeaf} className="absolute right-0 bottom-0 h-40 object-cover opacity-50" />
 
         <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
           <h1 style={{fontFamily:"gotham2"}} className="text-3xl text-[#9a7523] font-bold mb-2">My Wishlist</h1>

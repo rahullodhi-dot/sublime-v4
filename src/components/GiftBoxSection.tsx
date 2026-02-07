@@ -84,7 +84,7 @@ const GiftBoxSection: React.FC = () => {
   const currentGiftBox = GIFT_BOXES[currentIndex];
 
   return (
-    <section className="w-full min-h-screen relative bg-[#f1e4b0]  py-8 sm:py-12 lg:py-16 overflow-hidden">
+    <section className="w-full min-h-screen relative bg-[#f6f1e8]  py-8 sm:py-12 lg:py-16 overflow-hidden">
         <img src={bottomTree} alt="Bottom Tree" className="  h-full object-contain absolute bottom-0 left-0  z-0 opacity-20 " />
         <img src={bottomTree} alt="Bottom Tree" className="   object-contain absolute bottom-0 right-0  z-0 opacity-20 scale-x-[-1] h-[70%] " />
       <div className="w-full relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
