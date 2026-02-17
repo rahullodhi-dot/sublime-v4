@@ -530,27 +530,41 @@ export default function WhyChooseUsSection() {
 
 
 
+useEffect(() => {
+  calculate();
 
-  useEffect(() => {
-    calculate();
+  const path = pathRef.current!;
+  const totalLength = path.getTotalLength();
 
-    const path = pathRef.current!;
-    const totalLenght = path.getTotalLength();
-    gsap.set(path,{strokeDasharray:"6,6",strokeDashoffset:totalLenght});
-    gsap.to(path,{
-      strokeDashoffset:0,
-      ease:"none",
-      scrollTrigger:{
-        trigger:sectionRef.current,
-        start:"top bottom",
-        end:"bottom top",
-        scrub:1,
-        toggleActions:"play reverse play reverse"
-      }
-    });
-    window.addEventListener("resize", calculate);
-    return () => window.removeEventListener("resize", calculate);
-  }, []);
+  // Set initial dash state
+  gsap.set(path, {
+    strokeDasharray: "6,6",
+    strokeDashoffset: totalLength
+  });
+
+  // Animate the stroke on scroll
+ gsap.to(path, {
+  strokeDashoffset: 0,
+  ease: "none",
+  scrollTrigger: {
+    trigger: sectionRef.current,
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+    toggleActions: "play reverse play reverse"
+  }
+});
+
+  window.addEventListener("resize", calculate);
+  return () => {
+    window.removeEventListener("resize", calculate);
+    // ScrollTrigger.kill(); // optional: clean up triggers on unmount
+  };
+}, []);
+
+
+
+
 
   return (
     <section ref={sectionRef} className="pt-[88px] bg-[#F5F4F0]">
