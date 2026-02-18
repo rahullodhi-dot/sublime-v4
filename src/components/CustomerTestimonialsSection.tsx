@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import round1 from "../assets/images/roound1.png";
 import AboutFrame from "../assets/images/csback.png";
-
+import p1 from "../assets/images/Ellipse 96.png"
+import p2 from "../assets/images/Ellipse 97.png"
+import p3 from "../assets/images/Ellipse 98.png"
 interface Testimonial {
   id: number;
   name: string;
@@ -20,7 +22,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Exceptional Quality',
     review: '"Sublime Signature Black Tea is pure perfection! The aroma is refreshing, the taste is soothing, and it instantly uplifts my mood. Truly a premium blend that delivers wellness."',
-    image: '/src/assets/images/Ellipse 96.png',
+    image: p1,
   },
   {
     id: 2,
@@ -29,7 +31,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Rich Aroma With Taste',
     review: '"Our whole family loves Sublime Moroccan Mint Tea! It\'s refreshing, natural, and packed with antioxidants. It helps digestion, boosts immunity, and keeps us"',
-    image: '/src/assets/images/Ellipse 97.png',
+    image: p2,
   },
   {
     id: 3,
@@ -38,7 +40,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Exceptional Support',
     review: '"Sublime Dry Fruits are pure perfection! The aroma is refreshing, the taste is soothing, and it instantly uplifts my mood. Truly a premium blend that delivers wellness."',
-    image: '/src/assets/images/Ellipse 98.png',
+    image: p3,
   },
   {
     id: 4,
@@ -47,7 +49,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Amazing Experience',
     review: '"The quality of tea is outstanding! Every sip is a journey of flavors. The packaging is beautiful and the delivery was prompt. Highly recommend!"',
-     image: '/src/assets/images/Ellipse 97.png',
+     image: p1,
   },
   {
     id: 5,
@@ -56,7 +58,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Pure Bliss',
     review: '"I have tried many tea brands, but Sublime House stands out. The freshness and aroma are unmatched. It has become my daily ritual."',
-  image: '/src/assets/images/Ellipse 97.png',
+  image: p3
   },
 ];
 
