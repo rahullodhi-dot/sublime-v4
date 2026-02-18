@@ -97,8 +97,8 @@ const Cart: React.FC = () => {
                 }}
                 className="relative py-12"
             >
-                <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
-                <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" />
+                {/* <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
+                <img src={TeaLeaf} className="absolute right-0 bottom-0 h-72 object-cover opacity-50" /> */}
 
                 <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
                     <h1 style={{ fontFamily: "gotham" }} className="text-3xl font-bold mb-2 text-[#9a7523]">Cart</h1>
@@ -112,7 +112,7 @@ const Cart: React.FC = () => {
                     {/* Cart Items */}
 
                     <div className="lg:col-span-2 space-y-6">
-                        <div style={{ fontFamily: "gotham2" }} className="flex hidden lg:block text-[#0F0F0F] justify-between px-10">
+                        <div style={{ fontFamily: "gotham2" }} className="lg:flex hidden  text-[#0F0F0F] justify-between px-10">
                             <div>
                                 Product
                             </div>
@@ -136,7 +136,7 @@ const Cart: React.FC = () => {
         <img
           src={item.image}
           alt={item.name}
-          className="w-24 h-24 object-contain"
+          className="w-24 h-24 object-cover rounded-lg"
         />
 
         <div className="flex-1 ml-6">

@@ -187,8 +187,7 @@ const Contact: React.FC = () => {
   const structuredData = [organizationSchema, localBusinessSchema];
 
   const breadcrumbItems = [
-    { label: "Loose-Tea", path: `Loose-tea/` },
-    { label: "Green-Tea", path: `Green-Tea/` },
+
     { label: "Contact Us", path: `Contact/`, isBold: true },
   ];
 
@@ -264,7 +263,7 @@ const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <p className="text-base sm:text-lg break-all">
-                  mohammed.maqsood@sublime.in
+                contact@sublimehouseoftea.com
                 </p>
               </div>
 

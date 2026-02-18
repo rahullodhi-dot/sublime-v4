@@ -19,6 +19,12 @@ const ProductFAQ = () => {
       answer:
         "Our Assorted Green Tea Sampler includes Classic Green Tea, Jasmine Green Tea, Mint Green Tea, and Lemon Green Tea.",
     },
+      {
+      id: 4,
+      question: "Can I Purchase This Sampler As Part Of A Larger Tea Set?",
+      answer:
+        "Yes, we offer bundle options that include multiple tea varieties at discounted prices.",
+    },
     {
       id: 2,
       question: "How Do I Brew The Green Tea?",
@@ -36,6 +42,13 @@ const ProductFAQ = () => {
       question: "Can I Purchase This Sampler As Part Of A Larger Tea Set?",
       answer:
         "Yes, we offer bundle options that include multiple tea varieties at discounted prices.",
+    },
+
+     {
+      id: 2,
+      question: "How Do I Brew The Green Tea?",
+      answer:
+        "Heat water to 175–185°F (80–85°C). Steep for 2–3 minutes. Avoid over-steeping to prevent bitterness.",
     },
   ];
 

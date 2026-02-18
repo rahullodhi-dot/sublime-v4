@@ -117,7 +117,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className="hidden lg:flex absolute -left-0 top-1/3 mt-4  -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll left"
           >
            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
@@ -129,7 +129,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
           <div className="overflow-hidden -mx-2">
             <div
               ref={scrollContainerRef}
-              className="flex gap-5 lg:gap-6 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
+              className="flex gap-5 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
             >
               {PRODUCTS.map((product, index) => (
             <div
@@ -241,7 +241,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className="hidden lg:flex absolute -right-0 top-1/3  mt-4 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll right"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">

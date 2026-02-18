@@ -702,7 +702,14 @@ export default function ProductDetailPage() {
 
         <div className="flex flex-col mt-12 gap-4 justify-center items-center">
 
-          <p style={{fontFamily:"gotham-light"}} className="text-[#000000] text-lg  tracking-[4%] leading-[100%] uppercase font-bold ">Brew Methods</p>
+          <p style={{
+                fontFamily: "'gotham', sans-serif",
+                fontWeight: 100,
+
+                fontSize: '12px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }} className="text-[#000000] text-lg  tracking-[4%] leading-[100%] uppercase font-bold ">Brew Methods</p>
           <h2 className="text-[#9A7523] text-[50px] font-medium">How To Brew</h2>
           {/* <div className="flex gap-3">
             <button className="bg-[#316763] px-9 rounded-lg py-2 text-white">Hot Brew</button>

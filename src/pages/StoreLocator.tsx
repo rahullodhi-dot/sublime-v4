@@ -72,14 +72,14 @@ const StoreLocation: React.FC = () => {
                 }}
                 className="relative py-10 sm:py-14"
             >
-                <img
+                {/* <img
                     src={tokri}
                     className="absolute left-0 top-0 h-full opacity-30 pointer-events-none hidden sm:block"
                 />
                 <img
                     src={TeaLeaf}
                     className="absolute right-0 bottom-0 h-24 sm:h-40 opacity-30 pointer-events-none"
-                />
+                /> */}
 
                 <div className="relative container mx-auto px-4 text-center">
                     <h1

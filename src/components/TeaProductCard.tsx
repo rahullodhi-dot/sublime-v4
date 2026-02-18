@@ -36,18 +36,16 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
         isList
           ? "flex flex-col sm:flex-row gap-6 sm:gap-8 p-4 sm:p-5"
           : "flex flex-col p-3 px-4"
-      }
-      `}
+      }`}
     >
       {/* IMAGE */}
       <div
-        className={`relative  rounded-lg flex items-center justify-center
+        className={`relative rounded-lg flex items-center justify-center
         ${
           isList
             ? "w-full sm:w-[220px] h-[220px] shrink-0"
             : "aspect-square"
-        }
-      `}
+        }`}
       >
         <button
           className="absolute top-3 right-3 z-10"
@@ -67,16 +65,20 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-contain  rounded-lg"
+          className="w-full h-full object-contain rounded-lg"
         />
       </div>
 
       {/* CONTENT */}
-      <div className="flex flex-col justify-between flex-1 gap-4">
-
-        <div className="flex flex-col gap-3">
+      <div
+        className={`flex   justify-between flex-1 pt-3 ${
+          isList ? "  flex-col" : " flex flex-col-reverse gap-3"
+        }`}
+      >
+        {/* NAME + DESCRIPTION / WEIGHT */}
+        <div className="flex   flex-col  ">
           <h3
-            style={{ fontFamily: "gotham2" }}
+            style={{ fontFamily: "gotham-book" }}
             className={`${
               isList
                 ? "text-xl sm:text-2xl lg:text-[26px] text-[#9a7523]"
@@ -87,14 +89,19 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
           </h3>
 
           {isList ? (
-            <p
-              style={{ fontFamily: "gotham-book" }}
-              className="text-sm sm:text-[15px] text-gray-600 line-clamp-3"
-            >
-              {description}
-            </p>
+            <div>
+              <p className="text-sm  my-2 py-1 px-3 bg-white rounded-2xl w-fit text-[#000] mb-1">
+                New Weight 100g
+              </p>
+              <p
+                style={{ fontFamily: "gotham-book" }}
+                className="text-sm sm:text-[15px] text-gray-600 line-clamp-3"
+              >
+                {description}
+              </p>
+            </div>
           ) : (
-            <p className="text-sm text-[#9A7523]">
+            <p className="text-[16px] text-[#9A7523]">
               New Weight 100g
             </p>
           )}
@@ -102,29 +109,54 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
 
         {/* PRICE + BUTTON */}
         <div
-          className={`flex ${
+          className={`flex  ${
             isList
-              ? "flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-              : "items-center justify-between"
+              ? "flex-col   sm:flex-row sm:items-center sm:justify-between gap-4"
+              : "items-center border-b pb-3 border-black justify-between"
           }`}
         >
-          <span
-            style={{ fontFamily: "gotham-light" }}
-            className={`${
-              isList
-                ? "text-xl sm:text-2xl lg:text-[26px]"
-                : "text-lg sm:text-[20px]"
-            } text-[#9A7522] font-semibold`}
-          >
-            ₹{price}
-          </span>
+          <div className={`flex gap items-start ${isList && "flex flex-col"}`}>
+            {isList && (
+              <span style={{ fontFamily: "gotham-book" }} className="text-lg text-left">Price</span>
+            )}
+            <span
+              style={{ fontFamily: "gotham-light" }}
+              className={`${
+                isList
+                  ? "text-xl sm:text-2xl lg:text-[26px]"
+                  : "text-lg sm:text-[20px]"
+              } text-[#9A7522] font-semibold`}
+            >
+              ₹{price}
+            </span>
+          </div>
 
           <button
             onClick={(e) => e.stopPropagation()}
             style={{ fontFamily: "gotham-book" }}
-            className="bg-[#9a7523] text-white px-4 py-2.5 sm:py-3 tracking-wider rounded-lg text-sm transition hover:bg-[#316763]"
+            className={`bg-[#9a7523] text-white ${
+              isList
+                ? "px-3 py-3 rounded-lg"
+                : "h-fit w-fit rounded-full p-2"
+            } tracking-wider text-sm transition hover:bg-[#316763]`}
           >
-            Add to Cart
+            {isList ? (
+              "Add to Cart"
+            ) : (
+              <svg
+                className="w-3 h-3 sm:w-6 sm:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+              > 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>

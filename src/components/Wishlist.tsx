@@ -60,8 +60,8 @@ export default function WishlistPage({ showTop = true}) {
           }}
           className="relative py-12"
         >
-          <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
-          <img src={TeaLeaf} className="absolute right-0 bottom-0 h-40 object-cover opacity-50" />
+          {/* <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
+          <img src={TeaLeaf} className="absolute right-0 bottom-0 h-40 object-cover opacity-50" /> */}
 
           <div className="relative flex justify-center items-center flex-col container mx-auto px-4 text-center">
             <h1 style={{fontFamily:"gotham2"}} className="text-3xl text-[#9a7523] font-bold mb-2">My Wishlist</h1>
@@ -75,11 +75,11 @@ export default function WishlistPage({ showTop = true}) {
         <div className={`grid grid-cols-1 sm:grid-cols-2  ${!showTop ? "lg:grid-cols-3":"lg:grid-cols-4"} gap-6`}>
 
           {wishlistItems.map((product) => (
-            <div key={product.id} className="rounded-2xl bg-white shadow-md">
+            <div key={product.id} className="rounded-2xl ">
               
               {/* Image + Icons */}
               <div className="relative w-full h-[291px] rounded-t-[14px]">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-[14px]" />
+                <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-[14px]" />
 
                 {/* Remove X button (LEFT) */}
                 {/* <button
@@ -90,7 +90,7 @@ export default function WishlistPage({ showTop = true}) {
                 </button> */}
 
                 {/* Heart Icon (RIGHT) */}
-                <button className="absolute top-3 right-3 bg-white p-2 rounded-full shadow z-10">
+                <button className="absolute top-3 right-3  p-2 rounded-full shadow z-10">
                   <Heart onClick={()=>setisLiked((prev)=>!prev)} fill={isLiked ? "white" :"red"} className="w-5 h-5 text-red-500" />
                 </button>
 
@@ -116,9 +116,10 @@ export default function WishlistPage({ showTop = true}) {
               </div>
 
               {/* Card Content */}
-              <div className="p-4">
-                <h3
-                  className="text-[20px] leading-[30px] capitalize line-clamp-2 mb-2"
+              <div className="p-4 flex justify-between items-start">
+             <div className="">
+                 <h3
+                  className="text-[20px] leading-[30px] capitalize line-clamp-2 "
                   style={{ fontFamily: "'gotham-light'", fontWeight: 100 }}
                 >
                   {product.name}
@@ -126,7 +127,7 @@ export default function WishlistPage({ showTop = true}) {
 
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span style={{fontFamily:"gotham2"}} className="text-[#9a7523] mb-2 text-sm">
+                    <span style={{fontFamily:"gotham2"}} className="text-[#9a7523]  text-sm">
                       Net Weight - {product.weight}
                     </span>
                     <span style={{fontFamily:"gotham-book"}} className="text-[22px] leading-[30px]">
@@ -134,8 +135,13 @@ export default function WishlistPage({ showTop = true}) {
                     </span>
                   </div>
 
+                </div>
+             </div>
+
+           <div className=" flex items-start">
+                
                   {cart[product.id] ? (
-                    <div className="flex items-center mt-4 text-xs py-1 bg-[#9a7523] text-white border rounded-lg overflow-hidden">
+                    <div className="flex items-center  text-xs py-1 bg-[#9a7523] text-white border rounded-lg overflow-hidden">
                       <button className="px-3 py-1" onClick={()=>decreaseQty(product.id)}>
                         <Minus className="w-4 h-4" />
                       </button>
@@ -147,14 +153,13 @@ export default function WishlistPage({ showTop = true}) {
                   ) : (
                     <button
                       style={{fontFamily:"gotham-book"}}
-                      className="flex items-center gap-2 mt-4 bg-[#9a7523] text-white px-4 py-2 rounded-lg text-xs"
+                      className="flex items-center gap-2  h-fit w-fit bg-[#9a7523] text-white p-2 rounded-full text-xs"
                       onClick={()=>addToCart(product.id)}
                     >
-                      <ShoppingCart className="w-4 h-4" />
-                      Add to Cart
+                      <ShoppingCart className="w-6 h-6" />
+                    
                     </button>
-                  )}
-                </div>
+                  )}</div> 
               </div>
             </div>
           ))}

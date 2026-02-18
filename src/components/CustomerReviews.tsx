@@ -105,7 +105,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                             </div>
 
                             {/* Avatar — NO overflow hidden */}
-                            <div className="w-20 h-20 absolute -top-12 left-6 rounded-full border-2 border-white shadow-lg bg-white flex items-center justify-center">
+                            <div className="w-24 h-24 absolute -top-12 left-6 rounded-full border-2 border-white shadow-lg bg-white flex items-center justify-center">
                                 {t.image ? (
                                     <img
                                         src={t.image}
