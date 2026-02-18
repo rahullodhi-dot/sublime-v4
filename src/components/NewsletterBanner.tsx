@@ -199,7 +199,7 @@ const NewsletterBanner: React.FC = () => {
         {/* Left */}
         <div className="max-w-xl space-y-4 mt-10 leading-tight ">
           <h2
-            className="text-white lg:w-[600px] text-center lg:text-[40px] text-[22px] "
+            className="text-white lg:w-[600px]  lg:text-[40px] text-[22px] "
             style={{
               fontFamily: "'gotham2', sans-serif",
               fontWeight: 100,

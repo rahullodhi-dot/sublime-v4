@@ -117,7 +117,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className="hidden lg:flex absolute -left-0 mt-5 top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll left"
           >
             <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
           <div className="overflow-hidden -mx-2">
             <div
               ref={scrollContainerRef}
-              className="flex gap-5 lg:gap-6 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
+              className="flex gap-1 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
             >
               {PRODUCTS.map((product, index) => (
             <div
@@ -197,9 +197,9 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
                     </svg>
                   </Link>
                 </div>
-                 <div className='-mt-6'>
+                 <div className='-mt-7'>
                   <span style={{
-                  fontFamily: "'gotham', sans-serif",
+                  fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
 
                   fontSize: '14px',
@@ -210,7 +210,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
                   </span>
                  </div>
                 {/* Price */}
-                <div className="flex mt-3 items-baseline gap-2">
+                <div className="flex mt-3 items-baseline ">
                   <span style={{
                   fontFamily: "'gotham-book', sans-serif",
                   fontWeight: 100,
@@ -218,7 +218,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
                   fontSize: '18px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }}  className="font-['Open_Sans']  -mt-3 font-normal text-[22px] leading-[30px] tracking-[0%] text-center text-gray-900">
+                }}  className="font-['Open_Sans']  -mt-2 font-normal text-[22px] leading-[30px] tracking-[0%] text-center text-gray-900">
                     ₹{product.price}
                   </span>
                   {/* {product.quantity && (
@@ -241,7 +241,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className="hidden lg:flex absolute -right-0 mt-5  top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll right"
           >
             <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

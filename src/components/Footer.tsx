@@ -659,7 +659,7 @@ const Footer: React.FC = () => {
               lineHeight: '100%',
               letterSpacing: '0%',
             }} className="text-lora  font-semibold text-base leading-[30px] text-[#F6F1E8] uppercase tracking-wide">Explore</h4>
-            <ul className="space-y-2 sm:space-y-6 flex justify-start items-center flex-wrap  gap-4 ">
+            <ul className="space-y-2 sm:space-y-4 flex justify-start items-start  flex-col   ">
               <li style={{
                 fontFamily: "'gotham-light', sans-serif",
                 fontWeight: 100,
@@ -882,7 +882,7 @@ const Footer: React.FC = () => {
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} href="mailto:mohammed.maqsood@sublime.in" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors break-all">
-                  mohammed.maqsood@sublime.in
+              contact@sublimehouseoftea.com
                 </a>
               </div>
 

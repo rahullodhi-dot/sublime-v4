@@ -8,9 +8,9 @@ export default defineConfig({
   // Environment variables configuration
   envPrefix: 'VITE_', // Only expose env variables prefixed with VITE_
   // Remove console logs in production
-  esbuild: {
-    drop: ['console', 'debugger'],
-  },
+  // esbuild: {
+  //   drop: ['console', 'debugger'],
+  // },
   base:"/",
   build: {
     // Enable code splitting for better performance

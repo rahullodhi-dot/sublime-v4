@@ -442,6 +442,8 @@
 // };
 
 
+
+
 import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -454,6 +456,8 @@ import door from "../assets/images/whiteBox.gif";
 import lotus from "../assets/images/whiteLotus.gif";
 import leafgif from "../assets/images/whiteLeaf.gif";
 import lotusleaf from "../assets/images/v4leaf.png";
+// import { CitrusIcon } from "lucide-react";
+// import { clearInstances } from "react-helmet-async/lib/HelmetData";
 
 const features = [
   { icon: leafgif, title: "Wellness Enhancing", desc: "A lifestyle designed to elevate your body, mind, and spirit." },
@@ -479,8 +483,9 @@ export default function WhyChooseUsSection() {
   const [imgPoints, setImgPoints] = useState<any[]>([]);
   const svgRef = useRef<SVGSVGElement>(null);
   const sectionRef = useRef<HTMLTableSectionElement>(null)
-
+ console.log("hskjdghf")
   const calculate = () => {
+    console.log("hebgjshbdhbj")
     if (!pathRef.current) return;
 
     // const path = pathRef.current;
@@ -508,7 +513,7 @@ export default function WhyChooseUsSection() {
       //  direction flip only for icon
       const dir = index % 2 === 0 ? -1 : 1;
 
-      const iconOffset = index % 2 === 0 ? 70 : 80;
+      const iconOffset = index % 2 === 0 ? 115 : 80;
 
       return {
         anchorX: p.x,
@@ -529,38 +534,48 @@ export default function WhyChooseUsSection() {
   };
 
 
+useLayoutEffect(() => {
+  if (!pathRef.current || !sectionRef.current) return;
 
-useEffect(() => {
-  calculate();
+  const ctx = gsap.context(() => {
+    console.log("GSAP Context Running");
 
-  const path = pathRef.current!;
-  const totalLength = path.getTotalLength();
+    calculate(); // pehle points calculate karo
 
-  // Set initial dash state
-  gsap.set(path, {
-    strokeDasharray: "6,6",
-    strokeDashoffset: totalLength
-  });
+    const path = pathRef.current!;
+    const totalLength = path.getTotalLength();
 
-  // Animate the stroke on scroll
- gsap.to(path, {
-  strokeDashoffset: 0,
-  ease: "none",
-  scrollTrigger: {
-    trigger: sectionRef.current,
-    start: "top bottom",
-    end: "bottom top",
-    scrub: 1,
-    toggleActions: "play reverse play reverse"
-  }
-});
+    console.log("Total Length:", totalLength);
+
+    // Initial dashed state
+    gsap.set(path, {
+      strokeDasharray: "6,6",
+      strokeDashoffset: totalLength
+    });
+
+    // Scroll animation
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      }
+    });
+
+  }, sectionRef); // 👈 important: scope to sectionRef
 
   window.addEventListener("resize", calculate);
+
   return () => {
     window.removeEventListener("resize", calculate);
-    // ScrollTrigger.kill(); // optional: clean up triggers on unmount
+    ctx.revert(); // 🔥 cleanup (kills ScrollTrigger automatically)
   };
+
 }, []);
+
 
 
 
@@ -570,7 +585,7 @@ useEffect(() => {
     <section ref={sectionRef} className="pt-[88px] bg-[#F5F4F0]">
 
 
-      <div className="flex flex-col items-center gap-2 mb-3">
+      <div  className="flex flex-col items-center gap-2 mb-3">
         <span style={{
           fontFamily: "'gotham', sans-serif",
           fontWeight: 100,
@@ -594,16 +609,14 @@ useEffect(() => {
         </h2>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 pt-20">
+      <div   className="max-w-[1400px] mx-auto px-6 pt-20">
 
       <div className="w-full  max-w-[1280px] mx-auto">
   <svg
     ref={svgRef}
     viewBox="0 0 1300 500"
     className="
-    
       w-full 
-  
       sm:h-[650px] 
       md:h-[600px] 
       lg:h-full 
@@ -683,7 +696,7 @@ useEffect(() => {
                       )}
 
                       {/* GIF circle */}
-                      <div className="h-[110px] w-[110px] rounded-full border border-[#] bg-[#316763] flex items-center justify-center relative">
+                      <div className="h-[150px] w-[150px] rounded-full border border-[#] bg-[#316763] flex items-center justify-center relative">
                         <GifContainer gifUrl={features[i].icon} />
 
                      

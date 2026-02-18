@@ -47,7 +47,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Amazing Experience',
     review: '"The quality of tea is outstanding! Every sip is a journey of flavors. The packaging is beautiful and the delivery was prompt. Highly recommend!"',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+     image: '/src/assets/images/Ellipse 97.png',
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Pure Bliss',
     review: '"I have tried many tea brands, but Sublime House stands out. The freshness and aroma are unmatched. It has become my daily ritual."',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+  image: '/src/assets/images/Ellipse 97.png',
   },
 ];
 
@@ -89,29 +89,40 @@ const CustomerTestimonialsSection: React.FC = () => {
     setTimeout(() => setIsAnimating(false), 700);
   };
 
-const getVisibleTestimonials = () => {
-  return TESTIMONIALS.map((testimonial, index) => {
-    let position: 'left' | 'center' | 'right' | 'hidden' = 'hidden';
+  const getVisibleTestimonials = () => {
+    return TESTIMONIALS.map((testimonial, index) => {
+      let position: 'left' | 'center' | 'right' | 'hidden' = 'hidden';
 
-    if (index === currentIndex) {
-      position = 'center';
-    } 
-    else if (
-      index ===
-      (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
-    ) {
-      position = 'left';
-    } 
-    else if (
-      index ===
-      (currentIndex + 1) % TESTIMONIALS.length
-    ) {
-      position = 'right';
-    }
+      if (index === currentIndex) {
+        position = 'center';
+      }
+      else if (
+        index ===
+        (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
+      ) {
+        position = 'left';
+      }
+      else if (
+        index ===
+        (currentIndex + 1) % TESTIMONIALS.length
+      ) {
+        position = 'right';
+      }
 
-    return { testimonial, position };
-  });
+      return { testimonial, position };
+    });
+  };
+
+  const renderStars = (rating: number, max: number = 5) => {
+  return Array.from({ length: max }, (_, index) => (
+    <span key={index} className='m-1'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 30" fill="none">
+<path d="M5.95795 29.3248L8.5205 18.4795L0 11.1881L11.2236 10.2288L15.6192 0L20.0148 10.2267L31.2363 11.1861L22.7158 18.4775L25.2805 29.3227L15.6192 23.5664L5.95795 29.3248Z" fill="#9A7523"/>
+</svg>
+    </span>
+  ));
 };
+
 
 
   const visibleTestimonials = getVisibleTestimonials();
@@ -177,35 +188,38 @@ const getVisibleTestimonials = () => {
           </button>
 
           {/* Cards container */}
-<div className="relative flex items-center justify-center overflow-hidden px-4 sm:px-12 lg:px-16 h-[520px]">
+          <div className="relative flex items-center justify-center  px-4 sm:px-12 lg:px-16 h-[520px]">
 
-            {[...visibleTestimonials,...visibleTestimonials].map(({ testimonial, position }, index) => {
+            {[...visibleTestimonials, ...visibleTestimonials].map(({ testimonial, position }, index) => {
               const isCenter = position === 'center';
 
               return (
                 <div
-                 className={`absolute transition-all duration-700 ease-in-out ${
-  position === 'center'
-    ? 'translate-x-0 scale-100 sm:scale-110 z-20 opacity-100'
-    : position === 'left'
-    ? '-translate-x-[110%] scale-90 z-10 opacity-100'
-    : position === 'right'
-    ? 'translate-x-[110%] scale-90 z-10 opacity-100'
-    : 'translate-x-[200%] opacity-0'
-} w-full sm:w-[380px] lg:w-[410px]`}
+                  className={`absolute transition-all duration-700 ease-in-out ${position === 'center'
+                      ? 'translate-x-0 scale-100 sm:scale-110 z-20 opacity-100'
+                      : position === 'left'
+                        ? '-translate-x-[110%] scale-90 z-10 opacity-100'
+                        : position === 'right'
+                          ? 'translate-x-[110%] scale-90 z-10 opacity-100'
+                          : 'translate-x-[200%] opacity-0'
+                    } w-full sm:w-[380px] lg:w-[410px]`}
 
                 >
                   {/* ORIGINAL CARD (UNCHANGED) */}
                   <div className="bg-[#FFF7EA] rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-700 border-2 border-gray-200">
 
                     <div className="flex justify-center mb-6">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg transition-all duration-700">
+                      <div className={` ${position === "center" ? "w-36 h-36 " :"w-32 h-32" } rounded-full overflow-hidden  shadow-lg transition-all duration-700`}>
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-full h-full object-cover"
+                          className={`w-full h-full object-cover `}
                         />
                       </div>
+                    </div>
+
+                    <div className=' items-center flex justify-center '>
+                      {renderStars(4)}
                     </div>
 
                     <h3 className="text-[#1A302A] text-xl sm:text-2xl font-lora font-semibold text-center mb-4 leading-tight transition-all duration-700">
