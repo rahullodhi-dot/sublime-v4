@@ -343,7 +343,7 @@ export interface ChangePasswordRequest {
 
 // OTP Types
 export interface SendOTPRequest {
-  phone: string;
+  email_or_phone: string;
 }
 
 export interface SendOTPResponse {

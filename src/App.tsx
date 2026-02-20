@@ -25,6 +25,9 @@ import TermOfService from './pages/TermOfService';
 import FAQ from './pages/FAQ';
 import News from './pages/News';
 import AboutUs from './pages/AboutUs';
+import { StorySection } from './components/TeaTypesSection';
+import StoryTelling from './components/StoryTelling';
+import Checkout from './components/Checkout.tsx';
 
 function App() {
   return (
@@ -68,8 +71,11 @@ function App() {
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/News" element={<News />} />
           <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/checkout" element={<Checkout/>} />
+       
 
         </Route>
+           <Route path="/story" element={<StoryTelling />} />
       </Routes>
     </Router>
   );

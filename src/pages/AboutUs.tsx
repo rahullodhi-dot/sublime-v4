@@ -80,7 +80,7 @@ const AboutUs = () => {
               loop
               playsInline
             />
-            <div className="absolute inset-0 bg-black/95" />
+            <div className="absolute inset-0 bg-black/90" />
 
             {/* Content */}
             <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">

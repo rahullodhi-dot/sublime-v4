@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import {
     MapContainer,
@@ -50,10 +50,16 @@ const customIcon = new L.Icon({
     iconSize: [35, 35],
 });
 
-function ChangeView({ center }: { center: [number, number] }) {
-    const map = useMap();
-    map.setView(center, 13);
-    return null;
+function ChangeView({ center }) {
+  const map = useMap();
+
+  useEffect(() => {
+    map.flyTo(center, 16, {   //  16 ya 17 try karo
+      duration: 1.5,
+    });
+  }, [center, map]);
+
+  return null;
 }
 
 const breadcrumbItems = [{ label: "Store Locator", path: "/", isBold: true }];

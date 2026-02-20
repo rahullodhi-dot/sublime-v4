@@ -9,11 +9,7 @@ import HelpSupport from '../components/profile/HelpSupport';
 import { div } from 'three/tsl';
 import { Plus } from 'lucide-react';
 import WishlistPage from '../components/Wishlist';
-// import Wishlist from '../components/W9s';
-// import { getCartItem, mapCartItems } from '@/utils/addTocart';
-// import { setCart, type cartItems } from '@/redux/slices/CartSlice';
-// import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-// import { setOrder } from '@/redux/slices/orderSlice';
+
 
 type ProfileSection = 'orders' | 'wishlist' | 'address' | 'support';
 const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
