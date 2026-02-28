@@ -182,12 +182,14 @@ const StoreLocation: React.FC = () => {
                                     </svg></span> <span className="text-lg">{store.phone}</span>
                                 </button>
 
-                                <div className="mt-4 w-full flex items-center justify-center px-3 py-2 rounded-full bg-[#9a7523]">
+                                <div className="mt-4 w-full flex justify-start items-center  px-3 py-2 rounded-full bg-[#9a7523]">
                                   <div className="border p-1 rounded-full bg-white mr-1 ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" className="">
                                             <path d="M14 26.25C7.245 26.25 1.75 20.755 1.75 14C1.75 7.245 7.245 1.75 14 1.75C20.755 1.75 26.25 7.245 26.25 14C26.25 20.755 20.755 26.25 14 26.25ZM14 3.5C8.2075 3.5 3.5 8.2075 3.5 14C3.5 19.7925 8.2075 24.5 14 24.5C19.7925 24.5 24.5 19.7925 24.5 14C24.5 8.2075 19.7925 3.5 14 3.5Z" fill="#9A7523" />
                                             <path d="M17.5 18.375C17.3425 18.375 17.185 18.34 17.045 18.2525L12.67 15.6275C12.541 15.549 12.4346 15.4384 12.361 15.3065C12.2874 15.1747 12.2491 15.026 12.25 14.875V7.875C12.25 7.385 12.635 7 13.125 7C13.615 7 14 7.385 14 7.875V14.385L17.955 16.7475C18.1179 16.8473 18.2438 16.9976 18.3137 17.1754C18.3835 17.3533 18.3934 17.549 18.342 17.733C18.2906 17.9171 18.1805 18.0793 18.0286 18.1951C17.8766 18.311 17.6911 18.3741 17.5 18.375Z" fill="#9A7523" />
-                                        </svg> </div> <button style={{fontFamily:"gotham-book"}} className="flex lg:text-lg tracking-wide text-white"> Timings: 11am to 6pm</button>
+                                        </svg>
+                                  </div>
+                                          <button style={{fontFamily:"gotham-book"}} className="flex lg:text-lg tracking-wide text-white mx-auto"> Timings: 11am to 6pm</button>
                                 </div>
                                 </div>
                             </div>

@@ -25,6 +25,7 @@ import BannerImage from "../assets/images/bannerImage2.png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
 import V3Video from "../assets/video/FinalVideo.mp4"
 import BackToTop from '../components/ui/BackToTop';
+import mobileimage from "../assets/images/mobileHeroImage.png"
 
 
 

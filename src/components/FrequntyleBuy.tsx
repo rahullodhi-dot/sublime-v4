@@ -117,7 +117,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="hidden lg:flex absolute -left-0 top-1/3 mt-4  -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className="hidden lg:flex absolute -left-7 top-1/3 mt-4  -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll left"
           >
            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
@@ -128,107 +128,120 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
           {/* Scrollable Container */}
           <div className="overflow-hidden -mx-2">
             <div
-              ref={scrollContainerRef}
-              className="flex gap-5 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
-            >
-              {PRODUCTS.map((product, index) => (
-            <div
-              key={`${product.id}-${index}`}
-              className="group relative rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 w-[calc(100%-20px)] sm:w-[calc(50%-12px)] lg:w-[calc(25%-1.5px)] snap-start"
-              onMouseEnter={() => setHoveredId(product.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              onClick={()=>navigate(`/productDetails`)}
-            >
-              {/* Product Image with Hover Effect */}
-              <div className="relative w-[287px] h-[291px] mx-auto mt-[9px]  bg-white rounded-[14px]">
-                {/* Ribbon Badge - Vertical (matching screenshot) */}
-              
-                {/* Main Image */}
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
-                    hoveredId === product.id ? 'opacity-0' : 'opacity-100'
-                  }`}
-                />
-                {/* Hover Image */}
-                <img
-                  src={product.hoverImage}
-                  alt={`${product.name} - hover`}
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
-                    hoveredId === product.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              </div>
-
-              {/* Product Info */}
-              <div className="p-4 ">
-                <div className="flex items-start justify-between -mb-1">
-                  <h3 style={{
-                  fontFamily: "'gotham2', sans-serif",
-                  fontWeight: 100,
-
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className="font-karla  font-medium text-[22px] leading-[30px] tracking-[0%] capitalize text-[#000000] line-clamp-2 pr-2 flex-1">
-                    {product.name}
-                  </h3>
-                  <Link
-                    to={`/product/${product.id}`}
-                    className="w-10 h-10 sm:w-11 sm:h-11 bg-[#9A7522] text-white rounded-full flex items-center justify-center hover:bg-[#9A7522] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110 flex-shrink-0"
-                    aria-label="Add to cart"
-                  >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </Link>
-                </div>
-                 <div className='-mt-6'>
-                  <span style={{
-                  fontFamily: "'gotham', sans-serif",
-                  fontWeight: 100,
-
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className=" text-[16px] leading-[30px] tracking-[0%] text-center text-[#9a7523]">
-                   Net Weight  {product.quantity}
-                  </span>
-                 </div>
-                {/* Price */}
-                <div className="flex mt-3 items-baseline gap-2">
-                  <span style={{
-                  fontFamily: "'gotham-book', sans-serif",
-                  fontWeight: 100,
-
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className="font-['Open_Sans']  -mt-3 font-normal text-[22px] leading-[30px] tracking-[0%] text-center text-gray-900">
-                    ₹{product.price}
-                  </span>
-                  {/* {product.quantity && (
-                    <span style={{
-                  fontFamily: "'gotham2', sans-serif",
-                  fontWeight: 100,
-
-                  fontSize: '18px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                }}  className="text-karla text-xs text-gray-500">{product.quantity}</span>
-                  )} */}
-                </div>
-              </div>
-            </div>
-          ))}
-            </div>
+                       ref={scrollContainerRef}
+                       className="flex gap-3 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
+                     >
+                       {PRODUCTS.map((product, index) => (
+                     <div
+                       key={`${product.id}-${index}`}
+                       className="group relative rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 w-[calc(100%-20px)] sm:w-[calc(50%-12px)] lg:w-[calc(25%-1.5px)] snap-start"
+                       onMouseEnter={() => setHoveredId(product.id)}
+                       onMouseLeave={() => setHoveredId(null)}
+                       onClick={()=>navigate(`/productDetails`)}
+                     >
+                       {/* Product Image with Hover Effect */}
+                       <div className="relative  w-full aspect-[1/1] mx-auto mt-[9px]  rounded-[14px]">
+                         {/* Ribbon Badge - Vertical (matching screenshot) */}
+                         {product.badge && (
+                           <div className="absolute   -top-1 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#9a7523] " style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
+                             <div style={{
+                           fontFamily: "'gotham-book', sans-serif",
+                           fontWeight: 100,
+         
+                           fontSize: '12px',
+                           lineHeight: '100%',
+                           letterSpacing: '0%',
+                         }}  className=" font-light text-[8px] leading-[24px] tracking-wider capitalize text-center text-white [writing-mode:vertical-rl] rotate-180 -mt-8">
+                               Bestseller
+                             </div>
+                           </div>
+                         )}
+                         {/* Main Image */}
+                         <img
+                           src={product.image}
+                           alt={product.name}
+                           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+                             hoveredId === product.id ? 'opacity-0' : 'opacity-100'
+                           }`}
+                         />
+                         {/* Hover Image */}
+                         <img
+                           src={product.hoverImage}
+                           alt={`${product.name} - hover`}
+                           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+                             hoveredId === product.id ? 'opacity-100' : 'opacity-0'
+                           }`}
+                         />
+                       </div>
+         
+                       {/* Product Info */}
+                       <div className="p-4 ">
+                         <div className="flex items-start justify-between -mb-1">
+                           <h3 style={{
+                           fontFamily: "'gotham2', sans-serif",
+                           fontWeight: 100,
+         
+                           fontSize: '18px',
+                           lineHeight: '100%',
+                           letterSpacing: '0%',
+                         }}  className="font-karla  font-medium text-[22px] leading-[30px] tracking-[0%] capitalize text-[#000000] line-clamp-2 pr-2 flex-1">
+                             {product.name}
+                           </h3>
+                           <Link
+                             to={`/product/${product.id}`}
+                             className="w-10 h-10 sm:w-11 sm:h-11 bg-[#9A7522] text-white rounded-full flex items-center justify-center hover:bg-[#9A7522] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110 flex-shrink-0"
+                             aria-label="Add to cart"
+                           >
+                             <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                               <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                             </svg>
+                           </Link>
+                         </div>
+                          <div className='-mt-7'>
+                           <span style={{
+                           fontFamily: "'gotham-book', sans-serif",
+                           fontWeight: 100,
+         
+                           fontSize: '14px',
+                           lineHeight: '100%',
+                           letterSpacing: '0%',
+                         }}  className=" text-[16px] leading-[30px] tracking-[0%] text-center text-[#9a7523]">
+                            Net Weight  {product.quantity}
+                           </span>
+                          </div>
+                         {/* Price */}
+                         <div className="flex mt-3 items-baseline ">
+                           <span style={{
+                           fontFamily: "'gotham-book', sans-serif",
+                           fontWeight: 100,
+         
+                           fontSize: '18px',
+                           lineHeight: '100%',
+                           letterSpacing: '0%',
+                         }}  className="font-['Open_Sans']  -mt-2 font-normal text-[22px] leading-[30px] tracking-[0%] text-center text-gray-900">
+                             ₹{product.price}
+                           </span>
+                           {/* {product.quantity && (
+                             <span style={{
+                           fontFamily: "'gotham2', sans-serif",
+                           fontWeight: 100,
+         
+                           fontSize: '18px',
+                           lineHeight: '100%',
+                           letterSpacing: '0%',
+                         }}  className="text-karla text-xs text-gray-500">{product.quantity}</span>
+                           )} */}
+                         </div>
+                       </div>
+                     </div>
+                   ))}
+                     </div>
           </div>
 
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="hidden lg:flex absolute -right-0 top-1/3  mt-4 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className="hidden lg:flex absolute -right-7 top-1/3  mt-4 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll right"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">

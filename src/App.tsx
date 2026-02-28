@@ -48,14 +48,7 @@ function App() {
               </ProtectedRoute>
             }
           />               
- {/* <Route
-            path="    /:id"
-              element={
-              <ProtectedRoute>
-                <ProductDetails />
-              </ProtectedRoute>
-            }
-          /> */}
+
           <Route path="categories" element={<CategoriesTest />} />
           <Route path="blogs" element={<ComingSoon />} />
           <Route path="/ProductDetails" element={<ProductDetails />} />

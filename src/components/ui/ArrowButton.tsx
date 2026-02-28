@@ -4,6 +4,7 @@ import { useRef } from "react";
 interface ArrowButtonProps {
   direction?: "left" | "right";
   onClick: () => void;
+  
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({

@@ -132,7 +132,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
 
                 fontSize: '12px',
                 lineHeight: '100%',
-                letterSpacing: '0%',
+                // letterSpacing: '0%',
               }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
          {subHeading}
           </p>
