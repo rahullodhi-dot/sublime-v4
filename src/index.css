@@ -308,6 +308,132 @@
       line-height: clamp(24px, 3.5vw, 26px);
     }
   }
+
+  .nav-arrow-btn {
+  position: relative;
+  overflow: hidden;
+  background: #9A7522;
+  transition: background 0.3s ease;
+}
+
+.nav-arrow-btn svg {
+  transition: transform 0.35s cubic-bezier(.65,.05,.36,1),
+              opacity 0.25s ease;
+}
+
+/* Gold Pulse Layer */
+.nav-arrow-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.nav-arrow-btn.clicked::after {
+  opacity: 1;
+}
+
+  .shine-effect {
+  position: relative;
+  overflow: hidden;
+  /* border: 2px solid #9A7522; */
+  color: #9A7522;
+  background: #eab960;
+}
+
+.shine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(49, 103, 99,0.50),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.lift-reveal {
+  position: relative;
+  border: 2px solid #9A7522;
+  color: #9A7522;
+  background: #f6f1e8;
+  transition: all 0.3s ease;
+}
+
+.lift-reveal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #9A7522;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.lift-reveal:hover::before {
+  transform: scaleY(1);
+}
+
+.lift-reveal:hover {
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.lift-reveal span {
+  position: relative;
+  z-index: 2;
+}
+
+.shine-effect:hover::before {
+  animation: shine 0.9s ease forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+  .luxury-sweep {
+  position: relative;
+  overflow: hidden;
+  color: #9A7522;
+  border: 2px solid #9A7522;
+  background: #f6f1e8;
+  transition: color 0.4s ease;
+}
+
+.luxury-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #9A7522, #d6b56b, #9A7522);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(.77,0,.18,1);
+  z-index: 0;
+}
+
+.luxury-sweep:hover::before {
+  transform: translateX(0);
+}
+
+.luxury-sweep:hover {
+  color: white;
+}
+
+.luxury-sweep span {
+  position: relative;
+  z-index: 2;
+}
   
   /* Ribbon Badge */
   .ribbon-badge {

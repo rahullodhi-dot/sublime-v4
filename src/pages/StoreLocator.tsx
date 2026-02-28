@@ -34,6 +34,15 @@ const stores = [
         lng: 77.5901,
         phone: "+91 84311 88100",
     },
+      {
+        id: 2,
+        name: "The Collection UB City",
+        address:
+            "2nd Floor, Vittal Mallya Rd, Bengaluru, Karnataka 560001",
+        lat: 12.9768,
+        lng: 77.5901,
+        phone: "+91 84311 88100",
+    },
     {
         id: 3,
         name: "The Courtyard by Sublime",
@@ -54,7 +63,7 @@ function ChangeView({ center }) {
   const map = useMap();
 
   useEffect(() => {
-    map.flyTo(center, 16, {   //  16 ya 17 try karo
+    map.flyTo(center, 16, {   
       duration: 1.5,
     });
   }, [center, map]);
@@ -78,14 +87,7 @@ const StoreLocation: React.FC = () => {
                 }}
                 className="relative py-10 sm:py-14"
             >
-                {/* <img
-                    src={tokri}
-                    className="absolute left-0 top-0 h-full opacity-30 pointer-events-none hidden sm:block"
-                />
-                <img
-                    src={TeaLeaf}
-                    className="absolute right-0 bottom-0 h-24 sm:h-40 opacity-30 pointer-events-none"
-                /> */}
+               
 
                 <div className="relative container mx-auto px-4 text-center">
                     <h1
@@ -144,7 +146,7 @@ const StoreLocation: React.FC = () => {
 
             {/* ===== Store Cards Section ===== */}
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 mt-12 pb-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8">
                     {stores.map((store) => (
                         <div
                             key={store.id}
@@ -169,7 +171,7 @@ const StoreLocation: React.FC = () => {
 
                                 <p
                                     style={{ fontFamily: "gotham-book" }}
-                                    className="text-sm text-black mt-3 leading-relaxed"
+                                    className="text-sm text-black mt-3 leading-relaxed line-clamp-2"
                                 >
                                     {store.address}
                                 </p>

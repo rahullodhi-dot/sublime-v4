@@ -483,7 +483,7 @@ export default function WhyChooseUsSection() {
   const [imgPoints, setImgPoints] = useState<any[]>([]);
   const svgRef = useRef<SVGSVGElement>(null);
   const sectionRef = useRef<HTMLTableSectionElement>(null)
- console.log("hskjdghf")
+  console.log("hskjdghf")
   const calculate = () => {
     console.log("hebgjshbdhbj")
     if (!pathRef.current) return;
@@ -534,47 +534,47 @@ export default function WhyChooseUsSection() {
   };
 
 
-useLayoutEffect(() => {
-  if (!pathRef.current || !sectionRef.current) return;
+  useLayoutEffect(() => {
+    if (!pathRef.current || !sectionRef.current) return;
 
-  const ctx = gsap.context(() => {
-    console.log("GSAP Context Running");
+    const ctx = gsap.context(() => {
+      console.log("GSAP Context Running");
 
-    calculate(); // pehle points calculate karo
+      calculate(); // pehle points calculate karo
 
-    const path = pathRef.current!;
-    const totalLength = path.getTotalLength();
+      const path = pathRef.current!;
+      const totalLength = path.getTotalLength();
 
-    console.log("Total Length:", totalLength);
+      console.log("Total Length:", totalLength);
 
-    // Initial dashed state
-    gsap.set(path, {
-      strokeDasharray: "6,6",
-      strokeDashoffset: totalLength
-    });
+      // Initial dashed state
+      gsap.set(path, {
+        strokeDasharray: "6,6",
+        strokeDashoffset: totalLength
+      });
 
-    // Scroll animation
-    gsap.to(path, {
-      strokeDashoffset: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      }
-    });
+      // Scroll animation
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      });
 
-  }, sectionRef); // 👈 important: scope to sectionRef
+    }, sectionRef); // 👈 important: scope to sectionRef
 
-  window.addEventListener("resize", calculate);
+    window.addEventListener("resize", calculate);
 
-  return () => {
-    window.removeEventListener("resize", calculate);
-    ctx.revert(); // 🔥 cleanup (kills ScrollTrigger automatically)
-  };
+    return () => {
+      window.removeEventListener("resize", calculate);
+      ctx.revert(); // 🔥 cleanup (kills ScrollTrigger automatically)
+    };
 
-}, []);
+  }, []);
 
 
 
@@ -585,14 +585,14 @@ useLayoutEffect(() => {
     <section ref={sectionRef} className="pt-[88px] bg-[#F5F4F0]">
 
 
-      <div  className="flex flex-col items-center gap-2 mb-3">
+      <div className="flex flex-col items-center gap-2 ">
         <span style={{
           fontFamily: "'gotham', sans-serif",
           fontWeight: 100,
 
           fontSize: '12px',
           lineHeight: '100%',
-          letterSpacing: '0%',
+          // letterSpacing: '0%',
         }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
           AWESOME PRODUCTS
         </span>
@@ -609,13 +609,13 @@ useLayoutEffect(() => {
         </h2>
       </div>
 
-      <div   className="max-w-[1400px] mx-auto px-6 pt-20">
+      <div className="max-w-[1400px] mx-auto px-6 pt-12 md:pt-20">
 
-      <div className="w-full  max-w-[1280px] mx-auto">
-  <svg
-    ref={svgRef}
-    viewBox="0 0 1300 500"
-    className="
+        <div className="w-full hidden md:block  max-w-[1280px] mx-auto">
+          <svg
+            ref={svgRef}
+            viewBox="0 0 1300 500"
+            className="
       w-full 
       sm:h-[650px] 
       md:h-[600px] 
@@ -624,9 +624,9 @@ useLayoutEffect(() => {
       sm:pl-10 
       lg:pl-24
     "
-    preserveAspectRatio="xMidYMid meet"
-    style={{ overflow: "visible" }}
-  >
+            preserveAspectRatio="xMidYMid meet"
+            style={{ overflow: "visible" }}
+          >
 
             <path
               ref={pathRef}
@@ -699,10 +699,10 @@ useLayoutEffect(() => {
                       <div className="h-[150px] w-[150px] rounded-full border border-[#] bg-[#316763] flex items-center justify-center relative">
                         <GifContainer gifUrl={features[i].icon} />
 
-                     
+
                       </div>
 
-                      {/* 🔻 Content below GIF (2 & 4) */}
+                      {/*  Content below GIF (2 & 4) */}
                       {isBottomContent && (
                         <div className="mt-3 mb-3 w-[190%]  text-2xl font-semibold " >
                           <p style={{ fontFamily: "gotham-book" }} className="mt-3 mb-3 w-full  text-2xl font-semibold">
@@ -721,6 +721,34 @@ useLayoutEffect(() => {
 
 
           </svg>
+        </div>
+
+        <div className="w-full max-w-[1280px] mx-auto ">
+          {
+            features?.map((feature,i)=>(
+              <div key={`${feature} + i + ${i}`} className="flex flex-col items-center justify-center md:hidden gap-2 ">
+
+                <div className="flex justify-center items-center flex-col gap-6 pb-12">
+                 <div className="h-[150px] w-[150px] rounded-full border border-[#] bg-[#316763] flex items-center justify-center relative">
+                        <GifContainer gifUrl={features[i].icon} />
+
+
+                      </div>
+                      <div className="text-center">
+                        <p style={{ fontFamily: "gotham-book" }} className="text-2xl   font-semibold mb-2">
+                            {features[i].title}
+                          </p>
+                          <p className="text-lg text-[#9a7523]  px-3 mb-3">
+                            {features[i].desc}
+                          </p>
+                      </div>
+
+                </div>
+
+                 </div>
+            ))
+          }
+
         </div>
 
       </div>

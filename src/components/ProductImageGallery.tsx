@@ -77,7 +77,7 @@ const ProductImageGallery = ({ images, productName }: ProductImageGalleryProps) 
             </div>
 
             {/* Mobile Thumbnails (Below Main Image) */}
-            <div className=" flex gap-3 overflow-x-auto mt-4 px-2 pb-2">
+            <div className=" flex gap-3 overflow-x-auto no-scrollbar mt-4 px-2 pb-2">
               {displayImages.map((image, index) => (
                 <button
                   key={index}

@@ -66,7 +66,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                   <ul className="ml-4 mt-1 space-y-1 border-l-2 border-[#316763]/30 pl-4">
                     <li>
                       <Link
-                        to="/products?category=green-tea"
+                        to="/categories"
                         onClick={onClose}
                         className="block text-[#285853] hover:text-[#316763] py-2 px-3 text-sm transition-colors"
                       >
@@ -75,7 +75,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     </li>
                     <li>
                       <Link
-                        to="/products?category=black-tea"
+                        to="/categories"
                         onClick={onClose}
                         className="block text-[#285853] hover:text-[#316763] py-2 px-3 text-sm transition-colors"
                       >
@@ -84,7 +84,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     </li>
                     <li>
                       <Link
-                        to="/products?category=herbal-tea"
+                   to="/categories"
                         onClick={onClose}
                         className="block text-[#285853] hover:text-[#316763] py-2 px-3 text-sm transition-colors"
                       >
@@ -93,7 +93,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     </li>
                     <li>
                       <Link
-                        to="/products?category=white-tea"
+                    to="/categories"
                         onClick={onClose}
                         className="block text-[#285853] hover:text-[#316763] py-2 px-3 text-sm transition-colors"
                       >
@@ -184,7 +184,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               {/* About Sublime */}
               <li>
                 <Link
-                  to="/about"
+                  to="/aboutus"
                   onClick={onClose}
                   className="block text-[#316763] hover:text-[#285853] py-3 px-3 text-sm font-medium transition-colors"
                 >

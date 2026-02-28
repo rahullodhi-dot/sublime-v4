@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Sidebar from '../components/Sidebar';
 import NewsletterBanner from '../components/NewsletterBanner';
 import TopBar from '../components/TopBar';
+import BackToTop from '../components/ui/BackToTop';
 
 const Layout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -29,10 +30,13 @@ const Layout: React.FC = () => {
         {/* Main Content - Adjusts when sidebar is open */}
         <main className={`flex-grow transition-all duration-300 overflow-x-hidden `}>
           <Outlet />
+          
         </main>
+        
       </div>
         <NewsletterBanner/>
       <Footer />
+      <BackToTop />
     </div>
   );
 };

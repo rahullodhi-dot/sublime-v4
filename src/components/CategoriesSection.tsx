@@ -106,9 +106,9 @@ const CategoriesSection: React.FC = () => {
 
   return (
     <section
-      className=" py-12 sm:py-16  bg-[#F6F1E8] lg:py-20 min-h-screen"
+      className=" py-12 sm:py-16  bg-[#F6F1E8] lg:py-20 lg:min-h-screen"
       style={{
-        fontFamily: "'gotham', sans-serif",
+        fontFamily: "'gotham-book', sans-serif",
         fontWeight: 100,
       }}
     >
@@ -128,7 +128,7 @@ const CategoriesSection: React.FC = () => {
 
                 fontSize: '12px',
                 lineHeight: '100%',
-                letterSpacing: '0%',
+            
               }} className="text-[10px] text-center w-fit font-semibold  mx-auto sm:text-xs  tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
                 EXPLORE NEW RANGE
               </p>

@@ -91,7 +91,7 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
           {isList ? (
             <div>
               <p className="text-sm  my-2 py-1 px-3 bg-white rounded-2xl w-fit text-[#000] mb-1">
-                New Weight 100g
+                Net Weight 100g
               </p>
               <p
                 style={{ fontFamily: "gotham-book" }}
@@ -102,7 +102,7 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
             </div>
           ) : (
             <p className="text-[16px] text-[#9A7523]">
-              New Weight 100g
+              Net Weight 100g
             </p>
           )}
         </div>

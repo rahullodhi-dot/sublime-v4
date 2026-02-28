@@ -1,9 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import storyVideo from "../assets/video/storyVideo.mp4";
-import logo from "../assets/images/white-logo.png";
-import music from "../assets/video/music.mp3"
+// import storyVideo from "../assets/video/storyVideo.mp4";
+import logo from "../assets/images/goldLogo.png"
+import newStory from "../assets/images/newStory.png"
+import insta2 from "../assets/images/insta (2).png"
+import youtube from "../assets/images/youtube.png"
+import linkedin from "../assets/images/linkedin.png"
+import fb from "../assets/images/fb.png"
+// import music from "../assets/video/music.mp3"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BackToTop from "./ui/BackToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +41,8 @@ const StoryTelling = () => {
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
   const subHeadingRef = useRef(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-const [isMuted, setIsMuted] = useState(true);
+  // const videoRef = useRef<HTMLVideoElement>(null);
+  // const [isMuted, setIsMuted] = useState(true);
 
 
   useEffect(() => {
@@ -101,124 +107,111 @@ const [isMuted, setIsMuted] = useState(true);
 
   }, []);
 
-const toggleSound = async () => {
-  const video = videoRef.current;
-  if (!video) return;
+  // const toggleSound = async () => {
+  //   const video = videoRef.current;
+  //   if (!video) return;
 
-  try {
-    if (video.muted) {
-      video.muted = false;
-      video.volume = 1;
-      
-      // important trick
-      video.currentTime = video.currentTime;
-      await video.play();
+  //   try {
+  //     if (video.muted) {
+  //       video.muted = false;
+  //       video.volume = 1;
 
-      setIsMuted(false);
-    } else {
-      video.muted = true;
-      setIsMuted(true);
-    }
-  } catch (err) {
-    console.log("Playback error:", err);
-  }
-};
+  //       // important trick
+  //       video.currentTime = video.currentTime;
+  //       await video.play();
+
+  //       setIsMuted(false);
+  //     } else {
+  //       video.muted = true;
+  //       setIsMuted(true);
+  //     }
+  //   } catch (err) {
+  //     console.log("Playback error:", err);
+  //   }
+  // };
 
 
 
 
   return (
-    <section className="relative w-full min-h-screen text-white">
+    <section className="w-full min-h-screen relative text-white overflow-hidden">
+      <BackToTop />
 
-      {/* Background Video */}
-     <video
+      {/* Image First */}
+      <img
+        src={newStory}
+        alt="story"
+        className=" h-[100%] w-full object-contain  block"
+      />
 
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="absolute top-0 left-0 w-full h-full object-cover"
->
-  <source src={storyVideo} type="video/mp4" />
+      {/* Content Section */}
+      <div className="absolute inset-0   ">
+        <div className="container flex flex-col  border h-full max-w-[1400px] mx-auto px-6">
 
-</video>
-<audio   className="hidden" ref={videoRef} src={music} autoPlay loop muted={false} controls playsInline></audio>
-
-
-      {/* <div className="absolute inset-0 bg-[#151d2151]"></div> */}
-
-      <div className="relative container mx-auto px-6 pb-20  z-10">
-
-        {/* Top Section */}  <div onClick={toggleSound} className="border h-fit  absolute top-12 left-10 w-fit p-2 rounded-full">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M8.625 17.65C8.625 19.224 7.365 20.5 5.813 20.5C4.259 20.5 3 19.224 3 17.65C3 16.077 4.26 14.801 5.813 14.801C7.366 14.801 8.625 16.076 8.625 17.65ZM8.625 17.65V5.462C8.625 4.942 9.019 4.508 9.534 4.461L19.909 3.505C20.0479 3.49232 20.1878 3.5088 20.3199 3.55341C20.452 3.59801 20.5733 3.66975 20.6761 3.76401C20.7788 3.85827 20.8607 3.97298 20.9165 4.10076C20.9723 4.22854 21.0007 4.36658 21 4.506V16.51C21 18.083 19.74 19.36 18.188 19.36C16.634 19.36 15.375 18.083 15.375 16.51C15.375 14.937 16.635 13.66 18.188 13.66C19.741 13.66 21 14.938 21 16.512" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div className="text-center mb-40">
-          <img
-            ref={logoRef}
-            src={logo}
-            alt="Logo"
-            className="mx-auto mb-6 w-64"
-          />
-
-
-          <div >
-
-
-            <h2
-              ref={headingRef}
-              style={{ fontFamily: "gotham-book" }}
-              className="text-4xl md:text-3xl font-bold mb-4"
-            >
-              A JOURNEY OF FLAVOURS
-            </h2>
-
-            <p
-              ref={subHeadingRef}
-              style={{ fontFamily: "gotham-light" }}
-              className="max-w-xl mx-auto text-[16px] text-gray-200"
-            >
-              Embark on a sensory voyage through ancient tea gardens, exotic spice routes, golden apiaries, and sun-kissed orchards. Every sip and bite tells a story of heritage and craft.
-            </p>
-          </div>
-        </div>
-
-        {/* Story Cards */}
-        <div className="space-y-16">
-          {storyData.map((item, index) => (
-            <div
-              key={index}
-              className={`flex ${index % 2 === 0 ? "justify-end" : "justify-start"
-                }`}
-            >
-              <div
-                ref={(el) => (cardsRef.current[index] = el)}
-                className="backdrop-blur flex-col flex justify-center items-center px-5 bg-black/10 py-4 rounded-2xl max-w-xl"
-              >
-                <h4 className="text-sm uppercase tracking-widest text-gray-300 mb-2">
-                  {item.sub}
-                </h4>
-
-                <h3
-                  style={{ fontFamily: "gotham-book" }}
-                  className="text-2xl uppercase md:text-2xl font-semibold mb-4"
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  style={{ fontFamily: "gotham-light" }}
-                  className="text-gray-200 text-lg text-center leading-relaxed"
-                >
-                  {item.text}
-                </p>
-              </div>
+          {/* Top Content */}
+          <div className="text-center px-6   max-w-3xl flex flex-col justify-center items-center  ml-auto">
+            <img src={logo} alt="" className="max-w-[280px]" />
+            <div className="max-w-lg ">
+              <h2 style={{ fontFamily: "gotham2",lineHeight:"100%" }} className="text-2xl tracking-wider text-black font-bold mb-4">
+                A JOURNEY OF FLAVOURS
+              </h2>
+               <div className={`h-[2px] w-12 bg-[#9a7523] mx-auto` }></div>
+              <p style={{ fontFamily: "gotham-book" }} className="text-black text-lg tracking-wider">
+                Embark on a sensory voyage through ancient tea gardens, exotic spice routes, golden apiaries, and sun-kissed orchards. Every sip and bite tells a story of heritage and craft.
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
 
+          {/* Story Cards */}
+          <div className="flex flex-col flex-1 gap-0 px-6 pt-20  text-black justify-end">
+
+            {storyData.map((item, index) => {
+              const isLast = index === storyData.length - 1;
+
+              return (
+                <div
+                  key={index}
+                  className={`
+          flex flex-1  pt-12    mt-3  
+          ${isLast
+                      ? "justify-center items-end py-6"
+                      : index % 2
+                        ? "justify-end items-end "
+                        : "justify-start items-end"
+                    }
+        `}
+                >
+                  <div className={`px-6 rounded-2xl ${isLast ? "text-center mt-3" : " text-start "}  max-w-xl`}>
+                    <div className="">
+                      <h4 style={{ fontFamily: "gotham-light" }} className="text-xs">{item.sub}</h4>
+                      <h3 style={{lineHeight:"100%"}} className="text-2xl  uppercase">{item.title} </h3>
+                      <div className={`h-[2px] w-12 bg-[#9a7523] ${isLast  && "mx-auto"}` }></div>
+                    </div>
+                    <p style={{ fontFamily: "gotham-book" }} className="tracking-[0.03rem] text-lg">{item.text}</p>
+                  </div>
+                </div>
+              );
+            })}
+
+            <div className="flex  backdrop: mt-0   py-3 gap-2">
+              <div className="flex gap-2 px-4">
+                <img src={fb} alt="" />
+                <img src={insta2} alt="" />
+                <img src={linkedin} alt="" />
+                <img src={youtube} alt="" />
+              </div>
+              <p style={{ fontFamily: "gotham-book" }} className="flex-1  text-lg text-black text-center">© 2026 Sublime House of Tea | All rights reserved </p>
+            </div>
+
+          </div>
+
+          {/* social icons and copyrights */}
+
+
+
+        </div>
       </div>
+
     </section>
   );
 };

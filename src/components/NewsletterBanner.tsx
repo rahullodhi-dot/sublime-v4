@@ -242,7 +242,7 @@ const NewsletterBanner: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting || isSubmitted}
-            className="bg-red-600 hover:[#9A7522] disabled:opacity-50 w-[214px] h-[50px] rounded text-white transition flex items-center justify-center"
+            className="bg-red-600 hover:[#9A7522] shine-effect disabled:opacity-50 w-[214px] h-[50px] rounded text-white transition flex items-center justify-center"
             style={{
               fontFamily: "gotham-book",
               fontWeight: 500,

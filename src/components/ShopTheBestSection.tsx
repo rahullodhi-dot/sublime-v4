@@ -353,7 +353,7 @@ export default function ShopTheBestSection() {
 
   let renderedData =  PRODUCTS || shopTheBestProducts ;
   return (
-    <section className="w-full bg-[#f6f1e8] h-screen py-10 sm:py-8 lg:py-10 overflow-hidden">
+    <section className="w-full bg-[#f6f1e8] md:h-screen py-10 sm:py-8 lg:py-10 overflow-hidden">
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header */}
         <div  className="mb-10 flex flex-col text-center items-center  sm:items-center sm:text-center">
@@ -364,7 +364,7 @@ export default function ShopTheBestSection() {
 
                 fontSize: '12px',
                 lineHeight: '100%',
-                letterSpacing: '0%',
+                // letterSpacing: '0%',
               }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
               GO THROUGH OUR BEST
             </span>

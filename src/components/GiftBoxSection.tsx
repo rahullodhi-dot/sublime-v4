@@ -97,7 +97,7 @@ const GiftBoxSection: React.FC = () => {
               fontWeight: 100,
               fontSize: '12px',
               lineHeight: '100%',
-              letterSpacing: '0%',
+              // letterSpacing: '0%',
             }}
             className="text-[10px] mb-3 mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase"
           >
@@ -110,7 +110,7 @@ const GiftBoxSection: React.FC = () => {
               fontWeight: 100,
               fontSize: '38px',
               lineHeight: '100%',
-              letterSpacing: '0%',
+              // letterSpacing: '0%',
             }}
             className="section-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]"
           >

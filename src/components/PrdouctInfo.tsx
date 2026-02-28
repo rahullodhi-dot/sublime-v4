@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Star, ShoppingCart } from 'lucide-react';
+import { gsap } from "gsap";
 // import type { viewProduct } from '../redux/slices/viewProductsSlice';
 // import { addToCart } from '@/utils/addTocart';
 
@@ -10,9 +11,72 @@ interface ProductInfoProps {
 
 const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   const [pincode, setPincode] = useState('');
+   const buttonRef = useRef(null);
+  const textRef = useRef(null);
+  const iconRef = useRef(null);
+  const addedRef = useRef(null);
 
   console.log(product)
   // ---- Derived values (UI needs) ----
+ const handleClick = () => {
+  const tl = gsap.timeline();
+
+  tl
+    //  Hide original text upward
+    .to(textRef.current, {
+      y: -20,
+      opacity: 0,
+      duration: 0.3,
+      ease: "power2.out",
+    })
+
+    //  Show ADDED from bottom
+    .fromTo(
+      addedRef.current,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      }
+    )
+
+    //  Wait
+    .to({}, { duration: 0.8 })
+
+    //  Hide ADDED upward
+    .to(addedRef.current, {
+      y: -20,
+      opacity: 0,
+      duration: 0.3,
+      ease: "power2.in",
+    })
+
+    //  Icon animation (your existing one)
+    .fromTo(
+      iconRef.current,
+      { x: -40, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: "power3.out",
+      }
+    )
+
+    //  Bring original text back from bottom
+    .fromTo(
+      textRef.current,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: "power3.out",
+      }
+    );
+  }
   const rating =
     product.reviews.length > 0
       ? product.reviews.reduce((sum, r) => sum + r.rating, 0) /
@@ -20,6 +84,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       : 4.5;
 
   const reviewCount = product.reviews.length;
+  
 
   return (
     <div className="flex flex-col gap-5 lg:gap-6 mt-4">
@@ -109,9 +174,11 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
       {/* Buttons */}
       <div className="flex flex-col  sm:flex-row gap-3">
-        <button style={{ fontFamily: "gotham-book" }} onClick={() => addToCart({ productId: product.documentId, quantity: 1 })} className="flex-1 bg-[#9a7523] text-white py-2 text-[16px] rounded-lg flex items-center justify-center gap-2">
+        <button ref={buttonRef} style={{ fontFamily: "gotham-book" }} onClick={handleClick} className="flex-1 bg-[#9a7523] text-white py-2 text-[16px] rounded-lg flex items-center justify-center gap-2">
 
-          ADD TO BAG  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+         <span ref={textRef}> ADD TO BAG</span>   <span ref={addedRef} className="absolute opacity-0">
+    ADDED
+  </span>  <svg ref={iconRef} xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
             <path d="M1.44701 9.72421C1.92748 7.31916 2.16817 6.11842 2.9618 5.34358C3.10847 5.20082 3.26712 5.0709 3.43601 4.95526C4.35132 4.32894 5.57711 4.32895 8.02869 4.32895H9.55243C12.0031 4.32895 13.228 4.32894 14.1424 4.95526C14.3124 5.07217 14.4705 5.20191 14.6166 5.34447C15.4103 6.11842 15.6519 7.32005 16.1323 9.72421C16.8222 13.1743 17.1675 14.8994 16.373 16.1216C16.2293 16.3441 16.0622 16.5478 15.872 16.7327C14.8287 17.75 13.0705 17.75 9.55243 17.75H8.02869C4.50969 17.75 2.75064 17.75 1.70738 16.7318C1.51863 16.5472 1.35089 16.3422 1.20722 16.1207C0.412692 14.8985 0.75806 13.1734 1.4488 9.72332L1.44701 9.72421Z" fill="white" stroke="white" stroke-width="1.5" />
             <path d="M11.4729 7.90786C11.967 7.90786 12.3676 7.50727 12.3676 7.01312C12.3676 6.51897 11.967 6.11839 11.4729 6.11839C10.9787 6.11839 10.5781 6.51897 10.5781 7.01312C10.5781 7.50727 10.9787 7.90786 11.4729 7.90786Z" fill="black" />
             <path d="M6.10567 7.90786C6.59982 7.90786 7.00041 7.50727 7.00041 7.01312C7.00041 6.51897 6.59982 6.11839 6.10567 6.11839C5.61152 6.11839 5.21094 6.51897 5.21094 7.01312C5.21094 7.50727 5.61152 7.90786 6.10567 7.90786Z" fill="black" />

@@ -174,6 +174,7 @@ const SavedAddress: React.FC = () => {
             {/* Address Details */}
             <div>
               <h3
+            
                 className={`font-semibold text-base sm:text-lg mb-1 ${
                   address.isSelected ? "text-[#2A2A2A]" : "text-[#898989]"
                 }`}

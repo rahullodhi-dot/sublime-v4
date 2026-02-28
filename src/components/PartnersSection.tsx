@@ -146,7 +146,7 @@ const PartnersSection: React.FC = () => {
 
                 fontSize: '12px',
                 lineHeight: '100%',
-                letterSpacing: '0%',
+                // letterSpacing: '0%',
               }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-[#f6f1e8] mb-3 uppercase">
             {sectionData.subheading}
           </p>

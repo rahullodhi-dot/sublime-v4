@@ -6,6 +6,7 @@ import productImg3 from '../assets/images/productImg3.png';
 import productImg from '../assets/images/yellow.png';
 import group530 from '../assets/images/Group 530.png';
 import group531 from '../assets/images/Group 531.png';
+import gsap from "gsap"
 
 interface Product {
   id: number;
@@ -63,6 +64,41 @@ const PRODUCTS = [...BASE_PRODUCTS, ...BASE_PRODUCTS, ...BASE_PRODUCTS];
 const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="Our Bestselling Products"}) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const iconRef = useRef<HTMLOrSVGElement>(null)
+
+    const handleClick = (direction:string,onClick:()=>void) => {
+      console.log("nvig")
+    const moveValue = direction === "right" ? 25 : -25;
+
+    const tl = gsap.timeline({
+      onStart: () => {
+        btnRef?.current?.classList.add("clicked");
+      },
+      onComplete: () => {
+        btnRef?.current?.classList.remove("clicked");
+      }
+    });
+
+    tl.to(iconRef.current, {
+      x: moveValue,
+      opacity: 0,
+      duration: 0.25,
+      ease: "power2.out",
+    })
+      .set(iconRef.current, {
+        x: -moveValue,
+      })
+      .to(iconRef.current, {
+        x: 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+
+    onClick();
+  };
+
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -116,12 +152,13 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
         <div className="relative">
           {/* Left Arrow */}
           <button
-            onClick={scrollLeft}
-            className="hidden lg:flex absolute -left-0 mt-5 top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+          ref={btnRef}
+            onClick={()=>handleClick("left",scrollLeft)}
+            className="  hidden lg:flex absolute nav-arrow-btn -left-5 md:-left-7 mt-5 top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all active:scale-90"
             aria-label="Scroll left"
           >
-            <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            <svg  className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path ref={iconRef} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
@@ -129,7 +166,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
           <div className="overflow-hidden -mx-2">
             <div
               ref={scrollContainerRef}
-              className="flex gap-1 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
+              className="flex gap-3 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
             >
               {PRODUCTS.map((product, index) => (
             <div
@@ -140,7 +177,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
               onClick={()=>navigate(`/productDetails`)}
             >
               {/* Product Image with Hover Effect */}
-              <div className="relative w-[287px] h-[291px] mx-auto mt-[9px]  bg-white rounded-[14px]">
+              <div className="relative  w-full aspect-[1/1] mx-auto mt-[9px]  rounded-[14px]">
                 {/* Ribbon Badge - Vertical (matching screenshot) */}
                 {product.badge && (
                   <div className="absolute   -top-1 z-[50] left-5 w-9 h-[130px] flex items-center justify-center bg-[#9a7523] " style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 70%, 0 85%)' }}>
@@ -241,7 +278,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="hidden lg:flex absolute -right-0 mt-5  top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
+            className=" hidden lg:flex absolute  -right-5 md:-right-7 mt-5  top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
             aria-label="Scroll right"
           >
             <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

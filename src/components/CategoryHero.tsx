@@ -1,6 +1,4 @@
 import React from 'react';
-import texture from '../assets/images/AboutFrame.png';
-import tokri from "../assets/images/tokri.png"
 import TeaLeaf from "../assets/images/TeaCup.png"
 import Breadcrumb from './Breadcrumb';
 

@@ -576,7 +576,7 @@ const Footer: React.FC = () => {
   gap-10 
  
   
-  lg:py-2">
+  lg:py-2"> 
           {/* Company Info - Left Column */}
           <div className="space-y-4 lg:col-span-2 ">
             {/* Logo */}
@@ -694,7 +694,7 @@ const Footer: React.FC = () => {
                   fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} to="/about" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
+                }} to="/aboutus" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
                   About US
                 </Link>
               </li>
@@ -713,7 +713,7 @@ const Footer: React.FC = () => {
                   fontSize: '14px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
-                }} to="/legal/disclaimer" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
+                }} to="/disclaimer" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors">
                   Disclaimer
                 </Link>
               </li>
@@ -882,15 +882,15 @@ const Footer: React.FC = () => {
                   lineHeight: '100%',
                   letterSpacing: '0%',
                 }} href="mailto:mohammed.maqsood@sublime.in" className="text-karla font-light text-[17px] leading-[30px] text-[#F6F1E8]  transition-colors break-all">
-              contact@sublimehouseoftea.com
+                  contact@sublimehouseoftea.com
                 </a>
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                <button style={{ fontFamily: "gotham-book" }} className='border justify-center whitespace-nowrap items-center flex-nowrap w-fit border-[#9a7523] px-3 text-sm py-1 bg-[#f6f1e8] text-[#9a7523] rounded-lg  gap-1'>
+                <Link to={"/store"} style={{ fontFamily: "gotham-book" }} className='border  justify-center whitespace-nowrap items-center flex-nowrap w-fit border-[#9a7523] px-3 text-sm py-1 bg-[#f6f1e8] text-[#9a7523] rounded-lg  gap-1'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className='inline'>
                     <path d="M4.9245 4.5H19.0785C19.2198 4.5 19.3385 4.548 19.4345 4.644C19.5305 4.74 19.5785 4.859 19.5785 5.001C19.5785 5.143 19.5305 5.26167 19.4345 5.357C19.3385 5.45233 19.2198 5.5 19.0785 5.5H4.9245C4.7825 5.5 4.66384 5.452 4.5685 5.356C4.47317 5.26 4.42517 5.141 4.4245 4.999C4.42384 4.857 4.47184 4.73833 4.5685 4.643C4.66517 4.54767 4.78384 4.5 4.9245 4.5ZM5.3095 19.5C5.08084 19.5 4.88884 19.4227 4.7335 19.268C4.57817 19.1133 4.50084 18.9213 4.5015 18.692V13.5H4.0575C3.80484 13.5 3.5945 13.3983 3.4265 13.195C3.2585 12.9917 3.20784 12.7637 3.2745 12.511L4.2745 8.127C4.31584 7.94433 4.41184 7.79433 4.5625 7.677C4.71317 7.559 4.8845 7.5 5.0765 7.5H18.9265C19.1185 7.5 19.2898 7.55867 19.4405 7.676C19.5912 7.794 19.6872 7.94433 19.7285 8.127L20.7285 12.511C20.7952 12.7643 20.7445 12.9923 20.5765 13.195C20.4085 13.3977 20.1985 13.4993 19.9465 13.5H19.5015V19C19.5015 19.142 19.4535 19.2607 19.3575 19.356C19.2615 19.4513 19.1425 19.4993 19.0005 19.5C18.8585 19.5007 18.7398 19.4527 18.6445 19.356C18.5492 19.2593 18.5015 19.1407 18.5015 19V13.5H13.5015V18.692C13.5015 18.9213 13.4242 19.1133 13.2695 19.268C13.1148 19.4227 12.9228 19.5 12.6935 19.5H5.3095ZM5.5015 18.5H12.5015V13.5H5.5015V18.5ZM4.2815 12.5H19.7215L18.7935 8.5H5.2095L4.2815 12.5Z" fill="#9A7522" />
-                  </svg><span>Locate us</span></button>
+                  </svg><span>Locate us</span></Link>
                 <button style={{ fontFamily: "gotham-book" }} className='border justify-center items-center border-[#9a7523] px-3 text-sm py-1 bg-[#f6f1e8] text-[#9a7523] rounded-lg flex gap-1'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M4 11V19C4 19.5304 4.21071 20.0391 4.58579 20.4142C4.96086 20.7893 5.46957 21 6 21H18C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19V11" stroke="#9A7522" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M12 5.5C12 4.57174 11.6313 3.6815 10.9749 3.02513C10.3185 2.36875 9.42826 2 8.5 2C7.83696 2 7.20107 2.26339 6.73223 2.73223C6.26339 3.20107 6 3.83696 6 4.5C6 5.16304 6.26339 5.79893 6.73223 6.26777C7.20107 6.73661 7.83696 7 8.5 7H12M12 5.5V7M12 5.5C12 4.57174 12.3687 3.6815 13.0251 3.02513C13.6815 2.36875 14.5717 2 15.5 2C16.163 2 16.7989 2.26339 17.2678 2.73223C17.7366 3.20107 18 3.83696 18 4.5C18 4.8283 17.9353 5.15339 17.8097 5.45671C17.6841 5.76002 17.4999 6.03562 17.2678 6.26777C17.0356 6.49991 16.76 6.68406 16.4567 6.8097C16.1534 6.93534 15.8283 7 15.5 7H12" stroke="#9A7522" stroke-linejoin="round" />
@@ -1015,7 +1015,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* BOTTOM */}
-        <div className="pt-8 flex flex-col   border-t md:flex-row justify-between text-[10px] tracking-[0.3em] uppercase text-[#f6f1e8] text-center">
+        <div className="pt-8 flex flex-col  mt-3  border-t md:flex-row justify-between text-[10px] tracking-[0.3em] uppercase text-[#f6f1e8] text-center">
           <p style={{ fontFamily: "gotham-light", fontSize: "12px" }} className=' mx-auto'>© 2026 Sublime House of Tea | All rights reserved</p>
 
         </div>

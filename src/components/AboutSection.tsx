@@ -12,6 +12,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import newBg from "../assets//images/aboutNewFrame.png"
+import AnimatedSignature from './ui/AnimatedSignature';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -43,7 +44,7 @@ Sticking to the core value of bringing to you fresh quality and superior product
 
 Every product of which is packed with authentic quality fresh ingredients, which will enhance your health and wellness.`,
     buttonText: 'Read Our Full Story',
-    buttonLink: '/about',
+    buttonLink: '/aboutus',
     image: GirlImage,
     backgroundColor: '#a9be95',
   };
@@ -182,7 +183,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
   return (
     <section
       ref={sectionRef}
-      className="relative py-2 sm:py-12 lg:py-32 overflow-hidden"
+      className="relative  sm:py-12 lg:py-32 overflow-hidden"
       style={{
         backgroundImage: `url(${AboutFrame})`,
         backgroundSize: 'cover',
@@ -190,7 +191,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="relative mx-auto max-w-[1600px] px-6 sm:px-8 lg:px-16">
+      <div className="relative md:mx-auto max-w-[1600px]  sm:px-8 lg:px-16">
 
         <div
           className="relative hidden lg:block rounded-3xl p-10 sm:p-20 lg:p-8"
@@ -240,7 +241,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
               <div className="pt-2">
                 <Link
                   to={displayData.buttonLink}
-                  className="relative inline-block bg-[#f6f1e8] border-[2px] border-[#9A7522] rounded-3xl text-[#9A7522] px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium shadow-md overflow-hidden group transition-all duration-300 hover:shadow-lg"
+                  className="relative inline-block   luxury-sweep bg-[#f6f1e8] border-[2px] border-[#9A7522] rounded-3xl text-[#9A7522] px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium shadow-md overflow-hidden group transition-all duration-300 hover:shadow-lg"
                 >
                   <span style={{
                     fontFamily: "'gotham-book', sans-serif",
@@ -272,67 +273,11 @@ Every product of which is packed with authentic quality fresh ingredients, which
                   }} className=''>
 
                     <div ref={desktopPenRef} className='absolute h-12 w-12 '>
-                      <img src={Pen} alt="pen" className='h-full w-full  scale-x-[1] scale-y-[-1]    
-         drop-shadow-[0_8px_10px_rgba(0,0,0,0.15)]
-                    ' />
+                 
                     </div>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-                        <path
-                          stroke="#9A7522"
-                          strokeWidth="1.5" d="M5.96188 14.22C2.32188 14.22 0.00187507 12.12 0.00187507 8.06V-9.53674e-07H2.46188V7.96C2.46188 10.56 3.80188 11.96 6.00188 11.96C8.18188 11.96 9.52188 10.64 9.52188 8.06V-9.53674e-07H11.9819V7.94C11.9819 12.12 9.62188 14.22 5.96188 14.22Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781149 14V12.18L8.25922 2.18H0.259219V-9.53674e-07H11.4592V1.82L3.19922 11.82H11.4592V14H-0.000781149Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H2.61922L6.87922 6.62L11.1392 -9.53674e-07H13.7592V14H11.2992V3.96L6.87922 10.56H6.79922L2.41922 4V14H-0.000781178Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.00156248 14.1L6.15844 -2.52724e-05H8.43844L14.5984 14.1H11.9984L10.5784 10.72H3.95844L2.51844 14.1H-0.00156248ZM4.85844 8.53998H9.67844L7.25844 2.93998L4.85844 8.53998Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    &nbsp;
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="3" height="14" viewBox="0 0 3 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.00140619 14V-9.53674e-07H2.45859V14H-0.00140619Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H6.23922C7.99922 -9.53674e-07 9.37922 0.52 10.2792 1.4C11.0192 2.16 11.4392 3.2 11.4392 4.42V4.46C11.4392 6.76 10.0592 8.14 8.09922 8.7L11.8792 14H8.97922L5.53922 9.12H2.45922V14H-0.000781178ZM2.45922 6.94H6.05922C7.81922 6.94 8.93922 6.02 8.93922 4.6V4.56C8.93922 3.06 7.85922 2.24 6.03922 2.24H2.45922V6.94Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H10.4192V2.24H2.45922V6.06H9.51922V8.3H2.45922V14H-0.000781178Z" fill="transparent" />
-                      </svg>
-                    </span>
+                 
 
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.00156248 14.1L6.15844 -2.52724e-05H8.43844L14.5984 14.1H11.9984L10.5784 10.72H3.95844L2.51844 14.1H-0.00156248ZM4.85844 8.53998H9.67844L7.25844 2.93998L4.85844 8.53998Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H2.27922L9.77922 9.68V-9.53674e-07H12.1992V14H10.1392L2.41922 4.04V14H-0.000781178Z" fill="transparent" />
-                      </svg>
-                    </span>
+                    <AnimatedSignature/>
                     {/* Continue for all remaining letters like you had */}
                   </div>
                   <p style={{
@@ -356,7 +301,7 @@ Every product of which is packed with authentic quality fresh ingredients, which
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
-        }} className="block lg:hidden px-8 py-8 rounded-2xl">
+        }} className="block lg:hidden px-8 py-8">
 
           {/* Image First */}
           <div className="w-full flex justify-center">
@@ -368,96 +313,27 @@ Every product of which is packed with authentic quality fresh ingredients, which
           </div>
 
           {/* Founder Name SVG Section */}
-          <div className="flex flex-col items-center mt-6 relative">
-            <div className="relative flex justify-center items-center min-h-[40px]">
+          <div className="flex flex-col  items-center mt-6 relative">
+            <div className="relative w-full flex justify-center items-center min-h-[40px]">
 
               {/* <div ref={penDivRef} className="absolute h-10 w-10">
         <img src={Pen} alt="pen" className="h-full w-full scale-y-[-1]" />
       </div> */}
 
-              <div ref={containerRef} className="flex gap-[2px] items-center justify-center">
-                <div className='  flex justify-center  rounded-lg items-center flex-col mt-2 relative'>
-                  <div ref={containerRef} style={{
-                    display: "flex",
-                    gap: "2px",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    minHeight: "40px"
-                  }} className=''>
-
-                    <div ref={penDivRef} className='absolute h-12 w-12 '>
-                      <img src={Pen} alt="pen" className='h-full w-full block scale-x-[1] scale-y-[-1]   
-         drop-shadow-[0_8px_10px_rgba(0,0,0,0.15)]
-                    ' />
-                    </div>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-                        <path
-                          stroke="#9A7522"
-                          strokeWidth="1.5" d="M5.96188 14.22C2.32188 14.22 0.00187507 12.12 0.00187507 8.06V-9.53674e-07H2.46188V7.96C2.46188 10.56 3.80188 11.96 6.00188 11.96C8.18188 11.96 9.52188 10.64 9.52188 8.06V-9.53674e-07H11.9819V7.94C11.9819 12.12 9.62188 14.22 5.96188 14.22Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781149 14V12.18L8.25922 2.18H0.259219V-9.53674e-07H11.4592V1.82L3.19922 11.82H11.4592V14H-0.000781149Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H2.61922L6.87922 6.62L11.1392 -9.53674e-07H13.7592V14H11.2992V3.96L6.87922 10.56H6.79922L2.41922 4V14H-0.000781178Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.00156248 14.1L6.15844 -2.52724e-05H8.43844L14.5984 14.1H11.9984L10.5784 10.72H3.95844L2.51844 14.1H-0.00156248ZM4.85844 8.53998H9.67844L7.25844 2.93998L4.85844 8.53998Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    &nbsp;
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="3" height="14" viewBox="0 0 3 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.00140619 14V-9.53674e-07H2.45859V14H-0.00140619Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H6.23922C7.99922 -9.53674e-07 9.37922 0.52 10.2792 1.4C11.0192 2.16 11.4392 3.2 11.4392 4.42V4.46C11.4392 6.76 10.0592 8.14 8.09922 8.7L11.8792 14H8.97922L5.53922 9.12H2.45922V14H-0.000781178ZM2.45922 6.94H6.05922C7.81922 6.94 8.93922 6.02 8.93922 4.6V4.56C8.93922 3.06 7.85922 2.24 6.03922 2.24H2.45922V6.94Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H10.4192V2.24H2.45922V6.06H9.51922V8.3H2.45922V14H-0.000781178Z" fill="transparent" />
-                      </svg>
-                    </span>
-
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.00156248 14.1L6.15844 -2.52724e-05H8.43844L14.5984 14.1H11.9984L10.5784 10.72H3.95844L2.51844 14.1H-0.00156248ZM4.85844 8.53998H9.67844L7.25844 2.93998L4.85844 8.53998Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    <span className='char'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
-                        <path stroke="#9A7522"
-                          strokeWidth="1.5" d="M-0.000781178 14V-9.53674e-07H2.27922L9.77922 9.68V-9.53674e-07H12.1992V14H10.1392L2.41922 4.04V14H-0.000781178Z" fill="transparent" />
-                      </svg>
-                    </span>
-                    {/* Continue for all remaining letters like you had */}
-                  </div>
-                  <p style={{
+        <div className='px-5 w-full '>
+             <p
+                  style={{
                     fontFamily: "'gotham-light', sans-serif",
                     fontWeight: 100,
-                    fontSize: '18px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                  }} className=' text-[#000]'>Founder Of Sublime </p>
-                </div>
-              </div>
+                    fontSize: "18px",
+                  }}
+                  className="text-black w-fit mx-auto "
+                >
+                  Founder Of Sublime
+                </p>
+            <AnimatedSignature/>
+         
+        </div>
 
             </div>
 
