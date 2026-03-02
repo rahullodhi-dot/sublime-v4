@@ -58,7 +58,7 @@ export default function WishlistPage({ showTop = true}) {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
-          className="relative py-12"
+        className="relative py-12 scale-125 " 
         >
           {/* <img src={tokri} className="absolute left-0 top-0 h-full object-cover opacity-50" />
           <img src={TeaLeaf} className="absolute right-0 bottom-0 h-40 object-cover opacity-50" /> */}

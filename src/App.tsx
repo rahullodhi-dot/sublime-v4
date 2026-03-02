@@ -28,6 +28,8 @@ import AboutUs from './pages/AboutUs';
 import { StorySection } from './components/TeaTypesSection';
 import StoryTelling from './components/StoryTelling';
 import Checkout from './components/Checkout.tsx';
+import Blogs from './pages/Blogs.tsx';
+import Blog from './pages/Blog.tsx';
 
 function App() {
   return (
@@ -50,7 +52,7 @@ function App() {
           />               
 
           <Route path="categories" element={<CategoriesTest />} />
-          <Route path="blogs" element={<ComingSoon />} />
+          {/* <Route path="blogs" element={<ComingSoon />} /> */}
           <Route path="/ProductDetails" element={<ProductDetails />} />
           <Route path="/Wishlist" element={<WishlistPage />} />
           <Route path="/Cart" element={<Cart />} />
@@ -65,6 +67,9 @@ function App() {
           <Route path="/News" element={<News />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/blogs/:slug" element={<Blog/>} />
+          <Route path="/Blogs" element={<Blogs/>} />
        
 
         </Route>

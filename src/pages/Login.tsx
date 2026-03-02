@@ -105,7 +105,7 @@ const mockLogin = (provider: "otp" | "google" | "facebook") => {
 
 
   return (
-    <div style={{ backgroundImage: `url(${loginBack})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div style={{ backgroundImage: `url(${loginBack})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} className="min-h-screen  flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-50 py-12 px-4 sm:px-6 lg:px-8">
       {/* <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
         <div className="text-center">
           <div className="flex justify-center mb-4">
@@ -162,7 +162,7 @@ const mockLogin = (provider: "otp" | "google" | "facebook") => {
 
 
       <div className='container max-w-[1380px] mx-auto '>
-        <div className='w-[33vw]  rounded-xl mr-auto bg-[#F6F1E8] py-12 px-6'>
+        <div className='md:w-[33vw] mb-6 w-full  rounded-xl mr-auto bg-[#F6F1E8] py-12 px-6'>
 
           {/* form header */}
           <div className='text-center space-y-2'>
@@ -243,7 +243,7 @@ const mockLogin = (provider: "otp" | "google" | "facebook") => {
             {/* opt-in text */}
             <div className="space-y-4">
               {/* Top Row */}
-              <div className="flex items-center flex-wrap  gap-1    ">
+              <div className="flex items-center justify-center   gap-4 md:gap-1    ">
                 {/* Left Toggle */}
                 {/* <input type="checkbox" className="toggle toggle-sm" /> */}
                 <button
@@ -259,7 +259,7 @@ const mockLogin = (provider: "otp" | "google" | "facebook") => {
                 </button>
 
                 {/* Right Text */}
-                <p style={{fontFamily:"gotham-light"}} className="font-medium text-right  text-lg text-black">
+                <p style={{fontFamily:"gotham-light"}} className="font-medium  text-sm  md:text-lg text-black">
                   Opt-in for Promotional Marketing Updates on
                 </p>
               </div>
