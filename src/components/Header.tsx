@@ -74,7 +74,7 @@ const user = JSON.parse(localStorage.getItem("authUser") || "null");
               className="p-1.5 sm:p-2 text-[#F6F1E8]  transition-colors"
               aria-label="Toggle sidebar menu"
             >
-              <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>

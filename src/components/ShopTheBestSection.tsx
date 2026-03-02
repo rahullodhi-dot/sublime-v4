@@ -12,6 +12,7 @@ import video5 from "../assets/images/video-5.mp4";
 import Arrow1 from "../assets/images/arrow1.png";
 import Arrow2 from "../assets/images/arrow2.png";
 import Rass1 from "../assets/images/Rass-1.png";
+import ArrowButton from "./ui/ArrowButton.tsx";
 // import LeafGif from "../assets/images/leaf.gif";
 // import QuantityCart from "./Constant/QuantityCart";
 
@@ -148,7 +149,7 @@ function ProductCard({ product, onSelect, onAddToCart }: ProductCardProps) {
     <Card
       className={cn(
         "relative flex-shrink-0 snap-start",
-        "w-[92vw] sm:w-[300px] lg:w-[287px]",
+        "w-[312px] h-[442px] sm:w-[300px] lg:w-[287px]",
         "h-[460px] sm:h-[500px]",
         "overflow-hidden cursor-pointer group rounded-[12px]"
       )}
@@ -382,21 +383,8 @@ export default function ShopTheBestSection() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
-          <button
-            onClick={() => scroll("left")}
-            className="
-              flex absolute left-[-19px]
-              top-[45%] -translate-y-1/2 z-[60]
-              h-12 w-12
-              items-center justify-center
-              rounded-full bg-white shadow-xl
-              hover:bg-[#316763] transition-all active:scale-90
-            "
-            aria-label="Scroll left"
-          >
-            <img src={Arrow2} alt="Previous" className="h-6 w-6" />
-          </button>
+        <div className="relative  ">
+              <ArrowButton direction="left" onClick={() => scroll("left")} isDefaultSvg={true} />
 
           {/* Products Carousel */}
           <div
@@ -419,21 +407,9 @@ export default function ShopTheBestSection() {
             ))}
           </div>
 
-          <button
-            onClick={() => scroll("right")}
-            className="
-              flex absolute right-[-12px]
-              top-[45%] -translate-y-1/2 z-[60]
-              h-12 w-12
-              items-center justify-center
-              rounded-full bg-white shadow-xl
-              hover:bg-[#316763] transition-all active:scale-90
-              "
-            aria-label="Scroll right"
-          >
-            <img src={Arrow1} alt="Next" className="h-6 w-6" />
-          </button>
+          <ArrowButton direction="right" onClick={() => scroll("right")} isDefaultSvg={true} />
         </div>
+
         <div className="flex sm:hidden justify-center items-center gap-2 mt-8 lg:mt-10">
           {renderedData.map((_, index) => (
             <button

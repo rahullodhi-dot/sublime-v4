@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import round1 from "../assets/images/roound1.png";
+// import round1 from "../assets/images/roound1.png";
 import AboutFrame from "../assets/images/csback.png";
 import p1 from "../assets/images/Ellipse 96.png"
 import p2 from "../assets/images/Ellipse 97.png"
 import p3 from "../assets/images/Ellipse 98.png"
+import ArrowButton from './ui/ArrowButton';
 interface Testimonial {
   id: number;
   name: string;
@@ -49,7 +50,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Amazing Experience',
     review: '"The quality of tea is outstanding! Every sip is a journey of flavors. The packaging is beautiful and the delivery was prompt. Highly recommend!"',
-     image: p1,
+    image: p1,
   },
   {
     id: 5,
@@ -58,7 +59,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     title: 'Pure Bliss',
     review: '"I have tried many tea brands, but Sublime House stands out. The freshness and aroma are unmatched. It has become my daily ritual."',
-  image: p3
+    image: p3
   },
 ];
 
@@ -116,14 +117,14 @@ const CustomerTestimonialsSection: React.FC = () => {
   };
 
   const renderStars = (rating: number, max: number = 5) => {
-  return Array.from({ length: max }, (_, index) => (
-    <span key={index} className='m-1'>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 30" fill="none">
-<path d="M5.95795 29.3248L8.5205 18.4795L0 11.1881L11.2236 10.2288L15.6192 0L20.0148 10.2267L31.2363 11.1861L22.7158 18.4775L25.2805 29.3227L15.6192 23.5664L5.95795 29.3248Z" fill="#9A7523"/>
-</svg>
-    </span>
-  ));
-};
+    return Array.from({ length: max }, (_, index) => (
+      <span key={index} className='m-1'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 30" fill="none">
+          <path d="M5.95795 29.3248L8.5205 18.4795L0 11.1881L11.2236 10.2288L15.6192 0L20.0148 10.2267L31.2363 11.1861L22.7158 18.4775L25.2805 29.3227L15.6192 23.5664L5.95795 29.3248Z" fill="#9A7523" />
+        </svg>
+      </span>
+    ));
+  };
 
 
 
@@ -140,7 +141,10 @@ const CustomerTestimonialsSection: React.FC = () => {
       className="w-full relative py-12 sm:py-16 lg:py-20"
     >
       {/* Heading FIXED (absolute removed only) */}
-      <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+    
+
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
         <p
           style={{
             fontFamily: "'gotham', sans-serif",
@@ -160,50 +164,40 @@ const CustomerTestimonialsSection: React.FC = () => {
             fontWeight: 100,
             fontSize: '38px',
             lineHeight: '100%',
-            letterSpacing: '0%',
+            // letterSpacing: '0%',
           }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]"
+          className="text-2xl md:w-sm sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523]"
         >
           What Our Customers Say
         </h2>
       </div>
 
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-
         <div className="relative">
 
           {/* Arrows (unchanged design) */}
-          <button
-            onClick={handlePrev}
-            disabled={isAnimating}
-            className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#9a7522] text-white flex items-center justify-center shadow-lg transition-all duration-300 disabled:opacity-50"
-          >
-            ←
-          </button>
+        
+        {/* left arrow */}
+          <ArrowButton direction="left" onClick={handlePrev} isDefaultSvg={true}/>
 
-          <button
-            onClick={handleNext}
-            disabled={isAnimating}
-            className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#9a7522] text-white flex items-center justify-center shadow-lg transition-all duration-300 disabled:opacity-50"
-          >
-            →
-          </button>
+        {/* right arow */}
+
+          <ArrowButton direction="right" onClick={handleNext} isDefaultSvg={true}/>
 
           {/* Cards container */}
-          <div className="relative flex items-center justify-center  px-4 sm:px-12 lg:px-16 h-[520px]">
+          <div className="relative flex  items-center justify-center  px-4 sm:px-12 lg:px-16 h-[520px]">
 
-            {[...visibleTestimonials, ...visibleTestimonials].map(({ testimonial, position }, index) => {
-              const isCenter = position === 'center';
+            {[...visibleTestimonials, ...visibleTestimonials].map(({ testimonial, position },) => {
+        
 
               return (
                 <div
-                  className={`absolute transition-all duration-700 ease-in-out ${position === 'center'
-                      ? 'translate-x-0 scale-100 sm:scale-110 z-20 opacity-100'
-                      : position === 'left'
-                        ? '-translate-x-[110%] scale-90 z-10 opacity-100'
-                        : position === 'right'
-                          ? 'translate-x-[110%] scale-90 z-10 opacity-100'
-                          : 'translate-x-[200%] opacity-0'
+                  className={`absolute  transition-all duration-700 ease-in-out ${position === 'center'
+                    ? 'translate-x-0 scale-100 sm:scale-110 z-20 opacity-100'
+                    : position === 'left'
+                      ? '-translate-x-[110%] scale-90 z-10 opacity-100'
+                      : position === 'right'
+                        ? 'translate-x-[110%] scale-90 z-10 opacity-100'
+                        : 'translate-x-[200%] opacity-0'
                     } w-full sm:w-[380px] lg:w-[410px]`}
 
                 >
@@ -211,7 +205,7 @@ const CustomerTestimonialsSection: React.FC = () => {
                   <div className="bg-[#FFF7EA] rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-700 border-2 border-gray-200">
 
                     <div className="flex justify-center mb-6">
-                      <div className={` ${position === "center" ? "w-36 h-36 " :"w-32 h-32" } rounded-full overflow-hidden  shadow-lg transition-all duration-700`}>
+                      <div className={` ${position === "center" ? "w-36 h-36 " : "w-32 h-32"} rounded-full overflow-hidden  shadow-lg transition-all duration-700`}>
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}

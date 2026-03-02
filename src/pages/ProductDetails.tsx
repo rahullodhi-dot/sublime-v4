@@ -731,7 +731,7 @@ export default function ProductDetailPage() {
         <CustomerTestimonialsSection addrevviw={true}/>
 
         {/* <div className="bg-red-500"> */}
-           <TestimonialsSection subheading="    " bgClr="#f6f1e8"/>
+           <TestimonialsSection subheading="" bgClr="#f6f1e8"/>
         {/* </div> */}
         {/* <YouMayAlsoLike/> */}
 

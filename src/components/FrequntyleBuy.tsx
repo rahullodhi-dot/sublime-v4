@@ -6,6 +6,7 @@ import productImg3 from '../assets/images/productImg3.png';
 import productImg from '../assets/images/yellow.png';
 import group530 from '../assets/images/Group 530.png';
 import group531 from '../assets/images/Group 531.png';
+import ArrowButton from './ui/ArrowButton';
 
 interface Product {
   id: number;
@@ -96,7 +97,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
 
                 fontSize: '12px',
                 lineHeight: '100%',
-                letterSpacing: '0%',
+                // letterSpacing: '0%',
               }} className="text-[10px] text-center w-fit  mx-auto sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.35em] text-black uppercase">
          {subHeading}
           </p>
@@ -106,7 +107,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
 
               fontSize: '38px',
               lineHeight: '100%',
-              letterSpacing: '0%',
+              // letterSpacing: '0%',
             }} className="section-heading text-2xl sm:text-3xl md:text-4xl mt-3 lg:text-5xl font-bold text-[#9a7523]">
           {heading}
           </h2>
@@ -115,15 +116,8 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
         {/* Products Carousel */}
         <div className="relative">
           {/* Left Arrow */}
-          <button
-            onClick={scrollLeft}
-            className="hidden lg:flex absolute -left-7 top-1/3 mt-4  -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
-            aria-label="Scroll left"
-          >
-           <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path d="M5.50781 16.5198L13.7678 24.7798M5.50781 16.5198L13.7678 8.25978M5.50781 16.5198L19.9628 16.5198M27.5345 16.5198L24.0928 16.5198" stroke="#F6F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
+       
+          <ArrowButton direction="left" onClick={scrollLeft} isDefaultSvg={true} />
 
           {/* Scrollable Container */}
           <div className="overflow-hidden -mx-2">
@@ -239,15 +233,8 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="ONLY BUY GO
           </div>
 
           {/* Right Arrow */}
-          <button
-            onClick={scrollRight}
-            className="hidden lg:flex absolute -right-7 top-1/3  mt-4 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
-            aria-label="Scroll right"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path d="M27.5322 16.5198L19.2722 8.25977M27.5322 16.5198L19.2722 24.7798M27.5322 16.5198L13.0772 16.5198M5.50552 16.5198L8.94719 16.5198" stroke="#F6F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
+       
+          <ArrowButton direction="right" onClick={scrollRight} isDefaultSvg={true} />
 
           {/* Mobile Scroll Hint */}
           <div className="lg:hidden text-center mt-6">

@@ -8,6 +8,7 @@ import product1Img from '../assets/images/product1.png';
 import product2Img from '../assets/images/product2.png';
 import product3Img from '../assets/images/product3.png';
 import product4Img from '../assets/images/product4.png';
+import ArrowButton from './ui/ArrowButton';
 
 interface Category {
   id: number;
@@ -157,17 +158,16 @@ const CategoriesSection: React.FC = () => {
         ) : (
           <div className="relative">
             {/* Navigation Arrow - Left */}
-            <button
-              onClick={scrollLeft}
+            {/* <button
+        
               className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl transition-all hover:bg-gray-100 active:scale-90"
               aria-label="Scroll left"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                <path d="M5.50586 16.5199L13.7659 24.7799M5.50586 16.5199L13.7659 8.25993M5.50586 16.5199L19.9609 16.5199M27.5325 16.5199L24.0909 16.5199" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              </button>
+            > */}
+              
+              <ArrowButton direction="left" onClick={scrollLeft} isDefaultSvg={true} />
+              {/* </button> */}
               {/* Scrollable Categories Container */}
-              <div className="overflow-hidden -mx-2">
+              <div className="overflow-hidden ">
                 <div
                   ref={scrollContainerRef}
                   className="flex gap-5 lg:gap-6 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
@@ -199,18 +199,6 @@ const CategoriesSection: React.FC = () => {
                           borderBottomRightRadius: '20px'
                         }}
                       >
-                        {/* 
-                        gold: '#C5A059',
-              light: '#EBE7E0',
-              accent: '#1A352B'
-            },
-            ivory: '#F9F8F4', // Richer, warmer ivory
-            stone: '#EAE8E0', // Deep stone
-            forest: '#1A2F23', // Deep estate green
-            'forest-dark': '#0D1811', // Almost black green
-            sage: '#94A69A', // Muted, dusty sage
-            'sage-light': '#EEF2EF',
-            gold: '#C8A97E', / */}
                         <div className="text-[#F6F1E8] text-center">
                           {/* Category Name */}
                           <h3 className="text-[20px] font-medium uppercase tracking-[0.04em] leading-[100%]" style={{
@@ -231,15 +219,9 @@ const CategoriesSection: React.FC = () => {
               </div>
 
               {/* Navigation Arrow - Right */}
-              <button
-                onClick={scrollRight}
-                className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white shadow-xl transition-all hover:bg-gray-100 active:scale-90"
-                aria-label="Scroll right"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                  <path d="M27.5341 16.52L19.2741 8.26001M27.5341 16.52L19.2741 24.78M27.5341 16.52L13.0791 16.52M5.50747 16.52L8.94914 16.52" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+
+                  <ArrowButton direction="right" onClick={scrollRight} isDefaultSvg={true} />
+        
 
               {/* Mobile Scroll Hint */}
               <div className="lg:hidden text-center mt-6">

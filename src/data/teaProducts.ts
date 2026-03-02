@@ -6,7 +6,7 @@ import productImg2 from '../assets/images/brown.png';
 export const teaProductsData = [
   {
     id: 1,
-    name: 'Nilgiris BOP - 100g',
+    name: 'Nilgiris BOP ',
     category: 'BLACK TEA',
     description: 'Made From The Best Tea Leaves Cultivated In Assam, India. The Flavours Of Sublime\'s English Breakfast Tea Is One Of The Finest Black Tea Available Online. The Bold Flavours Of This...',
     fullDescription: 'We need Nilgiris are nature\'s tea on terms of Nilgiris, known\'s high the unmatched quality of Sublime. This tea is a high grade paper or tea bag or in a jar which comes loose, which is advisable to get BOP made tea, but for tea drinkers, a jar of Sublime tea on the go.',
@@ -24,7 +24,7 @@ export const teaProductsData = [
   },
   {
     id: 2,
-    name: 'Masala Chai - 100g',
+    name: 'Masala Chai ',
     category: 'BLACK TEA',
     description: 'Sublime\'s Masala Chai Tea Brings You A Comforting Embrace Of Nostalgia And Flavours With A Harmonious Blend Of Premium Assam Black Tea And A Blend Of Aromatic Spices. A Carefully Crafted...',
     fullDescription: 'A perfect blend of premium Assam black tea with aromatic spices including cardamom, cinnamon, ginger, and cloves. This traditional Indian chai offers a warming and invigorating experience.',
@@ -43,7 +43,7 @@ export const teaProductsData = [
   },
   {
     id: 3,
-    name: 'Signature Lavender Tea - 50g',
+    name: 'Signature Lavender Tea ',
     category: 'HERBAL TEA',
     description: 'Infuse Your Day Life With Peppermint And A Sense Of Soothing Calm With Sublime Signature Lavender Tea. This Unique Blend Combines Lavender...',
     fullDescription: 'A delicate blend of premium tea leaves with natural lavender flowers. This calming tea offers a soothing floral aroma and gentle taste, perfect for relaxation and stress relief.',
@@ -62,7 +62,7 @@ export const teaProductsData = [
   },
   {
     id: 4,
-    name: 'Energising Elaichi - 100g',
+    name: 'Energising Elaichi ',
     category: 'BLACK TEA',
     description: 'Sublime\'s Energising Elaichi Tea Brings A Harmonious Blend Of Assam Black Tea Infused With Fresh Cardamom, Adding Tea Sensation...',
     fullDescription: 'Premium Assam black tea infused with aromatic cardamom pods. This energizing blend offers a perfect balance of robust tea flavor with the sweet, spicy notes of fresh elaichi.',
@@ -81,7 +81,7 @@ export const teaProductsData = [
   },
   {
     id: 5,
-    name: 'Rose in Bloom - 100g',
+    name: 'Rose in Bloom ',
     category: 'HERBAL TEA',
     description: 'Witnessing A Blooming Rose Brings An Instant Smile On Your Face, Just Smell Of The Rose Petals All Day Used Flowers...',
     fullDescription: 'A romantic blend of premium tea with natural rose petals. This elegant tea offers a delicate floral aroma and subtle sweetness, perfect for special moments.',

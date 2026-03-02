@@ -5,6 +5,7 @@ import gift1 from "../assets/images/g1.png";
 import gift2 from "../assets/images/g2.png";
 import gift3 from "../assets/images/g3.png";
 import gift4 from "../assets/images/g4.png";
+import ArrowButton from './ui/ArrowButton';
 
 interface GiftBox {
   id: number;
@@ -151,8 +152,9 @@ const GiftBoxSection: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <button onClick={handlePrev} className="w-10 h-10 bg-[#9a7522] text-white rounded-full">‹</button>
-              <button onClick={handleNext} className="w-10 h-10 bg-[#9a7522] text-white rounded-full">›</button>
+              {/* <button onClick={handlePrev} className="w-10 h-10 bg-[#9a7522] text-white rounded-full">‹</button> */}
+              <ArrowButton direction='left' onClick={handlePrev} isDefaultSvg={false}/>
+              <ArrowButton direction='right' onClick={handleNext} isDefaultSvg={false}/>
             </div>
 
           </div>

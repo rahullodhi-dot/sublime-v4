@@ -6,26 +6,21 @@ import BlogSection from '../components/BlogSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CategoriesSection from '../components/CategoriesSection';
 import AboutSection from '../components/AboutSection';
-import { StorySection } from '../components/TeaTypesSection';
+
 import PartnersSection from '../components/PartnersSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
 import CustomerTestimonialsSection from '../components/CustomerTestimonialsSection';
 import GiftBoxSection from '../components/GiftBoxSection';
-import NewsletterBanner from '../components/NewsletterBanner';
+
 
 import { getHeroSlides } from '../services/homepage.service';
 import { getStrapiImageUrl } from '../config/strapi.config';
-import MunnarVideo from '../assets/images/munnar.mp4';
-import TeaImg from '../assets/images/BlackTea(2).png';
-import HoneyImg from '../assets/images/Honey.png';
 import BgImg1 from '../assets/images/bgImg2.png';
-import BgImg2 from '../assets/images/bgImg1.png';
 
-import BannerImage from "../assets/images/bannerImage2.png"
 import ShopTheBestSection from '../components/ShopTheBestSection';
 import V3Video from "../assets/video/FinalVideo.mp4"
-import BackToTop from '../components/ui/BackToTop';
-import mobileimage from "../assets/images/mobileHeroImage.png"
+import mobileVideo from "../assets/video/mobileVideo.mp4"
+
 
 
 
@@ -141,7 +136,7 @@ const slides = heroSlides;
     }
   };
 
-  // Auto-slide every 6 seconds
+  // Auto-slide every 6 seconds uncomment when the client wants auto sliding
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -150,24 +145,24 @@ const slides = heroSlides;
   //   return () => clearInterval(interval);
   // }, [slides.length, currentSlide]);
 
-  // Default colors for each slide type (managed from frontend)
-  const getDefaultColors = (slideType: string, index: number) => {
-    if (slideType === 'video') {
-      return {
-        backgroundColor: '#1a1a1a',
-        textColor: '#EED6B5'
-      };
-    }
+  // Default colors for each slide type (managed from frontend) uncomment when there is muliple slides and the client wants different colors for each slide type
+  // const getDefaultColors = (slideType: string, index: number) => {
+  //   if (slideType === 'video') {
+  //     return {
+  //       backgroundColor: '#1a1a1a',
+  //       textColor: '#EED6B5'
+  //     };
+  //   }
 
-    // Default colors for image slides (Tea & Honey)
-    const defaultImageColors = [
-      { backgroundColor: '#7A9B7F,#A3B899', textColor: '#1A302A' }, // Green (Tea)
-      { backgroundColor: '#D4A574,#F4D19B', textColor: '#1A302A' }, // Golden (Honey)
-      { backgroundColor: '#E8E4D8,#F5F1E8', textColor: '#2C3E50' }, // Cream (Default)
-    ];
+  //   // Default colors for image slides (Tea & Honey)
+  //   const defaultImageColors = [
+  //     { backgroundColor: '#7A9B7F,#A3B899', textColor: '#1A302A' }, // Green (Tea)
+  //     { backgroundColor: '#D4A574,#F4D19B', textColor: '#1A302A' }, // Golden (Honey)
+  //     { backgroundColor: '#E8E4D8,#F5F1E8', textColor: '#2C3E50' }, // Cream (Default)
+  //   ];
 
-    return defaultImageColors[index % defaultImageColors.length];
-  };
+  //   return defaultImageColors[index % defaultImageColors.length];
+  // };
 
   // Fetch Hero Slides from Strapi
 useEffect(() => {
@@ -273,15 +268,27 @@ useEffect(() => {
           {isVideo && slide.backgroundVideo ? (
             <div className="relative w-full h-full bg-black">
 
-             <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={V3Video} type="video/mp4" />
-      </video>
+           {/* Desktop Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute hidden sm:block inset-0 w-full h-full object-cover"
+>
+  <source src={V3Video} type="video/mp4" />
+</video>
+
+{/* Mobile Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute block sm:hidden inset-0 w-full h-full object-cover"
+>
+  <source src={mobileVideo} type="video/mp4" />
+</video>
 
               <div className="absolute inset-0 bg-black/50" />
 
@@ -320,15 +327,27 @@ useEffect(() => {
 
                   {/* Product Image */}
                   <div className="flex justify-center">
-                     <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={V3Video} type="video/mp4" />
-      </video>
+                  {/* Desktop Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute hidden sm:block inset-0 w-full h-full object-cover"
+>
+  <source src={V3Video} type="video/mp4" />
+</video>
+
+{/* Mobile Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute block sm:hidden inset-0 w-full h-full object-cover"
+>
+  <source src={mobileVideo} type="video/mp4" />
+</video>
                   </div>
 
                   {/* Text */}
@@ -361,25 +380,37 @@ useEffect(() => {
   {/* ================= FALLBACK VIDEO ================= */}
   {!isLoadingSlides && slides.length === 0 && (
     <div className="absolute inset-0">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={V3Video} type="video/mp4" />
-      </video>
+     {/* Desktop Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute hidden sm:block inset-0 w-full h-full object-cover"
+>
+  <source src={V3Video} type="video/mp4" />
+</video>
+
+{/* Mobile Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute block sm:hidden inset-0 w-full h-full object-cover"
+>
+  <source src={mobileVideo} type="video/mp4" />
+</video>
 
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
         <div className="max-w-3xl text-white">
-          <p className="uppercase mb-6 tracking-widest text-sm">
+          <p style={{fontFamily:"gotham-book"}} className="uppercase tracking-[0.3rem] mb-6  text-sm">
             To gather the finest leaves, spices and little treasures of nature
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-light mb-8">
+          <h1 style={{fontFamily:"gotham2"}} className="text-4xl tracking-[0.1rem] md:text-6xl font-light mb-8">
             Serenity in every moment
           </h1>
 

@@ -17,19 +17,19 @@ const BulkOrderBanner: React.FC = () => {
           }}
         >
           {/* Overlay */}
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div> */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div>
           
           {/* Content */}
           <div className="relative z-10 text-start  mr-auto px-8 sm:px-12 max-w-3xl">
-            <p className="font-karla font-medium text-[10px] sm:text-[12px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/90 mb-3 sm:mb-4">
+            <p      style={{fontFamily:"gotham-book"}} className="font-karla font-medium text-[10px] sm:text-[12px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/90 mb-3 sm:mb-4">
               GIVE LOVED ONES
             </p>
             
-            <h2 className="font-lora font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 leading-tight">
+            <h2      style={{fontFamily:"gotham-book"}} className="font-lora font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 leading-tight">
               For Bulk Order
             </h2>
             
-            <p className="font-karla font-light text-sm sm:text-base md:text-lg text-white/95 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p      style={{fontFamily:"gotham-book",}} className="font-karla font-light text-sm sm:text-base   tracking-wider md:text-lg text-white/95 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
               Reliable supply, consistent quality, and<br className="hidden sm:block" />
               exclusive bulk pricing for your business
             </p>

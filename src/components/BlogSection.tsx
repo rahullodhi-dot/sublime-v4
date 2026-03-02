@@ -4,6 +4,7 @@ import { getFeaturedBlogs, getImageUrl } from "../services/home.service";
 import blogImg1 from "../assets/images/Vector (3).png";
 import blogImg2 from "../assets/images/Vector (4).png";
 import blogImg3 from "../assets/images/Vector (5).png";
+import ArrowButton from "./ui/ArrowButton";
 
 interface BlogPost {
   id: number;
@@ -57,9 +58,9 @@ const FALLBACK_POSTS: BlogPost[] = [
 
 const BlogSection: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>(FALLBACK_POSTS);
-  const [isLoading, setIsLoading] = useState(true);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [canScrollLeft, setCanScrollLeft] = useState(false);
+  // const [canScrollRight, setCanScrollRight] = useState(true);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -92,7 +93,7 @@ const BlogSection: React.FC = () => {
       } catch (err) {
         console.error(err);
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     };
 
@@ -102,10 +103,10 @@ const BlogSection: React.FC = () => {
   const checkScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 0);
-    setCanScrollRight(
-      el.scrollLeft + el.clientWidth < el.scrollWidth - 5
-    );
+    // setCanScrollLeft(el.scrollLeft > 0);
+    // setCanScrollRight(
+    //   el.scrollLeft + el.clientWidth < el.scrollWidth - 5
+    // );
   };
 
   const scroll = (direction: "left" | "right") => {
@@ -123,7 +124,7 @@ const BlogSection: React.FC = () => {
 
   return (
     <section className="py-10 sm:py-14 lg:py-20 bg-[#f1e4b0]">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6  lg:px-12 relative">
 
         {/* Header */}
         <div className="text-center mb-10">
@@ -137,7 +138,7 @@ const BlogSection: React.FC = () => {
           }} className="text-xs tracking-[0.3em] uppercase text-black">
             LATEST UPDATES
           </p>
-          <h2 style={{ fontFamily: "gotham-book" }} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523] mt-2">
+          <h2 style={{ fontFamily: "'gotham-book', sans-serif", fontSize: '38px' }} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#9a7523] mt-2">
             Latest Blogs
           </h2>
         </div>
@@ -145,57 +146,25 @@ const BlogSection: React.FC = () => {
         {/* Arrows */}
         <div className="relative">
 
+           {/* left arrow */}
+          <ArrowButton direction="left" onClick={() => scroll("left")} isDefaultSvg={true} />
 
-          <button
-            onClick={() => scroll("left")}
-            className="absolute -left-5 top-1/2 -translate-y-1/2 z-30
-                         w-10 h-10 sm:w-12 sm:h-12
-                         bg-[#9a7522] rounded-full
-                         flex items-center justify-center shadow-lg"
-          >
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path
-                d="M5.50781 16.5198L13.7678 24.7798M5.50781 16.5198L13.7678 8.25978M5.50781 16.5198L19.9628 16.5198M27.5345 16.5198L24.0928 16.5198"
-                stroke="#F6F0E8"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+{/* right arrow */}
 
-
-
-          <button
-            onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-30
-                         w-10 h-10 sm:w-12 sm:h-12
-                         bg-[#9a7522] rounded-full
-                         flex items-center justify-center shadow-lg"
-          >
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <path
-                d="M27.5322 16.5198L19.2722 8.25977M27.5322 16.5198L19.2722 24.7798M27.5322 16.5198L13.0772 16.5198M5.50552 16.5198L8.94719 16.5198"
-                stroke="#F6F0E8"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+          <ArrowButton direction="right" onClick={() => scroll("right")} isDefaultSvg={true} />
 
 
           {/* Scroll Container */}
           <div
             ref={scrollRef}
             onScroll={checkScroll}
-            className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-2"
+            className="flex  gap-6  overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-2"
           >
             {displayPosts.map((post) => (
               <article
                 key={post.id}
                 className="snap-start flex-shrink-0
-                           w-full sm:w-1/2 lg:w-[450px]
+                           w-[320px] h-[442px] sm:h-full sm:w-1/2 lg:w-[450px]
                            bg-[#FFF7EA] rounded-xl
                            overflow-hidden flex flex-col"
               >

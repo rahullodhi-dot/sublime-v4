@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import p from "../assets/images/p1.png";
 import p1 from "../assets/images/Ellipse 96.png"
 import p2 from "../assets/images/Ellipse 97.png"
+import ArrowButton from "./ui/ArrowButton";
 
 interface Testimonial {
     id: number;
@@ -66,7 +67,7 @@ const CustomerTestimonialsSection: React.FC = () => {
     return (
         <section className="w-full py-16 bg-[#f1e4b0]">
             <div className="text-center mb-12">
-                <p style={{ fontFamily: "gotham-book" }} className="text-sm text-black font-bold uppercase">
+                <p style={{ fontFamily: "gotham2",letterSpacing:"0.3rem" }} className="text-sm font-bold text-black  font-bold uppercase">
                     Hear The Good
                 </p>
                 <h2 style={{ fontFamily: "gotham-book" }} className="text-4xl font-bold text-[#C5A059]">
@@ -76,14 +77,8 @@ const CustomerTestimonialsSection: React.FC = () => {
 
             <div className="relative max-w-[1200px] mx-auto">
                 {/* LEFT BUTTON — YOUR SVG */}
-                <button
-                    onClick={() => scroll("left")}
-                    className="absolute left-0 top-[55%] -translate-y-1/2 z-10 bg-[#f6f1e8] p-2 rounded-full"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                        <path d="M5.50781 16.5198L13.7678 24.7798M5.50781 16.5198L13.7678 8.25978M5.50781 16.5198L19.9628 16.5198M27.5345 16.5198L24.0928 16.5198" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </button>
+             
+                <ArrowButton direction="left" onClick={() => scroll("left")} isDefaultSvg={true} />
 
                 {/* SCROLL AREA */}
                 <div
@@ -155,14 +150,8 @@ const CustomerTestimonialsSection: React.FC = () => {
                 </div>
 
                 {/* RIGHT BUTTON — YOUR SVG */}
-                <button
-                    onClick={() => scroll("right")}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#f6f1e8] p-2 rounded-full"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                        <path d="M27.5322 16.5198L19.2722 8.25977M27.5322 16.5198L19.2722 24.7798M27.5322 16.5198L13.0772 16.5198M5.50552 16.5198L8.94719 16.5198" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </button>
+              
+                <ArrowButton direction="right" onClick={() => scroll("right")} isDefaultSvg={true} />
             </div>
         </section>
     );

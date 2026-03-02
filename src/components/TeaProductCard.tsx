@@ -40,10 +40,10 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
     >
       {/* IMAGE */}
       <div
-        className={`relative rounded-lg flex items-center justify-center
+        className={`relative rounded-lg overflow-hidden flex items-center justify-center
         ${
           isList
-            ? "w-full sm:w-[220px] h-[220px] shrink-0"
+            ? "w-full sm:w-[220px] md:h-[220px] h-[320px] shrink-0"
             : "aspect-square"
         }`}
       >
@@ -62,11 +62,13 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
           </svg>
         </button>
 
-        <img
+       {/* <div className="border"> */}
+         <img
           src={image}
           alt={name}
-          className="w-full h-full object-contain rounded-lg"
+          className="w-full h-full object-cover object-top   rounded-xl"
         />
+       {/* </div>/ */}
       </div>
 
       {/* CONTENT */}
@@ -95,7 +97,7 @@ const TeaProductCard: React.FC<TeaProductCardProps> = ({
               </p>
               <p
                 style={{ fontFamily: "gotham-book" }}
-                className="text-sm sm:text-[15px] text-gray-600 line-clamp-3"
+                className="text-sm line-clamp-1  sm:text-[15px] text-gray-600 md:line-clamp-3"
               >
                 {description}
               </p>

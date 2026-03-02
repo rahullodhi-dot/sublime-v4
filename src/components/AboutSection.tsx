@@ -304,11 +304,11 @@ Every product of which is packed with authentic quality fresh ingredients, which
         }} className="block lg:hidden px-8 py-8">
 
           {/* Image First */}
-          <div className="w-full flex justify-center">
+          <div className="w-full border flex justify-center">
             <img
               src={displayData.image}
               alt={displayData.heading}
-              className=" w-72 object-contain"
+              className=" object-contain rounded-xl"
             />
           </div>
 

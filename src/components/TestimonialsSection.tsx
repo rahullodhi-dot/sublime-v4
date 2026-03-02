@@ -7,6 +7,7 @@ import productImg from '../assets/images/yellow.png';
 import group530 from '../assets/images/Group 530.png';
 import group531 from '../assets/images/Group 531.png';
 import gsap from "gsap"
+import ArrowButton from './ui/ArrowButton';
 
 interface Product {
   id: number;
@@ -61,7 +62,7 @@ const BASE_PRODUCTS: Product[] = [
 // Repeat products for scrolling
 const PRODUCTS = [...BASE_PRODUCTS, ...BASE_PRODUCTS, ...BASE_PRODUCTS];
 
-const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="Our Bestselling Products"}) => {
+const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="only buy good",heading="Our Bestselling Products"}) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -142,7 +143,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
 
               fontSize: '38px',
               lineHeight: '100%',
-              letterSpacing: '0%',
+              // letterSpacing: '0%',
             }} className="section-heading text-2xl sm:text-3xl md:text-4xl mt-3 lg:text-5xl font-bold text-[#9a7523]">
           {heading}
           </h2>
@@ -151,19 +152,14 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
         {/* Products Carousel */}
         <div className="relative">
           {/* Left Arrow */}
-          <button
-          ref={btnRef}
-            onClick={()=>handleClick("left",scrollLeft)}
-            className="  hidden lg:flex absolute nav-arrow-btn -left-5 md:-left-7 mt-5 top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all active:scale-90"
-            aria-label="Scroll left"
-          >
-            <svg  className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path ref={iconRef} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+       
+          <ArrowButton direction='left' onClick={scrollLeft} isDefaultSvg={false}/>
+            
+          {/* Right Arrow */}
+          <ArrowButton direction='right' onClick={scrollRight} isDefaultSvg={false}/>
 
           {/* Scrollable Container */}
-          <div className="overflow-hidden -mx-2">
+          <div className="overflow-hidden ">
             <div
               ref={scrollContainerRef}
               className="flex gap-3 lg:gap-2 overflow-x-auto scroll-smooth pb-4 px-2 snap-x snap-mandatory hide-scrollbar"
@@ -171,7 +167,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
               {PRODUCTS.map((product, index) => (
             <div
               key={`${product.id}-${index}`}
-              className="group relative rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 w-[calc(100%-20px)] sm:w-[calc(50%-12px)] lg:w-[calc(25%-1.5px)] snap-start"
+              className="group relative rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 w-[calc(100%-30px)] sm:w-[calc(50%-24px)] lg:w-[calc(23%-1.5px)] snap-start"
               onMouseEnter={() => setHoveredId(product.id)}
               onMouseLeave={() => setHoveredId(null)}
               onClick={()=>navigate(`/productDetails`)}
@@ -275,16 +271,7 @@ const TestimonialsSection: React.FC = ({bgClr="#f1e4b0", subHeading="",heading="
             </div>
           </div>
 
-          {/* Right Arrow */}
-          <button
-            onClick={scrollRight}
-            className=" hidden lg:flex absolute  -right-5 md:-right-7 mt-5  top-1/3 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-[#9A7522] shadow-xl transition-all hover:bg-[#739984] active:scale-90"
-            aria-label="Scroll right"
-          >
-            <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        
 
           {/* Mobile Scroll Hint */}
           <div className="lg:hidden text-center mt-6">
